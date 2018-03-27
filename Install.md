@@ -48,7 +48,7 @@ Add to .htaccess (thunder is alias name)
 
     RewriteBase /thunder
 
-Not why I changed that:
+Not sure why I changed that:
 
     <IfModule dir_module>
         DirectoryIndex index.html index.php
