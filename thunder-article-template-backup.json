@@ -1,0 +1,9 @@
+{
+    "data": {
+        "type": "node--article",
+        "attributes": {
+            "title": "title: My custom title",
+            "field_seo_title": "seo: My custom title"
+        }
+    }
+}

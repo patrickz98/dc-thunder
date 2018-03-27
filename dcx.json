@@ -1,0 +1,217 @@
+{
+    "@context": "\/dcx\/api\/_context",
+    "_files_index": {
+        "variant_type": []
+    },
+    "_id": "dcxapi:document\/doc6wyp0ms0sg51mksj7omy",
+    "_links": {
+        "document_doctorprofs": {
+            "_url": "\/dcx\/api\/doctorprof?q[doc_id]=doc6wyp0ms0sg51mksj7omy",
+            "_entries_type": "dcx:doctorprof"
+        },
+        "document_doctoutags": {
+            "_url": "\/dcx\/api\/doctoutag?q[doc_id]=doc6wyp0ms0sg51mksj7omy",
+            "_entries_type": "dcx:doctoutag"
+        }
+    },
+    "_type": "dcx:document",
+    "fields": {
+        "Catchline": [
+            {
+                "position": "1",
+                "value": "Catch line blabla furz"
+            }
+        ],
+        "CharCount": [
+            {
+                "_type": "xsd:nonNegativeInteger",
+                "source": "com.digicol.dcx",
+                "value": "527"
+            }
+        ],
+        "Creator": [
+            {
+                "_id": "dcxapi:user\/tmt6whfkac0p54v92r2cj9",
+                "_type": "dcx:user",
+                "value": "Manfred Mustermann"
+            }
+        ],
+        "DateImported": [
+            {
+                "_type": "xsd:dateTime",
+                "value": "2017-10-04T05:39:51+02:00"
+            }
+        ],
+        "Headline": [
+            {
+                "position": "1",
+                "value": "Export Story Headline"
+            }
+        ],
+        "Image": [
+            {
+                "_type": "dcx:taggroup",
+                "fields": {
+                    "DocumentRef": [
+                        {
+                            "_id": "dcxapi:document\/doc6wxj23xrnq9ucu831m40",
+                            "_type": "dcx:document",
+                            "file_variant": "master",
+                            "position": "1"
+                        }
+                    ],
+                    "ImageCaption": [
+                        {
+                            "_type": "xhtml",
+                            "position": "1",
+                            "value": "<p>Test Img<\/p>"
+                        }
+                    ],
+                    "ImageCredit": [
+                        {
+                            "position": "1",
+                            "value": "Martin Ehleben"
+                        }
+                    ],
+                    "ImageLabel": [
+                        {
+                            "position": "1",
+                            "value": "Picture 2"
+                        }
+                    ],
+                    "TagGroupConfig": [
+                        {
+                            "document_mode": "single",
+                            "value": ""
+                        }
+                    ]
+                },
+                "taggroup_id": "image_2_59d458adaa586"
+            },
+            {
+                "_type": "dcx:taggroup",
+                "fields": {
+                    "DocumentRef": [
+                        {
+                            "_id": "dcxapi:document\/doc6wxj22g5r6q7fmfk1m40",
+                            "_type": "dcx:document",
+                            "file_variant": "master",
+                            "position": "1"
+                        }
+                    ],
+                    "ImageCaption": [
+                        {
+                            "_type": "xhtml",
+                            "position": "2",
+                            "value": "<p>Test Img 2<\/p>"
+                        }
+                    ],
+                    "ImageCredit": [
+                        {
+                            "position": "2",
+                            "value": "Hendrik Schmidt"
+                        }
+                    ],
+                    "ImageLabel": [
+                        {
+                            "position": "1",
+                            "value": "Picture 3"
+                        }
+                    ],
+                    "TagGroupConfig": [
+                        {
+                            "document_mode": "single",
+                            "value": ""
+                        }
+                    ]
+                },
+                "taggroup_id": "image_3_59d458c29d9e4"
+            }
+        ],
+        "ImportedBy": [
+            {
+                "_id": "dcxapi:user\/tmt6whfkac0p54v92r2cj9",
+                "_type": "dcx:user",
+                "value": "Manfred Mustermann"
+            }
+        ],
+        "LastEditedBy": [
+            {
+                "_id": "dcxapi:user\/tmt6whfkac0p54v92r2cj9",
+                "_type": "dcx:user",
+                "value": "Manfred Mustermann"
+            }
+        ],
+        "Owner": [
+            {
+                "_id": "dcxapi:tm_topic\/owner-default",
+                "_type": "dcx:tm_topic",
+                "value": "testApp"
+            }
+        ],
+        "Status": [
+            {
+                "_id": "dcxapi:tm_topic\/docstatus-draft",
+                "_type": "dcx:tm_topic",
+                "value": "Draft"
+            }
+        ],
+        "StoryType": [
+            {
+                "_id": "dcxapi:tm_topic\/storytype-default",
+                "_type": "dcx:tm_topic",
+                "value": "Default"
+            }
+        ],
+        "SubHeadline": [
+            {
+                "position": "1",
+                "value": "Export Story Sub-Headline"
+            }
+        ],
+        "Title": [
+            {
+                "position": "1",
+                "value": "Export Story Title"
+            }
+        ],
+        "Type": [
+            {
+                "_id": "dcxapi:tm_topic\/documenttype-story",
+                "_type": "dcx:tm_topic",
+                "value": "Story"
+            }
+        ],
+        "WordCount": [
+            {
+                "_type": "xsd:nonNegativeInteger",
+                "source": "com.digicol.dcx",
+                "value": "71"
+            }
+        ],
+        "_display_title": [
+            {
+                "value": "Export Story Headline"
+            }
+        ],
+        "body": [
+            {
+                "_type": "xhtml",
+                "lang": "",
+                "value": "<p>Zirkon ist ein Mineral aus der Mineralklasse der \u201eSilikate und Germanate\u201c mit der chemischen Zusammensetzung Zr[SiO4] und damit chemisch gesehen ein Zirconium-Silikat, das strukturell zu den Inselsilikaten z\u00e4hlt. Sehr typisch sind zum Teil hohe Gehalte an Hafnium, Uran, Thorium, Yttrium, Cer und anderen Metallen der Seltenen Erden (Rare Earth Elements, REE). Zirkon bildet eine l\u00fcckenlose Mischkristallreihe mit seinem wesentlich selteneren hafniumdominanten Analogon Hafnon. Reidit ist eine Hochdruckmodifikation von Zirkon.<\/p>\n<p\/>"
+            }
+        ]
+    },
+    "files": [],
+    "properties": {
+        "_created": "2017-10-04T05:39:51+02:00",
+        "_modcount": 2,
+        "_modified": "2017-10-04T05:43:55+02:00",
+        "_web_url": "\/dcx\/documents#\/doc\/doc6wyp0ms0sg51mksj7omy",
+        "_web_url_ui": "\/dcx\/ui\/document\/doc6wyp0ms0sg51mksj7omy",
+        "pool_id": {
+            "_id": "dcxapi:pool\/story",
+            "_type": "dcx:pool"
+        }
+    }
+}
