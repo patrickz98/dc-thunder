@@ -2,22 +2,40 @@
 
 class Curl
 {
-    public static function post($url, $data)
+    private static function curl_init($url)
     {
         $headers = [
             "Content-Type: application/json",
             "Accept: application/json"
         ];
 
-        $process = curl_init($url);
-        curl_setopt($process, CURLOPT_HTTPHEADER,     $headers);
-        curl_setopt($process, CURLOPT_USERPWD,        "patrick:1234");
-        curl_setopt($process, CURLOPT_CUSTOMREQUEST,  "POST");
-        curl_setopt($process, CURLOPT_POSTFIELDS,     Simple::prettyJson($data));
-        curl_setopt($process, CURLOPT_RETURNTRANSFER, true);
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_HTTPHEADER,     $headers);
+        curl_setopt($curl, CURLOPT_USERPWD,        "patrick:1234");
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST,  "GET");
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-        $result = curl_exec($process);
-        curl_close($process);
+        return $curl;
+    }
+
+    public static function get($url)
+    {
+        $curl = Curl::curl_init($url);
+
+        $result = curl_exec($curl);
+        curl_close($curl);
+
+        return Simple::parseJson($result);
+    }
+
+    public static function post($url, $data)
+    {
+        $curl = Curl::curl_init($url);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($curl, CURLOPT_POSTFIELDS,    Simple::prettyJson($data));
+
+        $result = curl_exec($curl);
+        curl_close($curl);
 
         return Simple::parseJson($result);
     }

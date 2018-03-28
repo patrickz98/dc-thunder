@@ -4,6 +4,11 @@ include("./SimpleRandomWords.php");
 
 class Simple
 {
+    public static function getHumanTime()
+    {
+        return date("H:i:s");
+    }
+
     public static function getTimeIso()
     {
         return date(DATE_ISO8601);

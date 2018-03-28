@@ -25,8 +25,7 @@ class Paragraph
 
         return [
             "target_id" => $response[ "id" ][ 0 ][ "value" ],
-            "target_revision_id" => $response[ "revision_id" ][ 0 ][ "value" ],
-            "target_type" => "paragraph"
+            "target_revision_id" => $response[ "revision_id" ][ 0 ][ "value" ]
         ];
     }
 }

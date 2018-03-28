@@ -23,20 +23,9 @@ function main()
 
     echo Simple::prettyJson($article) . "\n";
 
-    Simple::write("article.json", $article);
-
-    // echo Simple::prettyJson(Curl::post()) . "\n";
-    // echo Curl::post() . "\n";
-
-    // $time = Simple::getTimeIso();
-    // echo "--> Time: $time\n";
-    //
-    // $article = [
-    //     "title" => "Title $time",
-    //     "title_seo" => "SEO Title $time"
-    // ];
-    //
-    // echo Simple::prettyJson($article) . "\n";
+    // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
+    // echo Simple::prettyJson(Curl::get($server . "/entity/paragraph/83?_format=json")) . "\n";
+    // Simple::write("article.json", $article);
 }
 
 main();

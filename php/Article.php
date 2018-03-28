@@ -4,23 +4,24 @@ class Article
 {
     private static function build($paragraphs)
     {
-        $time = Simple::getTimeIso();
+        // $time = Simple::getTimeIso();
+        $time = Simple::getHumanTime();
 
-        $struc = [];
-        $struc[ "type"            ] = [["target_id" => "article"]];
-        $struc[ "title"           ] = [["value" => "$time Post Example node title"]];
-        $struc[ "field_seo_title" ] = [["value" => "$time Post Example seo title"]];
-        $struc[ "status"          ] = [["value" => true]];
-        $struc[ "field_channel"   ] = [[
-            "target_id" => 1,
+        $article = [];
+        $article[ "type"            ] = [["target_id" => "article"]];
+        $article[ "title"           ] = [["value" => "$time --> Post Example node title"]];
+        $article[ "field_seo_title" ] = [["value" => "$time --> Post Example seo title"]];
+        $article[ "status"          ] = [["value" => true]];
+        $article[ "field_channel"   ] = [[
+            "target_id"   => 1,
             "target_type" => "taxonomy_term",
             "target_uuid" => "bfc251bc-de35-467d-af44-1f7a7012b845",
-            "url" => "/thunder/news"
+            "url"         => "/thunder/news"
         ]];
 
-        $struc[ "field_paragraphs" ] = $paragraphs;
+        $article[ "field_paragraphs" ] = $paragraphs;
 
-        return $struc;
+        return $article;
     }
 
     public static function create($server, $paragraphs)
