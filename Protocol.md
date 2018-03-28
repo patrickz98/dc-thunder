@@ -7,7 +7,7 @@
 * DB Thunder angeguckt
 
 #### Woche 1: Mittwoch
-* JSON api geficke
+* Json-Api geficke
 * Thunder Modul-Verwaltung untersucht
 * Thunder und Dcx Editor gegenübergestellt
 * Thunder und Dcx MySql-Datenbank gegenübergestellt
@@ -26,3 +26,7 @@
 * Setup Developer Environment
 * Bugfix Client
 * Besprechung mit Frances über Drupal/Thunder Struktur
+
+#### Woche 2: Dienstag
+* Thunder Json-Api gefickt
+* Php Programm geschrieben zu erstellen von Artikeln

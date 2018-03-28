@@ -43,10 +43,11 @@ server="localhost"
 # cat error.json
 # echo
 
-# curl \
-#     --request GET \
-#     --url http://${server}/thunder/seo-title?_format=json > xxx.json
-#
+curl \
+    --request GET \
+    --user patrick:1234 \
+    --url http://${server}/thunder/seo-title?_format=json > xxx.json
+
 # curl \
 #     --request GET \
 #     --url http://${server}/thunder/seo-title?_format=hal_json > xxx-hal.json
@@ -66,16 +67,16 @@ server="localhost"
 #     --request GET \
 #     --url http://${server}/thunder/entity/paragraph/21?_format=hal_json > paragraph-pz.json
 
-curl \
-    --request POST \
-    --user patrick:1234 \
-    --header "Accept: application/json" \
-    --header "Content-type: application/json" \
-    --url http://${server}/thunder/entity/paragraph?_format=json \
-    --data-binary @thunder-template-paragraphs.json > error.json
-
-cat error.json
-echo
+# curl \
+#     --request POST \
+#     --user patrick:1234 \
+#     --header "Accept: application/json" \
+#     --header "Content-type: application/json" \
+#     --url http://${server}/thunder/entity/paragraph?_format=json \
+#     --data-binary @thunder-template-paragraphs.json > error.json
+#
+# cat error.json
+# echo
 
 # curl \
 #     --request PATCH \
