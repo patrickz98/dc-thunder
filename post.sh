@@ -1,8 +1,107 @@
 #!/bin/sh
 
+server="localhost"
+
+#
+# Authentication
+#
+
+# curl \
+#     --request POST \
+#     --header "Content-type: application/json" \
+#     -c cookie.txt \
+#     --url "http://${server}/thunder/user/login?_format=json" \
+#     --data '{"name":"patrick", "pass":"1234"}'
+#
+# echo
+
+
+
+#
+# Article
+#
+
+# curl \
+#     --request POST \
+#     --user patrick:1234 \
+#     --header "Accept: application/json" \
+#     --header "Content-type: application/json" \
+#     --url http://${server}/thunder/entity/node?_format=json \
+#     --data-binary @thunder-template.json > error.json
+#
+# cat error.json
+# echo
+
+# curl \
+#     --request PATCH \
+#     --user patrick:1234 \
+#     --header "Accept: application/json" \
+#     --header "Content-type: application/json" \
+#     --url http://${server}/thunder/post-example-seo-title?_format=json \
+#     --data-binary @thunder-template-patch.json > error.json
+#
+# cat error.json
+# echo
+
+# curl \
+#     --request GET \
+#     --url http://${server}/thunder/seo-title?_format=json > xxx.json
+#
+# curl \
+#     --request GET \
+#     --url http://${server}/thunder/seo-title?_format=hal_json > xxx-hal.json
+
+
+
+
+#
+# Paragraphs
+#
+
+# curl \
+#     --request GET \
+#     --url http://${server}/thunder/entity/paragraph/19?_format=hal_json > paragraph-std.json
+
+# curl \
+#     --request GET \
+#     --url http://${server}/thunder/entity/paragraph/21?_format=hal_json > paragraph-pz.json
+
 curl \
--b cookie.txt \
---header 'Accept: application/vnd.api+json' \
---header 'Content-type: application/vnd.api+json' \
---request POST http://h2758593.stratoserver.net/thunder/jsonapi/node/article \
---data-binary @thunder-article-template.json
+    --request POST \
+    --user patrick:1234 \
+    --header "Accept: application/json" \
+    --header "Content-type: application/json" \
+    --url http://${server}/thunder/entity/paragraph?_format=json \
+    --data-binary @thunder-template-paragraphs.json > error.json
+
+cat error.json
+echo
+
+# curl \
+#     --request PATCH \
+#     --user patrick:1234 \
+#     --header "Accept: application/json" \
+#     --header "Content-type: application/json" \
+#     --url http://${server}/thunder/entity/paragraph/26?_format=json \
+#     --data-binary @paragraph-pz-patch.json > error.json
+#
+# cat error.json
+# echo
+
+
+
+#
+# Stuff
+#
+
+# http://localhost/thunder/entity/node/12
+# --request POST http://h2758593.stratoserver.net/thunder/jsonapi/node/article \
+
+# curl --include \
+#   --request POST \
+#   --user patrick:1234 \
+#   --header 'Content-type: application/hal+json' \
+#   --url http://${server}/thunder/entity/node?_format=hal_json \
+#   --data-binary @${file}
+#
+# echo

@@ -1,0 +1,12 @@
+{
+    "type": [
+        {
+            "target_id": "pz_text"
+        }
+    ],
+    "field_pz_text_label": [
+        {
+            "value": "Patch Patch"
+        }
+    ]
+}

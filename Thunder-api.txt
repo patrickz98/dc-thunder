@@ -1,12 +1,12 @@
 curl \
-  --request POST
+  --request POST \
   --header "Content-type: application/json" \
   -c cookie.txt \
   --url "http://h2758593.stratoserver.net/thunder/user/login?_format=json" \
   --data '{"name":"USER", "pass":"PASSWORD"}'
 
 curl \
-  --request GET
+  --request GET \
   --header "Content-type: application/json" \
   -b cookie.txt \
   --url "http://h2758593.stratoserver.net/thunder/user/login_status?_format=json"

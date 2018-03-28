@@ -62,4 +62,4 @@ Json Api: https://www.drupal.org/project/jsonapi
 composer config repositories.repo-name vcs https://github.com/BurdaMagazinOrg/module-dcx-integration.git
 
     cd /var/www/html/
-    sudo composer require drush/drush
+    composer require drush/drush
