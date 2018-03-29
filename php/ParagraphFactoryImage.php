@@ -2,7 +2,7 @@
 
 class ParagraphFactoryImage
 {
-    private static function gatBase64($imgSrc)
+    private static function getBase64($imgSrc)
     {
         // $path = 'myfolder/myimage.png';
         // $type = pathinfo($path, PATHINFO_EXTENSION);
@@ -11,8 +11,10 @@ class ParagraphFactoryImage
         return base64_encode($data);
     }
 
-    private static function build($server, $fileName)
+    private static function build($server, $fileSrc)
     {
+        $fileName = basename($fileSrc);
+
         // build hal_json
         $uploadInfo = [];
         $uploadInfo[ "_links"   ] = [ "type"  => ["href" => "$server/rest/type/file/image"]];
@@ -28,14 +30,14 @@ class ParagraphFactoryImage
             ]
         ];
 
-        $uploadInfo[ "data" ] = [["value" => ParagraphFactoryImage::gatBase64($fileName)]];
+        $uploadInfo[ "data" ] = [["value" => ParagraphFactoryImage::getBase64($fileSrc)]];
 
         return $uploadInfo;
     }
 
-    private static function createFile($server, $fileName)
+    private static function createFile($server, $fileSrc)
     {
-        $uploadInfo = ParagraphFactoryImage::build($server, $fileName);
+        $uploadInfo = ParagraphFactoryImage::build($server, $fileSrc);
 
         $url = "$server/entity/file?_format=hal_json";
 
@@ -46,10 +48,10 @@ class ParagraphFactoryImage
         return $id;
     }
 
-    private static function createMedia($server, $fileName)
+    private static function createMedia($server, $fileSrc)
     {
         $url = "$server/entity/media?_format=json";
-        $target_id = ParagraphFactoryImage::createFile($server, $fileName);
+        $target_id = ParagraphFactoryImage::createFile($server, $fileSrc);
 
         $media = [
             "bundle" => [
@@ -67,9 +69,9 @@ class ParagraphFactoryImage
         return Curl::post($url, $media);
     }
 
-    public static function create($server, $fileName)
+    public static function create($server, $fileSrc)
     {
-        $media = ParagraphFactoryImage::createMedia($server, $fileName);
+        $media = ParagraphFactoryImage::createMedia($server, $fileSrc);
         $targetId = $media[ "mid" ][ 0 ][ "value" ];
 
         $data = [
@@ -78,7 +80,7 @@ class ParagraphFactoryImage
             ]],
             "field_image" => [
                 [
-                    "target_id" => $media[ "mid" ][ 0 ][ "value" ]
+                    "target_id" => $targetId
                 ]
             ]
         ];

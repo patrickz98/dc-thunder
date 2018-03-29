@@ -1,0 +1,24 @@
+{
+  "headline": "Export Story Headline",
+  "subHeadline": "Export Story Sub-Headline",
+  "title": "Export Story Title",
+  "display_title": "Export Story Headline",
+  "paragraphs": [
+    {
+      "type": "text",
+      "text": "Zirkon ist ein Mineral aus der Mineralklasse der \u201eSilikate und Germanate\u201c mit der chemischen Zusammensetzung Zr[SiO4] und damit chemisch gesehen ein"
+    },
+    {
+      "type": "image",
+      "src": "http:\/\/192.168.18.131\/device_testApp\/dev1\/2017\/10-01\/c3\/77\/file6wxj23xw1gg19jwah1m40.jpg"
+    },
+    {
+      "type": "text",
+      "text": "Zirconium-Silikat, das strukturell zu den Inselsilikaten z\u00e4hlt. Sehr typisch sind zum Teil hohe Gehalte an Hafnium, Uran, Thorium, Yttrium, Cer und anderen Metallen der Seltenen Erden (Rare Earth Elements, REE). Zirkon bildet eine l\u00fcckenlose Mischkristallreihe mit seinem wesentlich selteneren hafniumdominanten Analogon Hafnon. Reidit ist eine Hochdruckmodifikation von Zirkon."
+    },
+    {
+      "type": "text",
+      "text": "Paragraf 2"
+    }
+  ]
+}

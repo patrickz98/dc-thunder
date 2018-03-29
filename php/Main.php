@@ -5,49 +5,61 @@ date_default_timezone_set("UTC");
 include("./Curl.php");
 include("./Simple.php");
 include("./Article.php");
-include("./DcxImporter.php");
+include("./DcxExtractor.php");
 include("./ParagraphFactory.php");
+
+function sampleArticle()
+{
+    $server     = "http://localhost/thunder";
+    $article    = new Article($server);
+    $paragraphs = new ParagraphFactory($server);
+
+    for ($inx = 0; $inx < 4; $inx++)
+    {
+        $randomText = Simple::getRandomText();
+        $paragraphs->createText($randomText);
+    }
+
+    $paragraphs->createImage("Einstein.jpg");
+
+    $article->addParagraphs($paragraphs->build());
+    $response = $article->post();
+
+    echo Simple::prettyJson($response) . "\n";
+    // Simple::write("article.json", $response);
+}
 
 function main()
 {
-//    $dcxDoc = DcxImporter::getDoc();
-    $dcxDoc = DcxImporter::getDoc();
-//    echo Simple::prettyJson($dcxDoc) . "\n";
+    $dcxExtractor = new DcxExtractor("http://192.168.18.131/dcx/api");
+    $story = $dcxExtractor->getStory("doc6wyp0ms0sg51mksj7omy");
 
-    $headline      = strip_tags($dcxDoc[ "fields" ][ "Headline"       ][ 0 ][ "value" ]);
-    $subHeadline   = strip_tags($dcxDoc[ "fields" ][ "SubHeadline"    ][ 0 ][ "value" ]);
-    $title         = strip_tags($dcxDoc[ "fields" ][ "Title"          ][ 0 ][ "value" ]);
-    $display_title = strip_tags($dcxDoc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]);
-//    $htmlBody      = strip_tags($dcxDoc[ "fields" ][ "body"           ][ 0 ][ "value" ]);
-    $htmlBody      = $dcxDoc[ "fields" ][ "body"           ][ 0 ][ "value" ];
+    echo "dcx: " . Simple::prettyJson($story) . "\n";
 
-     echo $htmlBody . "\n";
+    $server     = "http://localhost/thunder";
+    $article    = new Article($server);
+    $paragraphs = new ParagraphFactory($server);
 
-    $xml = simplexml_load_string("<xml>$htmlBody</xml>");
-
-    foreach($xml->children() as $Item)
+    foreach ($story[ "paragraphs" ] as $inx => $paragraph)
     {
-        var_dump($Item->getName());
-        var_dump($Item);
+        $type = $paragraph[ "type" ];
+
+        if ($type === "text")
+        {
+            $paragraphs->createText($paragraph[ "text" ]);
+        }
+
+        if ($type === "image")
+        {
+            $paragraphs->createImage($paragraph[ "src" ]);
+        }
     }
 
-//    $server     = "http://localhost/thunder";
-//    $article    = new Article($server);
-//    $paragraphs = new ParagraphFactory($server);
-//
-//    for ($inx = 0; $inx < 4; $inx++)
-//    {
-//        $randomText = Simple::getRandomText();
-//        $paragraphs->createText($randomText);
-//    }
-//
-//    $paragraphs->createImage("Einstein.jpg");
-//
-//    $article->addParagraphs($paragraphs->build());
-//    $response = $article->post();
-//
-//    echo Simple::prettyJson($response) . "\n";
-    // Simple::write("article.json", $response);
+
+    $article->addParagraphs($paragraphs->build());
+    $response = $article->post();
+
+    echo "thunder: " . Simple::prettyJson($response) . "\n";
 
     // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
 }

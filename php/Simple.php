@@ -24,6 +24,11 @@ class Simple
         return json_encode($array, JSON_PRETTY_PRINT);
     }
 
+    public static function xmlToJson($xml)
+    {
+        return Simple::parseJson(Simple::prettyJson($xml));
+    }
+
     public static function getRandomText($words = null)
     {
         return SimpleRandomWords::createText($words);
