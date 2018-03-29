@@ -55,8 +55,11 @@ function main()
         }
     }
 
-
     $article->addParagraphs($paragraphs->build());
+
+    $article->setTitle($story[ "headline" ]);
+    $article->setSeoTitle($story[ "subHeadline" ]);
+
     $response = $article->post();
 
     echo "thunder: " . Simple::prettyJson($response) . "\n";

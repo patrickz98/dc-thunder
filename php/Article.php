@@ -4,6 +4,8 @@ class Article
 {
     private $server;
     private $paragraphs;
+    private $title;
+    private $seoTitle;
 
     function __construct($server)
     {
@@ -21,15 +23,38 @@ class Article
         $this->paragraphs = array_merge($this->paragraphs, $paragraphs);
     }
 
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    public function setSeoTitle($seoTitle)
+    {
+        $this->seoTitle = $seoTitle;
+    }
+
     private function build()
     {
-        // $time = Simple::getTimeIso();
-        $time = Simple::getHumanTime();
+        $time = Simple::getTimeIso();
+        // $time = Simple::getHumanTime();
+
+        $title = $this->title;
+        $seoTitle = $this->seoTitle;
+
+        if (! $title)
+        {
+            $title = "Default Title: $time";
+        }
+
+        if (! $seoTitle)
+        {
+            $seoTitle = "Default Seo Title: $time";
+        }
 
         $article = [];
         $article[ "type"            ] = [["target_id" => "article"]];
-        $article[ "title"           ] = [["value" => "$time --> Post Example node title"]];
-        $article[ "field_seo_title" ] = [["value" => "$time --> Post Example seo title"]];
+        $article[ "title"           ] = [["value" => $title]];
+        $article[ "field_seo_title" ] = [["value" => $seoTitle]];
         $article[ "status"          ] = [["value" => true]];
         $article[ "field_channel"   ] = [[
             "target_id"   => 1,
