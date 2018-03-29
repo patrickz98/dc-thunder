@@ -1,8 +1,42 @@
 <?php
 
+include("./ParagraphsText.php");
+include("./ParagraphsImage.php");
+
 class Article
 {
-    private static function build($paragraphs)
+    private $server;
+    private $paragraphs;
+
+    function __construct($server)
+    {
+        $this->server = $server;
+        $this->paragraphs = [];
+    }
+
+    public function createText($htmlBody)
+    {
+        $paragraph = ParagraphsText::create
+        (
+            $this->server,
+            $htmlBody
+        );
+
+        array_push($this->paragraphs, $paragraph);
+    }
+
+    public function createImage($imgSrc)
+    {
+        $paragraph = ParagraphsImage::create
+        (
+            $this->server,
+            $imgSrc
+        );
+
+        array_push($this->paragraphs, $paragraph);
+    }
+
+    private function build()
     {
         // $time = Simple::getTimeIso();
         $time = Simple::getHumanTime();
@@ -19,17 +53,15 @@ class Article
             "url"         => "/thunder/news"
         ]];
 
-        $article[ "field_paragraphs" ] = $paragraphs;
+        $article[ "field_paragraphs" ] = $this->paragraphs;
 
         return $article;
     }
 
-    public static function create($server, $paragraphs)
+    public function create()
     {
-        $url = $server . "/node?_format=json";
-
-        $data = Article::build($paragraphs);
-        $response = Curl::post($url, $data);
+        $url = $this->server . "/node?_format=json";
+        $response = Curl::post($url, Article::build());
 
         return $response;
     }
