@@ -1,13 +1,10 @@
 <?php
 
-include("./ParagraphImage.php");
-
-class Paragraph
+class ParagraphsText
 {
-    public static function create($server)
+    public static function create($server, $htmlBody)
     {
         $url = $server . "/entity/paragraph?_format=json";
-        $randomText = Simple::getRandomText();
 
         $data = [
             "type" => [
@@ -17,7 +14,7 @@ class Paragraph
             ],
             "field_text" => [
                 [
-                    "value" => "<p>$randomText</p>\r\n",
+                    "value" => $htmlBody,
                     "format" => "basic_html"
                 ]
             ]
@@ -29,11 +26,6 @@ class Paragraph
             "target_id" => $response[ "id" ][ 0 ][ "value" ],
             "target_revision_id" => $response[ "revision_id" ][ 0 ][ "value" ]
         ];
-    }
-
-    public static function createImage($server, $imgSrc)
-    {
-        return ParagraphImage::create($server, $imgSrc);
     }
 }
 

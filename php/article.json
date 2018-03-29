@@ -1,0 +1,166 @@
+{
+    "nid": [
+        {
+            "value": 36
+        }
+    ],
+    "uuid": [
+        {
+            "value": "c073a383-d04f-4133-b5da-aeeca185f70a"
+        }
+    ],
+    "vid": [
+        {
+            "value": 47
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "article",
+            "target_type": "node_type",
+            "target_uuid": "0ca242de-8b7d-4a44-bc1b-94a3175687fc"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2018-03-29T16:06:54+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "revision_uid": [
+        {
+            "target_id": 1,
+            "target_type": "user",
+            "target_uuid": "2a843ac3-167f-4bee-9a98-728a78a539c6",
+            "url": "\/thunder\/user\/1"
+        }
+    ],
+    "revision_log": [],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "title": [
+        {
+            "value": "16:06:54 --> Post Example node title"
+        }
+    ],
+    "uid": [
+        {
+            "target_id": 1,
+            "target_type": "user",
+            "target_uuid": "2a843ac3-167f-4bee-9a98-728a78a539c6",
+            "url": "\/thunder\/user\/1"
+        }
+    ],
+    "created": [
+        {
+            "value": "2018-03-29T16:06:54+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-03-29T16:06:54+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true
+        }
+    ],
+    "sticky": [
+        {
+            "value": false
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true
+        }
+    ],
+    "metatag": {
+        "value": {
+            "title": "| Patrick Thunder Test Site",
+            "shortlink": "http:\/\/localhost\/thunder\/",
+            "canonical_url": "http:\/\/localhost\/thunder\/"
+        }
+    },
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en"
+        }
+    ],
+    "publish_on": [],
+    "unpublish_on": [],
+    "menu_link": [
+        {
+            "target_id": null
+        }
+    ],
+    "field_channel": [
+        {
+            "target_id": 1,
+            "target_type": "taxonomy_term",
+            "target_uuid": "bfc251bc-de35-467d-af44-1f7a7012b845",
+            "url": "\/thunder\/news"
+        }
+    ],
+    "field_meta_tags": [
+        "Metatags are normalized in the metatag field."
+    ],
+    "field_paragraphs": [
+        {
+            "target_id": 117,
+            "target_revision_id": 136,
+            "target_type": "paragraph",
+            "target_uuid": "f5a9cdc9-6056-4fb2-bba7-47dec34e580c"
+        },
+        {
+            "target_id": 118,
+            "target_revision_id": 137,
+            "target_type": "paragraph",
+            "target_uuid": "1b6654fd-4bb9-4f0e-aa1b-9fd2fa3d74fa"
+        },
+        {
+            "target_id": 119,
+            "target_revision_id": 138,
+            "target_type": "paragraph",
+            "target_uuid": "6d078c3f-99da-4c3c-b0f7-80e372fd2623"
+        },
+        {
+            "target_id": 120,
+            "target_revision_id": 139,
+            "target_type": "paragraph",
+            "target_uuid": "a864e37e-db73-44d7-900b-15f1f6db24c7"
+        },
+        {
+            "target_id": 121,
+            "target_revision_id": 140,
+            "target_type": "paragraph",
+            "target_uuid": "0c9e046e-011f-4707-a6fa-3af6bbc195f6"
+        }
+    ],
+    "field_seo_title": [
+        {
+            "value": "16:06:54 --> Post Example seo title"
+        }
+    ],
+    "field_tags": [],
+    "field_teaser_media": [],
+    "field_teaser_text": []
+}

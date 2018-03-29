@@ -1,6 +1,6 @@
 <?php
 
-class ParagraphImage
+class ParagraphsImage
 {
     private static function gatBase64($imgSrc)
     {
@@ -28,14 +28,14 @@ class ParagraphImage
             ]
         ];
 
-        $uploadInfo[ "data" ] = [["value" => ParagraphImage::gatBase64($fileName)]];
+        $uploadInfo[ "data" ] = [["value" => ParagraphsImage::gatBase64($fileName)]];
 
         return $uploadInfo;
     }
 
-    public static function createFile($server, $fileName)
+    private static function createFile($server, $fileName)
     {
-        $uploadInfo = ParagraphImage::build($server, $fileName);
+        $uploadInfo = ParagraphsImage::build($server, $fileName);
 
         $url = "$server/entity/file?_format=hal_json";
 
@@ -46,10 +46,10 @@ class ParagraphImage
         return $id;
     }
 
-    public static function createMedia($server, $fileName)
+    private static function createMedia($server, $fileName)
     {
         $url = "$server/entity/media?_format=json";
-        $target_id = ParagraphImage::createFile($server, $fileName);
+        $target_id = ParagraphsImage::createFile($server, $fileName);
 
         $media = [
             "bundle" => [
@@ -69,7 +69,27 @@ class ParagraphImage
 
     public static function create($server, $fileName)
     {
-        return ParagraphImage::createMedia($server, $fileName);
+        $media = ParagraphsImage::createMedia($server, $fileName);
+        $targetId = $media[ "mid" ][ 0 ][ "value" ];
+
+        $data = [
+            "type" => [[
+                "target_id" => "image"
+            ]],
+            "field_image" => [
+                [
+                    "target_id" => $media[ "mid" ][ 0 ][ "value" ]
+                ]
+            ]
+        ];
+
+        $url = "$server/entity/paragraph?_format=json";
+        $paragraph = Curl::post($url, $data);
+
+        return [
+            "target_id" => $paragraph[ "id" ][ 0 ][ "value" ],
+            "target_revision_id" => $paragraph[ "revision_id" ][ 0 ][ "value" ]
+        ];
     }
 }
 
