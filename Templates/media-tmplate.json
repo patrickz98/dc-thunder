@@ -4,14 +4,9 @@
             "target_id": "image"
         }
     ],
-    "status": [
-        {
-            "value": true
-        }
-    ],
     "field_image": [
         {
-            "target_id": 34
+            "target_id": 25
         }
     ]
 }

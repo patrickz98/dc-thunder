@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http://localhost/thunder/file/31?_format=hal_json"
+            "href": "http://localhost/thunder/file/35?_format=hal_json"
         },
         "type": {
             "href": "http://localhost/thunder/rest/type/file/image"
@@ -9,12 +9,12 @@
     },
     "fid": [
         {
-            "value": 31
+            "value": 35
         }
     ],
     "uuid": [
         {
-            "value": "ea9b8455-f907-4bb8-8b66-d957b3200f43"
+            "value": "1a57d342-7fd8-4d16-a48d-35c74c944d50"
         }
     ],
     "langcode": [
@@ -29,13 +29,13 @@
     ],
     "filename": [
         {
-            "value": "pz-666.jpeg"
+            "value": "pz-1234.jpeg"
         }
     ],
     "uri": [
         {
-            "value": "public://patrick/pz-666.jpeg",
-            "url": "/thunder/sites/default/files/patrick/pz-666.jpeg"
+            "value": "public://patrick/pz-1234_3.jpeg",
+            "url": "/thunder/sites/default/files/patrick/pz-1234_3.jpeg"
         }
     ],
     "filemime": [
@@ -55,13 +55,13 @@
     ],
     "created": [
         {
-            "value": "2018-03-29T11:38:31+00:00",
+            "value": "2018-03-29T13:59:53+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2018-03-29T11:38:31+00:00",
+            "value": "2018-03-29T13:59:53+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -75,7 +75,7 @@
     ],
     "url": [
         {
-            "value": "/thunder/sites/default/files/patrick/pz-666.jpeg"
+            "value": "/thunder/sites/default/files/patrick/pz-1234_3.jpeg"
         }
     ],
     "metatag": [
