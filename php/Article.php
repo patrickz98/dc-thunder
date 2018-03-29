@@ -1,8 +1,5 @@
 <?php
 
-include("./ParagraphText.php");
-include("./ParagraphImage.php");
-
 class Article
 {
     private $server;
@@ -14,26 +11,14 @@ class Article
         $this->paragraphs = [];
     }
 
-    public function createText($htmlBody)
+    public function addParagraph($paragraph)
     {
-        $paragraph = ParagraphText::create
-        (
-            $this->server,
-            $htmlBody
-        );
-
         array_push($this->paragraphs, $paragraph);
     }
 
-    public function createImage($imgSrc)
+    public function addParagraphs($paragraphs)
     {
-        $paragraph = ParagraphImage::create
-        (
-            $this->server,
-            $imgSrc
-        );
-
-        array_push($this->paragraphs, $paragraph);
+        $this->paragraphs = array_merge($this->paragraphs, $paragraphs);
     }
 
     private function build()
@@ -58,7 +43,7 @@ class Article
         return $article;
     }
 
-    public function create()
+    public function post()
     {
         $url = $this->server . "/node?_format=json";
         $response = Curl::post($url, Article::build());

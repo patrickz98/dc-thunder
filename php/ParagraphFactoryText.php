@@ -1,6 +1,6 @@
 <?php
 
-class ParagraphText
+class ParagraphFactoryText
 {
     public static function create($server, $htmlBody)
     {

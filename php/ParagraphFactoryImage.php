@@ -1,6 +1,6 @@
 <?php
 
-class ParagraphImage
+class ParagraphFactoryImage
 {
     private static function gatBase64($imgSrc)
     {
@@ -28,14 +28,14 @@ class ParagraphImage
             ]
         ];
 
-        $uploadInfo[ "data" ] = [["value" => ParagraphImage::gatBase64($fileName)]];
+        $uploadInfo[ "data" ] = [["value" => ParagraphFactoryImage::gatBase64($fileName)]];
 
         return $uploadInfo;
     }
 
     private static function createFile($server, $fileName)
     {
-        $uploadInfo = ParagraphImage::build($server, $fileName);
+        $uploadInfo = ParagraphFactoryImage::build($server, $fileName);
 
         $url = "$server/entity/file?_format=hal_json";
 
@@ -49,7 +49,7 @@ class ParagraphImage
     private static function createMedia($server, $fileName)
     {
         $url = "$server/entity/media?_format=json";
-        $target_id = ParagraphImage::createFile($server, $fileName);
+        $target_id = ParagraphFactoryImage::createFile($server, $fileName);
 
         $media = [
             "bundle" => [
@@ -69,7 +69,7 @@ class ParagraphImage
 
     public static function create($server, $fileName)
     {
-        $media = ParagraphImage::createMedia($server, $fileName);
+        $media = ParagraphFactoryImage::createMedia($server, $fileName);
         $targetId = $media[ "mid" ][ 0 ][ "value" ];
 
         $data = [
