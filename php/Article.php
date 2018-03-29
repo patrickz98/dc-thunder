@@ -1,7 +1,7 @@
 <?php
 
-include("./ParagraphsText.php");
-include("./ParagraphsImage.php");
+include("./ParagraphText.php");
+include("./ParagraphImage.php");
 
 class Article
 {
@@ -16,7 +16,7 @@ class Article
 
     public function createText($htmlBody)
     {
-        $paragraph = ParagraphsText::create
+        $paragraph = ParagraphText::create
         (
             $this->server,
             $htmlBody
@@ -27,7 +27,7 @@ class Article
 
     public function createImage($imgSrc)
     {
-        $paragraph = ParagraphsImage::create
+        $paragraph = ParagraphImage::create
         (
             $this->server,
             $imgSrc

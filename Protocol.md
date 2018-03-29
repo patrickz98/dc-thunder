@@ -29,4 +29,9 @@
 
 #### Woche 2: Dienstag
 * Thunder Json-Api gefickt
-* Php Programm geschrieben zu erstellen von Artikeln
+
+#### Woche 2: Mittwoch
+* Php Programm geschrieben zum erstellen von Einfachen Artikeln
+
+#### Woche 2: Donnerstag
+* Php Programm erweitert um Bilder hinzuzufügen
