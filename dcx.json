@@ -1,82 +1,100 @@
 {
-    "@context": "\/dcx\/api\/_context",
+    "@context": "\/dcx_trunk\/api\/_context",
     "_files_index": {
         "variant_type": []
     },
-    "_id": "dcxapi:document\/doc6wyp0ms0sg51mksj7omy",
+    "_id": "dcxapi:document\/doc6wkfj97y13ouzj9dhpf",
     "_links": {
         "document_doctorprofs": {
-            "_url": "\/dcx\/api\/doctorprof?q[doc_id]=doc6wyp0ms0sg51mksj7omy",
+            "_url": "\/dcx_trunk\/api\/doctorprof?q[doc_id]=doc6wkfj97y13ouzj9dhpf",
             "_entries_type": "dcx:doctorprof"
         },
         "document_doctoutags": {
-            "_url": "\/dcx\/api\/doctoutag?q[doc_id]=doc6wyp0ms0sg51mksj7omy",
+            "_url": "\/dcx_trunk\/api\/doctoutag?q[doc_id]=doc6wkfj97y13ouzj9dhpf",
             "_entries_type": "dcx:doctoutag"
         }
     },
     "_type": "dcx:document",
     "fields": {
-        "Catchline": [
-            {
-                "position": "1",
-                "value": "Catch line blabla furz"
-            }
-        ],
         "CharCount": [
             {
                 "_type": "xsd:nonNegativeInteger",
                 "source": "com.digicol.dcx",
-                "value": "527"
+                "value": "1010"
+            }
+        ],
+        "Classification": [
+            {
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ezcmecky558o",
+                "_type": "dcx:tm_topic",
+                "value": "Tierverhalten"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ertc18vi5558o",
+                "_type": "dcx:tm_topic",
+                "value": "Evolution"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ew7qs87g758o",
+                "_type": "dcx:tm_topic",
+                "value": "Tiere"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ezcmecky558o",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "listid": "dc_se_thesterm",
+                "percent": "37",
+                "score": "1",
+                "value": "Tierverhalten"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ew7qs87g758o",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "listid": "dc_se_thesterm",
+                "percent": "33",
+                "score": "0.902705",
+                "value": "Tiere"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ertc18vi5558o",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "listid": "dc_se_thesterm",
+                "percent": "30",
+                "score": "0.81487",
+                "value": "Evolution"
             }
         ],
         "Creator": [
             {
-                "_id": "dcxapi:user\/tmt6whfkac0p54v92r2cj9",
+                "_id": "dcxapi:user\/tmt6wjz0a9ksichdvrxhpl",
                 "_type": "dcx:user",
-                "value": "Manfred Mustermann"
+                "value": "pz_zierahn"
             }
         ],
         "DateImported": [
             {
                 "_type": "xsd:dateTime",
-                "value": "2017-10-04T05:39:51+02:00"
+                "value": "2017-09-06T11:26:21+02:00"
             }
         ],
         "Headline": [
             {
+                "_type": "xhtml",
                 "position": "1",
-                "value": "Export Story Headline"
+                "value": "<p>Simple UI Story iPad<\/p>"
             }
         ],
         "Image": [
             {
                 "_type": "dcx:taggroup",
                 "fields": {
-                    "DocumentRef": [
-                        {
-                            "_id": "dcxapi:document\/doc6wxj23xrnq9ucu831m40",
-                            "_type": "dcx:document",
-                            "file_variant": "master",
-                            "position": "1"
-                        }
-                    ],
-                    "ImageCaption": [
-                        {
-                            "_type": "xhtml",
-                            "position": "1",
-                            "value": "<p>Test Img<\/p>"
-                        }
-                    ],
-                    "ImageCredit": [
-                        {
-                            "position": "1",
-                            "value": "Martin Ehleben"
-                        }
-                    ],
                     "ImageLabel": [
                         {
                             "position": "1",
-                            "value": "Picture 2"
+                            "value": "Prim\u00e4res Bild"
                         }
                     ],
                     "TagGroupConfig": [
@@ -86,93 +104,73 @@
                         }
                     ]
                 },
-                "taggroup_id": "image_2_59d458adaa586"
-            },
-            {
-                "_type": "dcx:taggroup",
-                "fields": {
-                    "DocumentRef": [
-                        {
-                            "_id": "dcxapi:document\/doc6wxj22g5r6q7fmfk1m40",
-                            "_type": "dcx:document",
-                            "file_variant": "master",
-                            "position": "1"
-                        }
-                    ],
-                    "ImageCaption": [
-                        {
-                            "_type": "xhtml",
-                            "position": "2",
-                            "value": "<p>Test Img 2<\/p>"
-                        }
-                    ],
-                    "ImageCredit": [
-                        {
-                            "position": "2",
-                            "value": "Hendrik Schmidt"
-                        }
-                    ],
-                    "ImageLabel": [
-                        {
-                            "position": "1",
-                            "value": "Picture 3"
-                        }
-                    ],
-                    "TagGroupConfig": [
-                        {
-                            "document_mode": "single",
-                            "value": ""
-                        }
-                    ]
-                },
-                "taggroup_id": "image_3_59d458c29d9e4"
+                "taggroup_id": "image_primary"
             }
         ],
         "ImportedBy": [
             {
-                "_id": "dcxapi:user\/tmt6whfkac0p54v92r2cj9",
+                "_id": "dcxapi:user\/tmt6wjz0a9ksichdvrxhpl",
                 "_type": "dcx:user",
-                "value": "Manfred Mustermann"
+                "value": "pz_zierahn"
+            }
+        ],
+        "Keywords": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt69y100rhazr111ajc71n",
+                "_type": "dcx:tm_topic",
+                "value": "iPad"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6b65zcnitt015oloa1i4",
+                "_type": "dcx:tm_topic",
+                "value": "Faultier"
             }
         ],
         "LastEditedBy": [
             {
-                "_id": "dcxapi:user\/tmt6whfkac0p54v92r2cj9",
+                "_id": "dcxapi:user\/tmt68sk9bwnr8k1f2mfyl8d",
                 "_type": "dcx:user",
-                "value": "Manfred Mustermann"
+                "value": "Bastian Schmoll"
             }
         ],
         "Owner": [
             {
-                "_id": "dcxapi:tm_topic\/owner-default",
+                "_id": "dcxapi:tm_topic\/tmt68puofz9bk11bqm6w5gm",
                 "_type": "dcx:tm_topic",
-                "value": "testApp"
+                "value": "trunk"
+            }
+        ],
+        "Place": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6tyhbzu55jk17417yen3",
+                "_type": "dcx:tm_topic",
+                "value": "Hambrug"
             }
         ],
         "Status": [
             {
                 "_id": "dcxapi:tm_topic\/docstatus-draft",
                 "_type": "dcx:tm_topic",
-                "value": "Draft"
+                "value": "Entwurf"
             }
         ],
         "StoryType": [
             {
                 "_id": "dcxapi:tm_topic\/storytype-default",
                 "_type": "dcx:tm_topic",
-                "value": "Default"
+                "value": "Standard"
             }
         ],
         "SubHeadline": [
             {
                 "position": "1",
-                "value": "Export Story Sub-Headline"
+                "value": " Weitere \u00dcberschrift "
             }
         ],
         "Title": [
             {
                 "position": "1",
-                "value": "Export Story Title"
+                "value": "Simple UI Story"
             }
         ],
         "Type": [
@@ -186,29 +184,35 @@
             {
                 "_type": "xsd:nonNegativeInteger",
                 "source": "com.digicol.dcx",
-                "value": "71"
+                "value": "138"
             }
         ],
         "_display_title": [
             {
-                "value": "Export Story Headline"
+                "value": "Simple UI Story iPad"
             }
         ],
         "body": [
             {
                 "_type": "xhtml",
                 "lang": "",
-                "value": "<p>Zirkon ist ein Mineral aus der Mineralklasse der \u201eSilikate und Germanate\u201c mit der chemischen Zusammensetzung Zr[SiO4] und damit chemisch gesehen ein Zirconium-Silikat, das strukturell zu den Inselsilikaten z\u00e4hlt. Sehr typisch sind zum Teil hohe Gehalte an Hafnium, Uran, Thorium, Yttrium, Cer und anderen Metallen der Seltenen Erden (Rare Earth Elements, REE). Zirkon bildet eine l\u00fcckenlose Mischkristallreihe mit seinem wesentlich selteneren hafniumdominanten Analogon Hafnon. Reidit ist eine Hochdruckmodifikation von Zirkon.<\/p>\n<p\/>"
+                "value": "<p>Die Faultiere (Folivora, auch Tardigrada oder Phyllophaga) bilden eine Unterordnung der zahnarmen S\u00e4ugetiere (Pilosa) und sind mit den Ameisenb\u00e4ren und den G\u00fcrteltieren verwandt (Nebengelenktiere). Es sind sechs rezente Arten bekannt, die sich auf die beiden Gattungen der Zweifinger-Faultiere (Choloepus) und der Dreifinger-Faultiere (Bradypus) verteilen. Bei diesen heute lebenden Arten handelt es sich um eher kleine Tiere der Unterordnung, die durchschnittlich 50 cm lang und etwa 5 kg schwer werden. Sie bewohnen zumeist tropische Regenw\u00e4lder in S\u00fcd- und Mittelamerika, wo sie sich bevorzugt in den Baumkronen aufhalten und sich von blatthaltiger Pflanzenkost ern\u00e4hren. Bekannt sind die Faultiere vor allem durch ihre \u2013 mit dem R\u00fccken nach unten \u2013 im Ge\u00e4st h\u00e4ngende Lebensweise, ihre sehr langsamen Bewegungen und die langen Ruhephasen. Die beiden letztgenannten Eigenschaften werden durch einen extrem niedrigen Stoffwechsel hervorgerufen, der aus der energiearmen Blattnahrung resultiert.<\/p>\n<p\/>\n<p>iPad<\/p>\n<p\/>\n<p>Blablabla<\/p>"
+            }
+        ],
+        "parent_story": [
+            {
+                "_id": "dcxapi:document\/doc6wk0ea4fpsn10c0aihpg",
+                "_type": "dcx:document"
             }
         ]
     },
     "files": [],
     "properties": {
-        "_created": "2017-10-04T05:39:51+02:00",
-        "_modcount": 2,
-        "_modified": "2017-10-04T05:43:55+02:00",
-        "_web_url": "\/dcx\/documents#\/doc\/doc6wyp0ms0sg51mksj7omy",
-        "_web_url_ui": "\/dcx\/ui\/document\/doc6wyp0ms0sg51mksj7omy",
+        "_created": "2017-09-06T11:26:21+02:00",
+        "_modcount": 9,
+        "_modified": "2017-09-06T12:06:48+02:00",
+        "_web_url": "\/dcx_trunk\/documents#\/doc\/doc6wkfj97y13ouzj9dhpf",
+        "_web_url_ui": "\/dcx_trunk\/ui\/document\/doc6wkfj97y13ouzj9dhpf",
         "pool_id": {
             "_id": "dcxapi:pool\/story",
             "_type": "dcx:pool"

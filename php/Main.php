@@ -1,16 +1,24 @@
 <?php
 
-date_default_timezone_set('UTC');
+date_default_timezone_set("UTC");
 
 include("./Simple.php");
 include("./Curl.php");
 
 include("./Paragraph.php");
 include("./Article.php");
+include("./DcxImporter.php");
+
 
 function main()
 {
     $server = "http://localhost/thunder";
+
+    // echo Simple::prettyJson(DcxImporter::getDoc()) . "\n";
+
+    $imgSrc = "Einstein.jpg";
+    $image = Paragraph::createImage($server, $imgSrc);
+    echo Simple::prettyJson($image) . "\n";
 
     // $paragraphs = [];
     //
@@ -25,45 +33,6 @@ function main()
     // Simple::write("article.json", $article);
 
     // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
-    // echo Simple::prettyJson(Curl::get($server . "/entity/paragraph/83?_format=json")) . "\n";
-    // echo Simple::prettyJson(Curl::get($server . "/media/24?_format=json")) . "\n";
-
-    $id = 35;
-    $curl = Curl::get($server . "/file/$id?_format=hal_json");
-    Simple::write("zzz-$id-file-hal-brock.json", $curl);
-
-    $curl = Curl::get($server . "/file/$id?_format=json");
-    Simple::write("zzz-$id-file-brock.json", $curl);
-
-    $id = 36;
-    $curl = Curl::get($server . "/file/$id?_format=hal_json");
-    Simple::write("zzz-$id-file-hal.json", $curl);
-
-    $curl = Curl::get($server . "/file/$id?_format=json");
-    Simple::write("zzz-$id-file.json", $curl);
-
-    // $patch = [
-    //     "bundle" => [
-    //         [
-    //             "target_id" => "image",
-    //             "target_type" => "media_bundle"
-    //         ]
-    //     ],
-    //     "field_image" => [
-    //         "url" => "https://upload.wikimedia.org/wikipedia/commons/b/bd/Bending.jpg"
-    //     ],
-    //     "thumbnail" => [
-    //         "url" => "https://upload.wikimedia.org/wikipedia/commons/b/bd/Bending.jpg"
-    //     ]
-    // ];
-    //
-    // $curl = Curl::patch($server . "/media/25?_format=json", $patch);
-    // Simple::write("xxx-media-patched.json", $curl);
-    //
-    // echo Simple::prettyJson($curl) . "\n";
-    echo "done\n";
-
-    // echo Simple::prettyJson($curl) . "\n";
 }
 
 main();

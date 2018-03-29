@@ -1,5 +1,7 @@
 <?php
 
+include("./ParagraphImage.php");
+
 class Paragraph
 {
     public static function create($server)
@@ -27,6 +29,11 @@ class Paragraph
             "target_id" => $response[ "id" ][ 0 ][ "value" ],
             "target_revision_id" => $response[ "revision_id" ][ 0 ][ "value" ]
         ];
+    }
+
+    public static function createImage($server, $imgSrc)
+    {
+        return ParagraphImage::create($server, $imgSrc);
     }
 }
 
