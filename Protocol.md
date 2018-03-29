@@ -35,3 +35,4 @@
 
 #### Woche 2: Donnerstag
 * Php Programm erweitert um Bilder hinzuzufügen
+* Prototyp für export von dcx nach thunder
