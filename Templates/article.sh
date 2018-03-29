@@ -6,9 +6,9 @@ curl \
     --header "Accept: application/json" \
     --header "Content-type: application/json" \
     --url http://localhost/thunder/entity/node?_format=json \
-    --data-binary @article-template.json > article-log.json
+    --data-binary @article-template.json > zzz-log-article.json
 
-cat article-log.json
+cat zzz-log-article.json
 echo
 
 # curl http://localhost/thunder/seo-title?_format=json

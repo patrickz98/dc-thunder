@@ -28,19 +28,19 @@ function main()
     // echo Simple::prettyJson(Curl::get($server . "/entity/paragraph/83?_format=json")) . "\n";
     // echo Simple::prettyJson(Curl::get($server . "/media/24?_format=json")) . "\n";
 
-    $id = 25;
-
+    $id = 35;
     $curl = Curl::get($server . "/file/$id?_format=hal_json");
-    Simple::write("xxx-$id-file-hal.json", $curl);
+    Simple::write("zzz-$id-file-hal-brock.json", $curl);
 
     $curl = Curl::get($server . "/file/$id?_format=json");
-    Simple::write("xxx-$id-file.json", $curl);
+    Simple::write("zzz-$id-file-brock.json", $curl);
 
-    $curl = Curl::get($server . "/media/$id?_format=hal_json");
-    Simple::write("xxx-$id-media-hal.json", $curl);
+    $id = 36;
+    $curl = Curl::get($server . "/file/$id?_format=hal_json");
+    Simple::write("zzz-$id-file-hal.json", $curl);
 
-    $curl = Curl::get($server . "/media/$id?_format=json");
-    Simple::write("xxx-$id-media.json", $curl);
+    $curl = Curl::get($server . "/file/$id?_format=json");
+    Simple::write("zzz-$id-file.json", $curl);
 
     // $patch = [
     //     "bundle" => [

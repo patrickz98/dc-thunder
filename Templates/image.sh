@@ -6,8 +6,9 @@ curl \
     --header "Accept: application/hal+json" \
     --header "Content-type: application/hal+json" \
     --url http://localhost/thunder/entity/file?_format=hal_json \
-    --data-binary @image-upload-template.json
+    --data-binary @image-upload-template.json > zzz-log-image.json
 
+cat zzz-log-image.json
 echo
 
 # curl http://localhost/thunder/file/30?_format=hal_json
