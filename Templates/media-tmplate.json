@@ -1,0 +1,17 @@
+{
+    "bundle": [
+        {
+            "target_id": "image"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "field_image": [
+        {
+            "target_id": 34
+        }
+    ]
+}

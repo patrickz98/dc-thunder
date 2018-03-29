@@ -39,6 +39,18 @@ class Curl
 
         return Simple::parseJson($result);
     }
+
+    public static function patch($url, $data)
+    {
+        $curl = Curl::curl_init($url);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PATCH");
+        curl_setopt($curl, CURLOPT_POSTFIELDS,    Simple::prettyJson($data));
+
+        $result = curl_exec($curl);
+        curl_close($curl);
+
+        return Simple::parseJson($result);
+    }
 }
 
 ?>

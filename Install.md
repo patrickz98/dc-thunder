@@ -55,6 +55,15 @@ Not sure why I changed that:
     </IfModule>
 
 
+## Thunder Setup
+
+Install and enable modules
+* REST UI for config: https://www.drupal.org/project/restui
+* File entity needed for uploading images/data: https://www.drupal.org/project/file_entity
+
+Goto `Configuration >  Web services > REST` and enable Methods: `GET, POST, DELETE, PATCH`, Accepted request formats: `hal_json, json` and Authentication providers: `basic_auth` for: `Content, Paragraph, File, Media`
+
+
 ## Stuff
 
 Json Api: https://www.drupal.org/project/jsonapi
@@ -63,3 +72,5 @@ composer config repositories.repo-name vcs https://github.com/BurdaMagazinOrg/mo
 
     cd /var/www/html/
     composer require drush/drush
+
+https://www.drupal.org/project/file_entity
