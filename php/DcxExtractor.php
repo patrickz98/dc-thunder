@@ -5,35 +5,27 @@ include("./DcxExtractorImages.php");
 class DcxExtractor
 {
     private $server;
+    private $auth;
 
-    function __construct($server)
+    function __construct($server, $auth)
     {
         $this->server = $server;
+        $this->auth = $auth;
     }
 
-    public static function getDoc($server, $docId)
+    public static function getDoc($server, $auth, $docId)
     {
-        $docUrl = "$server/document/$docId";
-        $auth = "testuser:dc";
-
-        $doc = Curl::get($docUrl, $auth);
-
-        return $doc;
+        return Curl::get("$server/document/$docId", $auth);
     }
 
-    public static function getFile($server, $fileId)
+    public static function getFile($server, $auth, $fileId)
     {
-        $docUrl = "$server/file/$fileId";
-        $auth = "testuser:dc";
-
-        $doc = Curl::get($docUrl, $auth);
-
-        return $doc;
+        return Curl::get("$server/file/$fileId", $auth);
     }
 
     public function getStory($docId)
     {
-        $doc = self::getDoc($this->server, $docId);
+        $doc = self::getDoc($this->server, $this->auth, $docId);
 
         $headline      = strip_tags($doc[ "fields" ][ "Headline"       ][ 0 ][ "value" ]);
         $subHeadline   = strip_tags($doc[ "fields" ][ "SubHeadline"    ][ 0 ][ "value" ]);
@@ -41,7 +33,7 @@ class DcxExtractor
         $display_title = strip_tags($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]);
         $htmlBody      = $doc[ "fields" ][ "body"           ][ 0 ][ "value" ];
 
-        $images = DcxExtractorImages::getImages($this->server, $doc);
+        $images = DcxExtractorImages::getImages($this->server, $this->auth, $doc);
         $paragraphs = [];
 
         $xml = simplexml_load_string("<xml>$htmlBody</xml>");

@@ -7,6 +7,7 @@ include("./Simple.php");
 include("./Article.php");
 include("./DcxExtractor.php");
 include("./ParagraphFactory.php");
+include("./DcxDefs.php");
 
 function sampleArticle()
 {
@@ -31,8 +32,8 @@ function sampleArticle()
 
 function main()
 {
-    $dcxExtractor = new DcxExtractor("http://192.168.18.131/dcx/api");
-    $story = $dcxExtractor->getStory("doc6wyp0ms0sg51mksj7omy");
+    $dcxExtractor = new DcxExtractor(DcxDefs::$server, DcxDefs::$auth);
+    $story = $dcxExtractor->getStory(DcxDefs::$docId);
 
     echo "dcx: " . Simple::prettyJson($story) . "\n";
 
