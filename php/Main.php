@@ -33,10 +33,7 @@ function sampleArticle()
 
 function main()
 {
-    // dcx.digicol
-    // $story = DcxExtractor::getStory("doc6zhtpoemzpw8gb7gfms");
-    // VM
-    $story = DcxExtractor::getStory("doc6wyp0ms0sg51mksj7omy");
+    $story = DcxExtractor::getStory(Config::$dcx_doc);
 
     echo "dcx: " . Simple::prettyJson($story) . "\n";
 

@@ -45,6 +45,10 @@ class DcxExtractor
                     $paragraph[ "src"  ] = $images[ $imgId ];
                     array_push($paragraphs, $paragraph);
                 }
+                else
+                {
+                    echo "--> " . Simple::prettyJson($json) . "\n"
+                }
             }
             else
             {
