@@ -52,6 +52,11 @@ function main()
         {
             $paragraphs->createImage($paragraph[ "src" ]);
         }
+
+        if ($type === "twitter")
+        {
+            $paragraphs->createTwitter($paragraph[ "src" ]);
+        }
     }
 
     $article = new Article();
@@ -62,8 +67,11 @@ function main()
     $response = $article->post();
 
 //    echo "thunder: " . Simple::prettyJson($response) . "\n";
+//    echo "paragraphs: " . Simple::prettyJson($paragraphs->build()) . "\n";
 
     // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
+
+    echo "done\n";
 }
 
 main();

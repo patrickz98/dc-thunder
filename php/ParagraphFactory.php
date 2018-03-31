@@ -2,6 +2,7 @@
 
 include("./ParagraphFactoryText.php");
 include("./ParagraphFactoryImage.php");
+include("./ParagraphFactoryTwitter.php");
 
 class ParagraphFactory
 {
@@ -35,6 +36,18 @@ class ParagraphFactory
             $this->server,
             $this->auth,
             $imgSrc
+        );
+
+        array_push($this->paragraphs, $paragraph);
+    }
+
+    public function createTwitter($tweet)
+    {
+        $paragraph = ParagraphFactoryTwitter::create
+        (
+            $this->server,
+            $this->auth,
+            $tweet
         );
 
         array_push($this->paragraphs, $paragraph);
