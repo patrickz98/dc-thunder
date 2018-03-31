@@ -45,9 +45,19 @@ class DcxExtractor
                     $paragraph[ "src"  ] = $images[ $imgId ];
                     array_push($paragraphs, $paragraph);
                 }
-                else
+
+                if ($attributes[ "data-dcx_media_type" ] === "twitter")
                 {
-                    echo "--> " . Simple::prettyJson($json) . "\n"
+                    $mediaSlot = $json[ "0" ];
+
+                    // remove MediaSlot: Tweet
+                    $twitterUrl = "https://" . substr($mediaSlot, 17);
+                    echo "--> twitterUrl: " . $twitterUrl . "\n";
+
+                    $paragraph[ "type" ] = "twitter";
+                    $paragraph[ "src"  ] = $twitterUrl;
+
+                    array_push($paragraphs, $paragraph);
                 }
             }
             else

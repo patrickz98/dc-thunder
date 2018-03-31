@@ -35,7 +35,7 @@ function main()
 {
     $story = DcxExtractor::getStory(Config::$dcx_doc);
 
-    echo "dcx: " . Simple::prettyJson($story) . "\n";
+//    echo "dcx: " . Simple::prettyJson($story) . "\n";
 
     $paragraphs = new ParagraphFactory();
 
@@ -61,7 +61,7 @@ function main()
 
     $response = $article->post();
 
-    echo "thunder: " . Simple::prettyJson($response) . "\n";
+//    echo "thunder: " . Simple::prettyJson($response) . "\n";
 
     // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
 }
