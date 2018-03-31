@@ -2,7 +2,7 @@
 
 class DcxExtractorImages
 {
-    public static function getImages($server, $auth, $doc)
+    public static function getImages($doc)
     {
         $parsedImages = [];
         $images = $doc[ "fields" ][ "Image" ];
@@ -16,13 +16,13 @@ class DcxExtractorImages
 
                 // remove dcxapi:document/
                 $imageDocId = substr($imageDocId, 16);
-                $imageDoc   = DcxExtractor::getDoc($server, $auth, $imageDocId);
+                $imageDoc   = DcxExtractor::getDoc($imageDocId);
                 $fileId     = $imageDoc[ "files" ][ 0 ][ "_id" ];
 
                 // dcxapi:file/
                 $fileId = substr($fileId, 12);
 
-                $file = DcxExtractor::getFile($server, $auth, $fileId);
+                $file = DcxExtractor::getFile($fileId);
 
                 $parsedImages[ $targetImgId ] = $file[ "properties" ][ "_file_url_absolute" ];
             }

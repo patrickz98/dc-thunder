@@ -4,36 +4,23 @@ include("./DcxExtractorImages.php");
 
 class DcxExtractor
 {
-    private $server;
-    private $auth;
-
-    function __construct($server, $auth)
+    public static function getDoc($docId)
     {
-        $this->server = $server;
-        $this->auth = $auth;
+        return Curl::get(Config::$dcx_server . "/document/$docId", Config::$dcx_auth);
     }
 
-    public static function getDoc($server, $auth, $docId)
+    public static function getFile($fileId)
     {
-        return Curl::get("$server/document/$docId", $auth);
+        return Curl::get(Config::$dcx_server . "/file/$fileId", Config::$dcx_auth);
     }
 
-    public static function getFile($server, $auth, $fileId)
+    public static function getStory($docId)
     {
-        return Curl::get("$server/file/$fileId", $auth);
-    }
+        $doc = self::getDoc($docId);
 
-    public function getStory($docId)
-    {
-        $doc = self::getDoc($this->server, $this->auth, $docId);
+        $htmlBody = $doc[ "fields" ][ "body" ][ 0 ][ "value" ];
 
-        $headline      = strip_tags($doc[ "fields" ][ "Headline"       ][ 0 ][ "value" ]);
-        $subHeadline   = strip_tags($doc[ "fields" ][ "SubHeadline"    ][ 0 ][ "value" ]);
-        $title         = strip_tags($doc[ "fields" ][ "Title"          ][ 0 ][ "value" ]);
-        $display_title = strip_tags($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]);
-        $htmlBody      = $doc[ "fields" ][ "body"           ][ 0 ][ "value" ];
-
-        $images = DcxExtractorImages::getImages($this->server, $this->auth, $doc);
+        $images = DcxExtractorImages::getImages($doc);
         $paragraphs = [];
 
         $xml = simplexml_load_string("<xml>$htmlBody</xml>");
@@ -68,10 +55,10 @@ class DcxExtractor
         }
 
         $story = [];
-        $story[ "headline"      ] = $headline;
-        $story[ "subHeadline"   ] = $subHeadline;
-        $story[ "title"         ] = $title;
-        $story[ "display_title" ] = $display_title;
+        $story[ "headline"      ] = strip_tags($doc[ "fields" ][ "Headline"       ][ 0 ][ "value" ]);
+        $story[ "subHeadline"   ] = strip_tags($doc[ "fields" ][ "SubHeadline"    ][ 0 ][ "value" ]);
+        $story[ "title"         ] = strip_tags($doc[ "fields" ][ "Title"          ][ 0 ][ "value" ]);
+        $story[ "display_title" ] = strip_tags($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]);
         $story[ "paragraphs"    ] = $paragraphs;
 //        $story[ "htmlBody"      ] = $htmlBody;
 

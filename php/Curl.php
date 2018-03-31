@@ -22,7 +22,7 @@ class Curl
         return $curl;
     }
 
-    public static function get($url, $auth = "patrick:1234")
+    public static function get($url, $auth)
     {
         $curl = Curl::curl_init($url, $auth);
 
@@ -32,7 +32,7 @@ class Curl
         return Simple::parseJson($result);
     }
 
-    public static function post($url, $data, $auth = "patrick:1234")
+    public static function post($url, $auth, $data)
     {
         $curl = Curl::curl_init($url, $auth);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
@@ -44,7 +44,7 @@ class Curl
         return Simple::parseJson($result);
     }
 
-    public static function postHalJson($url, $data, $auth = "patrick:1234")
+    public static function postHalJson($url, $auth, $data)
     {
         $curl = Curl::curl_init($url, $auth);
 
@@ -63,7 +63,7 @@ class Curl
         return Simple::parseJson($result);
     }
 
-    public static function patch($url, $data, $auth = "patrick:1234")
+    public static function patch($url, $auth, $data)
     {
         $curl = Curl::curl_init($url, $auth);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PATCH");

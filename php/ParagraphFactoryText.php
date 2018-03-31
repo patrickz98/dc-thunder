@@ -2,7 +2,7 @@
 
 class ParagraphFactoryText
 {
-    public static function create($server, $htmlBody)
+    public static function create($server, $auth, $htmlBody)
     {
         $url = $server . "/entity/paragraph?_format=json";
 
@@ -20,7 +20,7 @@ class ParagraphFactoryText
             ]
         ];
 
-        $response = Curl::post($url, $data);
+        $response = Curl::post($url, $auth, $data);
 
         return [
             "target_id" => $response[ "id" ][ 0 ][ "value" ],

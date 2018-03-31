@@ -3,13 +3,15 @@
 class Article
 {
     private $server;
+    private $auth;
     private $paragraphs;
     private $title;
     private $seoTitle;
 
-    function __construct($server)
+    function __construct()
     {
-        $this->server = $server;
+        $this->server = Config::$thunder_server;
+        $this->auth   = Config::$thunder_auth;
         $this->paragraphs = [];
     }
 
@@ -71,7 +73,7 @@ class Article
     public function post()
     {
         $url = $this->server . "/node?_format=json";
-        $response = Curl::post($url, Article::build());
+        $response = Curl::post($url, $this->auth, Article::build());
 
         return $response;
     }

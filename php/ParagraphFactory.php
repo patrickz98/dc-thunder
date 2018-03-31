@@ -6,11 +6,13 @@ include("./ParagraphFactoryImage.php");
 class ParagraphFactory
 {
     private $server;
+    private $auth;
     private $paragraphs;
 
-    function __construct($server)
+    function __construct()
     {
-        $this->server = $server;
+        $this->server = Config::$thunder_server;
+        $this->auth   = Config::$thunder_auth;
         $this->paragraphs = [];
     }
 
@@ -19,6 +21,7 @@ class ParagraphFactory
         $paragraph = ParagraphFactoryText::create
         (
             $this->server,
+            $this->auth,
             $htmlBody
         );
 
@@ -30,6 +33,7 @@ class ParagraphFactory
         $paragraph = ParagraphFactoryImage::create
         (
             $this->server,
+            $this->auth,
             $imgSrc
         );
 

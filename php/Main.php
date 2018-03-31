@@ -3,17 +3,15 @@
 date_default_timezone_set("UTC");
 
 include("./Curl.php");
+include("./Config.php");
 include("./Simple.php");
 include("./Article.php");
 include("./DcxExtractor.php");
 include("./ParagraphFactory.php");
-include("./DcxDefs.php");
 
 function sampleArticle()
 {
-    $server     = "http://localhost/thunder";
-    $article    = new Article($server);
-    $paragraphs = new ParagraphFactory($server);
+    $paragraphs = new ParagraphFactory();
 
     for ($inx = 0; $inx < 4; $inx++)
     {
@@ -23,6 +21,9 @@ function sampleArticle()
 
     $paragraphs->createImage("Einstein.jpg");
 
+    $article = new Article();
+    $article->setTitle(Simple::getRandomText(6));
+    $article->setSeoTitle(Simple::getRandomText(6));
     $article->addParagraphs($paragraphs->build());
     $response = $article->post();
 
@@ -32,14 +33,14 @@ function sampleArticle()
 
 function main()
 {
-    $dcxExtractor = new DcxExtractor(DcxDefs::$server, DcxDefs::$auth);
-    $story = $dcxExtractor->getStory(DcxDefs::$docId);
+    // dcx.digicol
+    // $story = DcxExtractor::getStory("doc6zhtpoemzpw8gb7gfms");
+    // VM
+    $story = DcxExtractor::getStory("doc6wyp0ms0sg51mksj7omy");
 
     echo "dcx: " . Simple::prettyJson($story) . "\n";
 
-    $server     = "http://localhost/thunder";
-    $article    = new Article($server);
-    $paragraphs = new ParagraphFactory($server);
+    $paragraphs = new ParagraphFactory();
 
     foreach ($story[ "paragraphs" ] as $inx => $paragraph)
     {
@@ -56,10 +57,10 @@ function main()
         }
     }
 
-    $article->addParagraphs($paragraphs->build());
-
+    $article = new Article();
     $article->setTitle($story[ "headline" ]);
     $article->setSeoTitle($story[ "subHeadline" ]);
+    $article->addParagraphs($paragraphs->build());
 
     $response = $article->post();
 

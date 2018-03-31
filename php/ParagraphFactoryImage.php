@@ -21,6 +21,7 @@ class ParagraphFactoryImage
         $uploadInfo[ "filename" ] = [["value" => $fileName]];
         $uploadInfo[ "filemime" ] = [["value" => "image/jpeg"]];
         $uploadInfo[ "uri"      ] = [["value" => "public://patrick/$fileName"]];
+        $uploadInfo[ "data"     ] = [["value" => ParagraphFactoryImage::getBase64($fileSrc)]];
         $uploadInfo[ "uid"      ] = [
             [
                 "target_id" => 1,
@@ -30,28 +31,26 @@ class ParagraphFactoryImage
             ]
         ];
 
-        $uploadInfo[ "data" ] = [["value" => ParagraphFactoryImage::getBase64($fileSrc)]];
-
         return $uploadInfo;
     }
 
-    private static function createFile($server, $fileSrc)
+    private static function createFile($server, $auth, $fileSrc)
     {
         $uploadInfo = ParagraphFactoryImage::build($server, $fileSrc);
 
         $url = "$server/entity/file?_format=hal_json";
 
-        $response = Curl::postHalJson($url, $uploadInfo);
+        $response = Curl::postHalJson($url, $auth, $uploadInfo);
 
         $id = $response[ "fid" ][ 0 ][ "value" ];
 
         return $id;
     }
 
-    private static function createMedia($server, $fileSrc)
+    private static function createMedia($server, $auth, $fileSrc)
     {
         $url = "$server/entity/media?_format=json";
-        $target_id = ParagraphFactoryImage::createFile($server, $fileSrc);
+        $target_id = ParagraphFactoryImage::createFile($server, $auth, $fileSrc);
 
         $media = [
             "bundle" => [
@@ -66,12 +65,12 @@ class ParagraphFactoryImage
             ]
         ];
 
-        return Curl::post($url, $media);
+        return Curl::post($url, $auth, $media);
     }
 
-    public static function create($server, $fileSrc)
+    public static function create($server, $auth, $fileSrc)
     {
-        $media = ParagraphFactoryImage::createMedia($server, $fileSrc);
+        $media = ParagraphFactoryImage::createMedia($server, $auth, $fileSrc);
         $targetId = $media[ "mid" ][ 0 ][ "value" ];
 
         $data = [
@@ -86,7 +85,7 @@ class ParagraphFactoryImage
         ];
 
         $url = "$server/entity/paragraph?_format=json";
-        $paragraph = Curl::post($url, $data);
+        $paragraph = Curl::post($url, $auth, $data);
 
         return [
             "target_id" => $paragraph[ "id" ][ 0 ][ "value" ],
