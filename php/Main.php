@@ -34,6 +34,7 @@ function sampleArticle()
 function main()
 {
     $story = DcxExtractor::getStory(Config::$dcx_doc);
+    exit();
 
 //    echo "dcx: " . Simple::prettyJson($story) . "\n";
 

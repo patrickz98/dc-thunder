@@ -30,6 +30,8 @@ class DcxExtractor
             $json = Simple::xmlToJson($xml);
             $attributes = $json[ "@attributes" ];
 
+            echo Simple::prettyJson($json) . "\n";
+
             $paragraph = [];
 
             if ($attributes)
@@ -44,6 +46,7 @@ class DcxExtractor
                     $paragraph[ "type" ] = "image";
                     $paragraph[ "src"  ] = $images[ $imgId ];
                     array_push($paragraphs, $paragraph);
+                    continue;
                 }
 
                 if ($attributes[ "data-dcx_media_type" ] === "twitter")
@@ -56,8 +59,8 @@ class DcxExtractor
 
                     $paragraph[ "type" ] = "twitter";
                     $paragraph[ "src"  ] = $twitterUrl;
-
                     array_push($paragraphs, $paragraph);
+                    continue;
                 }
             }
             else
