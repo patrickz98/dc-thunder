@@ -11,4 +11,4 @@ curl \
 cat zzz-log-media.json
 echo
 
-# curl http://localhost/thunder/media/67?_format=json
+# curl http://localhost/thunder/media/73?_format=json
