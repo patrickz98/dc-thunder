@@ -7,16 +7,12 @@ class ParagraphFactoryTweet
         $url = "$server/entity/media?_format=json";
 
         $media = [
-            "bundle" => [
-                [
-                    "target_id" => "twitter"
-                ]
-            ],
-            "field_url" => [
-                [
-                    "uri" => $tweet
-                ]
-            ]
+            "bundle" => [[
+                "target_id" => "twitter"
+            ]],
+            "field_url" => [[
+                "uri" => $tweet
+            ]]
         ];
 
         return Curl::post($url, $auth, $media);
@@ -31,11 +27,9 @@ class ParagraphFactoryTweet
             "type" => [[
                 "target_id" => "twitter"
             ]],
-            "field_media" => [
-                [
-                    "target_id" => $targetId
-                ]
-            ]
+            "field_media" => [[
+                "target_id" => $targetId
+            ]]
         ];
 
         $url = "$server/entity/paragraph?_format=json";

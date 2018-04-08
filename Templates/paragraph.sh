@@ -22,4 +22,4 @@ curl \
 cat zzz-log-paragraph.json
 echo
 
-# curl http://localhost/thunder/entity/paragraph/226?_format=json
+# curl http://localhost/thunder/entity/paragraph/327?_format=json
