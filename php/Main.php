@@ -33,12 +33,14 @@ include("./ParagraphFactory.php");
 
 function main()
 {
-    echo "--> Extracting docId=" . Config::$dcx_doc . "... ";
+//    echo "--> Extracting docId=" . Config::$dcx_doc . "... ";
 
     $dcxExtractor = new DcxExtractor(Config::$dcx_server, Config::$dcx_auth);
     $story = $dcxExtractor->getStory(Config::$dcx_doc);
     // echo Simple::prettyJson($story) . "\n";
-    echo "done\n";
+//    echo "done\n";
+
+    exit();
 
     echo "--> Creating new thunder article... ";
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);

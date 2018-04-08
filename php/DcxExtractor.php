@@ -22,7 +22,7 @@ class DcxExtractor
         return Curl::get($this->dcx_server . "/file/$fileId", $this->dcx_auth);
     }
 
-    private function extractData($dcxParagraph, $imageIds)
+    private function extractData($dcxParagraph, $imageIds, $galleries)
     {
         $attributes = $dcxParagraph[ "@attributes" ];
 
@@ -72,6 +72,22 @@ class DcxExtractor
             ];
         }
 
+        if ($attributes[ "data-dcx_media_type" ] === "gallery")
+        {
+            echo "dcxParagraph=" . Simple::prettyJson($dcxParagraph) . "\n";
+
+            $config = Simple::parseJson($attributes[ "data-dcx_media_config" ]);
+            $params = $config[ "content" ][ "params" ];
+
+            // remove dcx_mg_attributes_slot_value=
+            $galleryId = urldecode(substr($params, 29));
+
+            return [
+                "type" => "gallery",
+                "gallery" => $galleries[ $galleryId ]
+            ];
+        }
+
         return null;
     }
 
@@ -88,17 +104,16 @@ class DcxExtractor
         return $json;
     }
 
-    public function getImages($doc)
+    public function getImages($images)
     {
         $parsedImages = [];
-        $images = $doc[ "fields" ][ "Image" ];
 
         if ($images)
         {
             foreach ($images as $inx => $value)
             {
                 $targetImgId = $value[ "taggroup_id" ];
-                $imageDocId = $value[ "fields" ][ "DocumentRef" ][ 0 ][ "_id" ];
+                $imageDocId  = $value[ "fields" ][ "DocumentRef" ][ 0 ][ "_id" ];
 
                 // remove dcxapi:document/
                 $imageDocId = substr($imageDocId, 16);
@@ -117,11 +132,41 @@ class DcxExtractor
         return $parsedImages;
     }
 
+    public function getGalleries($doc)
+    {
+        $galleryImgIds = $this->getImages($images = $doc[ "fields" ][ "GalleryImage" ]);
+
+        $galleries = [];
+
+        $dcxGallery = $doc[ "fields" ][ "Gallery" ];
+
+        if ($dcxGallery)
+        {
+            foreach ($dcxGallery as $inx => $gallery)
+            {
+                $targetId = $gallery[ "taggroup_id" ];
+                $galleries[ $targetId ] = [];
+
+                foreach ($gallery[ "fields" ][ "TagGroupRef" ] as $iny => $img)
+                {
+                    $imgRef = $img[ "ref_taggroup_id" ];
+                    $imgSrc = $galleryImgIds[ $imgRef ];
+                    array_push($galleries[ $targetId ], $imgSrc);
+                }
+            }
+        }
+
+        echo "galleries=" . Simple::prettyJson($galleries) . "\n";
+
+        return $galleries;
+    }
+
     public function getStory($docId)
     {
         $doc = $this->getDoc($docId);
 
-        $imageIds = $this->getImages($doc);
+        $galleries = $this->getGalleries($doc);
+        $imageIds  = $this->getImages($doc[ "fields" ][ "Image" ]);
 
         $htmlBody = $doc[ "fields" ][ "body" ][ 0 ][ "value" ];
         $paragraphs = [];
@@ -129,7 +174,7 @@ class DcxExtractor
         foreach($this->htmlBodyToJson($htmlBody) as $dcxParagraph)
         {
 //            echo "bla: " . Simple::prettyJson($json) . "\n";
-            array_push($paragraphs, $this->extractData($dcxParagraph, $imageIds));
+            array_push($paragraphs, $this->extractData($dcxParagraph, $imageIds, $galleries));
         }
 
         $story = [];
@@ -138,6 +183,8 @@ class DcxExtractor
         $story[ "title"         ] = strip_tags($doc[ "fields" ][ "Title"          ][ 0 ][ "value" ]);
         $story[ "display_title" ] = strip_tags($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]);
         $story[ "paragraphs"    ] = $paragraphs;
+
+        echo "paragraphs=" . Simple::prettyJson($paragraphs) . "\n";
 
         return $story;
     }

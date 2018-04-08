@@ -9,6 +9,8 @@ class Config
    public static $dcx_server = "https://dcx.digicol.de/dcx/api";
    public static $dcx_auth   = "pz_zierahn:Digicol10";
    public static $dcx_doc    = "doc6zhtpoemzpw8gb7gfms";
+   // naked
+//   public static $dcx_doc    = "doc6ze9lx8ob1xfw4529lb";
 
    public static $thunder_server = "http://localhost/thunder";
    public static $thunder_auth   = "patrick:1234";
