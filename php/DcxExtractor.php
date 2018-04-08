@@ -26,7 +26,7 @@ class DcxExtractor
     {
         $attributes = $dcxParagraph[ "@attributes" ];
 
-        if (is_null($attributes))
+        if (is_null($attributes) && $dcxParagraph[ "0" ])
         {
             return [
                 "type" => "text",
@@ -173,7 +173,6 @@ class DcxExtractor
 
         foreach($this->htmlBodyToJson($htmlBody) as $dcxParagraph)
         {
-//            echo "bla: " . Simple::prettyJson($json) . "\n";
             array_push($paragraphs, $this->extractData($dcxParagraph, $imageIds, $galleries));
         }
 
