@@ -4,25 +4,16 @@ class Article
 {
     private $server;
     private $auth;
+
     private $paragraphs;
     private $title;
     private $seoTitle;
 
-    function __construct()
+    function __construct($thunder_server, $thunder_auth)
     {
-        $this->server = Config::$thunder_server;
-        $this->auth   = Config::$thunder_auth;
-        $this->paragraphs = [];
-    }
-
-    public function addParagraph($paragraph)
-    {
-        array_push($this->paragraphs, $paragraph);
-    }
-
-    public function addParagraphs($paragraphs)
-    {
-        $this->paragraphs = array_merge($this->paragraphs, $paragraphs);
+        $this->server = $thunder_server;
+        $this->auth   = $thunder_auth;
+        $this->paragraphs = new ParagraphFactory($thunder_server, $thunder_auth);
     }
 
     public function setTitle($title)
@@ -33,6 +24,19 @@ class Article
     public function setSeoTitle($seoTitle)
     {
         $this->seoTitle = $seoTitle;
+    }
+
+    public function createParagraph($type, $src)
+    {
+        $this->paragraphs->createParagraph($type, $src);
+    }
+
+    public function createParagraphs($paragraphs)
+    {
+        foreach ($paragraphs as $inx => $json)
+        {
+            $this->createParagraph($json[ "type" ], $json[ "src" ]);
+        }
     }
 
     private function build()
@@ -65,7 +69,7 @@ class Article
             "url"         => "/thunder/news"
         ]];
 
-        $article[ "field_paragraphs" ] = $this->paragraphs;
+        $article[ "field_paragraphs" ] = $this->paragraphs->build();
 
         return $article;
     }
@@ -73,7 +77,7 @@ class Article
     public function post()
     {
         $url = $this->server . "/node?_format=json";
-        $response = Curl::post($url, $this->auth, Article::build());
+        $response = Curl::post($url, $this->auth, $this->build());
 
         return $response;
     }

@@ -10,8 +10,8 @@ class Config
    public static $dcx_auth   = "pz_zierahn:Digicol10";
    public static $dcx_doc    = "doc6zhtpoemzpw8gb7gfms";
 
-    public static $thunder_server = "http://localhost/thunder";
-    public static $thunder_auth   = "patrick:1234";
+   public static $thunder_server = "http://localhost/thunder";
+   public static $thunder_auth   = "patrick:1234";
 }
 
 ?>

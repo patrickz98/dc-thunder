@@ -2,21 +2,17 @@
 
 class ParagraphFactoryYoutube
 {
-    private static function createMedia($server, $auth, $url)
+    private static function createMedia($server, $auth, $youtubeUrl)
     {
         $url = "$server/entity/media?_format=json";
 
         $media = [
-            "bundle" => [
-                [
-                    "target_id" => "video"
-                ]
-            ],
-            "field_media_video_embed_field" => [
-                [
-                    "value" => $url
-                ]
-            ]
+            "bundle" => [[
+                "target_id" => "video"
+            ]],
+            "field_media_video_embed_field" => [[
+                "value" => $youtubeUrl
+            ]]
         ];
 
         return Curl::post($url, $auth, $media);
@@ -31,11 +27,9 @@ class ParagraphFactoryYoutube
             "type" => [[
                 "target_id" => "video"
             ]],
-            "field_media" => [
-                [
-                    "target_id" => $targetId
-                ]
-            ]
+            "field_video" => [[
+                "target_id" => $targetId
+            ]]
         ];
 
         $url = "$server/entity/paragraph?_format=json";

@@ -1,74 +1,135 @@
 <?php
 
-include("./DcxExtractorImages.php");
-
 class DcxExtractor
 {
-    public static function getDoc($docId)
+    private $dcx_server;
+    private $dcx_auth;
+    private $imagesTmp;
+
+    function __construct($dcx_server, $dcx_auth)
     {
-        return Curl::get(Config::$dcx_server . "/document/$docId", Config::$dcx_auth);
+        $this->dcx_server = $dcx_server;
+        $this->dcx_auth   = $dcx_auth;
     }
 
-    public static function getFile($fileId)
+    public function getDoc($docId)
     {
-        return Curl::get(Config::$dcx_server . "/file/$fileId", Config::$dcx_auth);
+        return Curl::get($this->dcx_server . "/document/$docId", $this->dcx_auth);
     }
 
-    public static function getStory($docId)
+    public function getFile($fileId)
     {
-        $doc = self::getDoc($docId);
+        return Curl::get($this->dcx_server . "/file/$fileId", $this->dcx_auth);
+    }
 
-        $htmlBody = $doc[ "fields" ][ "body" ][ 0 ][ "value" ];
+    private function extractData($dcxParagraph, $imageIds)
+    {
+        $attributes = $dcxParagraph[ "@attributes" ];
 
-        $images = DcxExtractorImages::getImages($doc);
-        $paragraphs = [];
+        if (is_null($attributes))
+        {
+            return [
+                "type" => "text",
+                "src" => $dcxParagraph[ "0" ]
+            ];
+        }
 
+        if ($attributes[ "data-dcx_media_type" ] === "imagegroups")
+        {
+            $mediaSlot = $dcxParagraph[ "0" ];
+            $imgId = explode("#", $mediaSlot)[ 1 ];
+
+            return [
+                "type" => "image",
+                "src" => $imageIds[ $imgId ]
+            ];
+        }
+
+        if ($attributes[ "data-dcx_media_type" ] === "twitter")
+        {
+            $mediaSlot = $dcxParagraph[ "0" ];
+
+            // remove MediaSlot: Tweet
+            $tweetUrl = "https://" . substr($mediaSlot, 17);
+
+            return [
+                "type" => "tweet",
+                "src" => $tweetUrl
+            ];
+        }
+
+        if ($attributes[ "data-dcx_media_type" ] === "youtube")
+        {
+            $config = Simple::parseJson($attributes[ "data-dcx_media_config" ]);
+            $params = $config[ "content" ][ "params" ];
+
+            // remove dcx_mg_attributes_slot_value=
+            $youtubeUrl = urldecode(substr($params, 29));
+
+            return [
+                "type" => "youtube",
+                "src" => $youtubeUrl
+            ];
+        }
+
+        return null;
+    }
+
+    private function htmlBodyToJson($htmlBody)
+    {
+        $json = [];
         $xml = simplexml_load_string("<xml>$htmlBody</xml>");
 
-        foreach($xml->children() as $xml)
+        foreach($xml->children() as $dcxParagraph)
         {
-            $json = Simple::xmlToJson($xml);
-            $attributes = $json[ "@attributes" ];
+            array_push($json, Simple::xmlToJson($dcxParagraph));
+        }
 
-            echo Simple::prettyJson($json) . "\n";
+        return $json;
+    }
 
-            $paragraph = [];
+    public function getImages($doc)
+    {
+        $parsedImages = [];
+        $images = $doc[ "fields" ][ "Image" ];
 
-            if ($attributes)
+        if ($images)
+        {
+            foreach ($images as $inx => $value)
             {
-                if ($attributes[ "data-dcx_media_type" ] === "imagegroups")
-                {
-                    $mediaSlot = $json[ "0" ];
+                $targetImgId = $value[ "taggroup_id" ];
+                $imageDocId = $value[ "fields" ][ "DocumentRef" ][ 0 ][ "_id" ];
 
-                    $imgId = explode("#", $mediaSlot)[ 1 ];
-                    echo "--> images: " . $imgId . "\n";
+                // remove dcxapi:document/
+                $imageDocId = substr($imageDocId, 16);
+                $imageDoc   = $this->getDoc($imageDocId);
+                $fileId     = $imageDoc[ "files" ][ 0 ][ "_id" ];
 
-                    $paragraph[ "type" ] = "image";
-                    $paragraph[ "src"  ] = $images[ $imgId ];
-                    array_push($paragraphs, $paragraph);
-                    continue;
-                }
+                // dcxapi:file/
+                $fileId = substr($fileId, 12);
 
-                if ($attributes[ "data-dcx_media_type" ] === "twitter")
-                {
-                    $mediaSlot = $json[ "0" ];
+                $file = $this->getFile($fileId);
 
-                    // remove MediaSlot: Tweet
-                    $twitterUrl = "https://" . substr($mediaSlot, 17);
-                    echo "--> twitterUrl: " . $twitterUrl . "\n";
-
-                    $paragraph[ "type" ] = "twitter";
-                    $paragraph[ "src"  ] = $twitterUrl;
-                    array_push($paragraphs, $paragraph);
-                    continue;
-                }
+                $parsedImages[ $targetImgId ] = $file[ "properties" ][ "_file_url_absolute" ];
             }
-            else
-            {
-                $paragraph[ "type" ] = "text";
-                $paragraph[ "text" ] = $json[ "0" ];
-                array_push($paragraphs, $paragraph);
-            }
+        }
+
+        return $parsedImages;
+    }
+
+    public function getStory($docId)
+    {
+        $doc = $this->getDoc($docId);
+
+        $imageIds = $this->getImages($doc);
+
+        $htmlBody = $doc[ "fields" ][ "body" ][ 0 ][ "value" ];
+        $paragraphs = [];
+
+        foreach($this->htmlBodyToJson($htmlBody) as $dcxParagraph)
+        {
+//            echo "bla: " . Simple::prettyJson($json) . "\n";
+            array_push($paragraphs, $this->extractData($dcxParagraph, $imageIds));
         }
 
         $story = [];
@@ -77,7 +138,6 @@ class DcxExtractor
         $story[ "title"         ] = strip_tags($doc[ "fields" ][ "Title"          ][ 0 ][ "value" ]);
         $story[ "display_title" ] = strip_tags($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]);
         $story[ "paragraphs"    ] = $paragraphs;
-//        $story[ "htmlBody"      ] = $htmlBody;
 
         return $story;
     }

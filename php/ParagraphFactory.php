@@ -2,7 +2,8 @@
 
 include("./ParagraphFactoryText.php");
 include("./ParagraphFactoryImage.php");
-include("./ParagraphFactoryTwitter.php");
+include("./ParagraphFactoryTweet.php");
+include("./ParagraphFactoryYoutube.php");
 
 class ParagraphFactory
 {
@@ -10,10 +11,10 @@ class ParagraphFactory
     private $auth;
     private $paragraphs;
 
-    function __construct()
+    function __construct($thunder_server, $thunder_auth)
     {
-        $this->server = Config::$thunder_server;
-        $this->auth   = Config::$thunder_auth;
+        $this->server = $thunder_server;
+        $this->auth   = $thunder_auth;
         $this->paragraphs = [];
     }
 
@@ -41,9 +42,9 @@ class ParagraphFactory
         array_push($this->paragraphs, $paragraph);
     }
 
-    public function createTwitter($tweet)
+    public function createTweet($tweet)
     {
-        $paragraph = ParagraphFactoryTwitter::create
+        $paragraph = ParagraphFactoryTweet::create
         (
             $this->server,
             $this->auth,
@@ -51,6 +52,41 @@ class ParagraphFactory
         );
 
         array_push($this->paragraphs, $paragraph);
+    }
+
+    public function createYoutube($tweet)
+    {
+        $paragraph = ParagraphFactoryYoutube::create
+        (
+            $this->server,
+            $this->auth,
+            $tweet
+        );
+
+        array_push($this->paragraphs, $paragraph);
+    }
+
+    public function createParagraph($type, $src)
+    {
+        if ($type === "text")
+        {
+            $this->createText($src);
+        }
+
+        if ($type === "image")
+        {
+            $this->createImage($src);
+        }
+
+        if ($type === "tweet")
+        {
+            $this->createTweet($src);
+        }
+
+        if ($type === "youtube")
+        {
+            $this->createYoutube($src);
+        }
     }
 
     public function build()

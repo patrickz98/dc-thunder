@@ -1,6 +1,6 @@
 <?php
 
-class ParagraphFactoryTwitter
+class ParagraphFactoryTweet
 {
     private static function createMedia($server, $auth, $tweet)
     {

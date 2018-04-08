@@ -1,16 +1,16 @@
 {
-    "@context": "\/dcx_trunk\/api\/_context",
+    "@context": "\/dcx\/api\/_context",
     "_files_index": {
         "variant_type": []
     },
-    "_id": "dcxapi:document\/doc6wkfj97y13ouzj9dhpf",
+    "_id": "dcxapi:document\/doc6zhtpoemzpw8gb7gfms",
     "_links": {
         "document_doctorprofs": {
-            "_url": "\/dcx_trunk\/api\/doctorprof?q[doc_id]=doc6wkfj97y13ouzj9dhpf",
+            "_url": "\/dcx\/api\/doctorprof?q[doc_id]=doc6zhtpoemzpw8gb7gfms",
             "_entries_type": "dcx:doctorprof"
         },
         "document_doctoutags": {
-            "_url": "\/dcx_trunk\/api\/doctoutag?q[doc_id]=doc6wkfj97y13ouzj9dhpf",
+            "_url": "\/dcx\/api\/doctoutag?q[doc_id]=doc6zhtpoemzpw8gb7gfms",
             "_entries_type": "dcx:doctoutag"
         }
     },
@@ -19,57 +19,76 @@
         "CharCount": [
             {
                 "_type": "xsd:nonNegativeInteger",
-                "source": "com.digicol.dcx",
-                "value": "1010"
+                "value": "2590"
+            }
+        ],
+        "City": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xm6axtgpcj1km595ovo",
+                "_type": "dcx:tm_topic",
+                "value": "Rom"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt644p21cra6rrsyr0c5a",
+                "_type": "dcx:tm_topic",
+                "value": "Latina"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xm6axtgpcj1km595ovo",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "3",
+                "value": "Rom"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt644p21cra6rrsyr0c5a",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Latina"
             }
         ],
         "Classification": [
             {
-                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ezcmecky558o",
-                "_type": "dcx:tm_topic",
-                "value": "Tierverhalten"
-            },
-            {
-                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ertc18vi5558o",
-                "_type": "dcx:tm_topic",
-                "value": "Evolution"
-            },
-            {
-                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ew7qs87g758o",
-                "_type": "dcx:tm_topic",
-                "value": "Tiere"
-            },
-            {
-                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ezcmecky558o",
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_ddb6d90abfb2bf8f6aa34ebd4792729e",
                 "_type": "dcx:tm_topic",
                 "generator": "com.digicol.se",
                 "listid": "dc_se_thesterm",
-                "percent": "37",
+                "percent": "70",
                 "score": "1",
-                "value": "Tierverhalten"
+                "value": "Arch\u00e4ologie"
             },
             {
-                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ew7qs87g758o",
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_a01039db7f7e0538db21efc0956e0854",
                 "_type": "dcx:tm_topic",
                 "generator": "com.digicol.se",
                 "listid": "dc_se_thesterm",
-                "percent": "33",
-                "score": "0.902705",
-                "value": "Tiere"
+                "percent": "16",
+                "score": "0.22669",
+                "value": "Mythologie"
             },
             {
-                "_id": "dcxapi:tm_topic\/dc_se_thesterm_68punr0ertc18vi5558o",
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_e6c946bbb006fb9a0b39f16ea864f819",
                 "_type": "dcx:tm_topic",
                 "generator": "com.digicol.se",
                 "listid": "dc_se_thesterm",
-                "percent": "30",
-                "score": "0.81487",
-                "value": "Evolution"
+                "percent": "14",
+                "score": "0.196328",
+                "value": "Kulturgut"
+            }
+        ],
+        "Country": [
+            {
+                "_id": "dcxapi:tm_topic\/country-IT",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Italien"
             }
         ],
         "Creator": [
             {
-                "_id": "dcxapi:user\/tmt6wjz0a9ksichdvrxhpl",
+                "_id": "dcxapi:user\/tmt6wgdxc8ea3o18eda8mur",
                 "_type": "dcx:user",
                 "value": "pz_zierahn"
             }
@@ -77,24 +96,155 @@
         "DateImported": [
             {
                 "_type": "xsd:dateTime",
-                "value": "2017-09-06T11:26:21+02:00"
+                "value": "2018-03-30T14:14:48+02:00"
+            }
+        ],
+        "Gallery": [
+            {
+                "_type": "dcx:taggroup",
+                "fields": {
+                    "GalleryDescription": [
+                        {
+                            "_type": "xhtml",
+                            "position": "1",
+                            "value": "<p>Galerie Beschreibung<\/p>"
+                        }
+                    ],
+                    "GalleryHeadline": [
+                        {
+                            "position": "1",
+                            "value": "Galerie \u00dcberschrift"
+                        }
+                    ],
+                    "TagGroupConfig": [
+                        {
+                            "value": ""
+                        }
+                    ],
+                    "TagGroupRef": [
+                        {
+                            "last_position": "1",
+                            "ref_taggroup_id": "galleryimage_1_5aca24ab7da3c",
+                            "value": ""
+                        },
+                        {
+                            "last_position": "2",
+                            "ref_taggroup_id": "galleryimage_2_5aca24ad99f9e",
+                            "value": ""
+                        },
+                        {
+                            "last_position": "3",
+                            "ref_taggroup_id": "galleryimage_3_5aca24af46473",
+                            "value": ""
+                        }
+                    ]
+                },
+                "taggroup_id": "gallery_primary"
+            }
+        ],
+        "GalleryImage": [
+            {
+                "_type": "dcx:taggroup",
+                "fields": {
+                    "DocumentRef": [
+                        {
+                            "_id": "dcxapi:document\/doc6zmhpf764zo9mtsqgy0",
+                            "_type": "dcx:document",
+                            "file_variant": "master",
+                            "position": "1"
+                        }
+                    ],
+                    "TagGroupConfig": [
+                        {
+                            "document_mode": "single",
+                            "value": ""
+                        }
+                    ]
+                },
+                "taggroup_id": "galleryimage_1_5aca24ab7da3c"
+            },
+            {
+                "_type": "dcx:taggroup",
+                "fields": {
+                    "DocumentRef": [
+                        {
+                            "_id": "dcxapi:document\/doc6zmhpf8fmty1d00sbgy2",
+                            "_type": "dcx:document",
+                            "file_variant": "master",
+                            "position": "1"
+                        }
+                    ],
+                    "TagGroupConfig": [
+                        {
+                            "document_mode": "single",
+                            "value": ""
+                        }
+                    ]
+                },
+                "taggroup_id": "galleryimage_2_5aca24ad99f9e"
+            },
+            {
+                "_type": "dcx:taggroup",
+                "fields": {
+                    "DocumentRef": [
+                        {
+                            "_id": "dcxapi:document\/doc6zmhpfhey601jz9zcgy3",
+                            "_type": "dcx:document",
+                            "file_variant": "master",
+                            "position": "1"
+                        }
+                    ],
+                    "TagGroupConfig": [
+                        {
+                            "document_mode": "single",
+                            "value": ""
+                        }
+                    ]
+                },
+                "taggroup_id": "galleryimage_3_5aca24af46473"
             }
         ],
         "Headline": [
             {
-                "_type": "xhtml",
                 "position": "1",
-                "value": "<p>Simple UI Story iPad<\/p>"
+                "value": "Headline R\u00f6misches Reich"
+            }
+        ],
+        "Highline": [
+            {
+                "position": "1",
+                "value": "Dachzeile R\u00f6misches Reich"
             }
         ],
         "Image": [
             {
                 "_type": "dcx:taggroup",
                 "fields": {
+                    "DocumentRef": [
+                        {
+                            "_id": "dcxapi:document\/doc6zh4i8f3gxe14k1gtej0",
+                            "_type": "dcx:document",
+                            "file_variant": "master",
+                            "position": "1"
+                        }
+                    ],
+                    "ImageCaption": [
+                        {
+                            "_type": "xhtml",
+                            "position": "1",
+                            "value": "<p>13.03.2018, Italien, Rom: Ein Schlagloch vor dem Kolosseum. Roms Verfall ist legend\u00e4r. Nun sollen selbst H\u00e4ftlinge daf\u00fcr sorgen, dass die verm\u00fcllte Stadt wieder blitzblank wird. H\u00e4ftlinge sind auch zum F\u00fcllen von Schlagl\u00f6chern im Gespr\u00e4ch. (zu dpa \"Knackis putzen am Kolosseum in Rom\" vom 29.03.2018) Foto: Annette Reuther\/dpa +++ dpa-Bildfunk +++<\/p>"
+                        }
+                    ],
+                    "ImageCredit": [
+                        {
+                            "position": "1",
+                            "value": "Annette Reuther"
+                        }
+                    ],
                     "ImageLabel": [
                         {
                             "position": "1",
-                            "value": "Prim\u00e4res Bild"
+                            "value": "Bild"
                         }
                     ],
                     "TagGroupConfig": [
@@ -109,42 +259,176 @@
         ],
         "ImportedBy": [
             {
-                "_id": "dcxapi:user\/tmt6wjz0a9ksichdvrxhpl",
+                "_id": "dcxapi:user\/tmt6wgdxc8ea3o18eda8mur",
                 "_type": "dcx:user",
                 "value": "pz_zierahn"
             }
         ],
         "Keywords": [
             {
-                "_id": "dcxapi:tm_topic\/tmt69y100rhazr111ajc71n",
+                "_id": "dcxapi:tm_topic\/tmt6s27i2fv2mfc9ac5l6l",
                 "_type": "dcx:tm_topic",
-                "value": "iPad"
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "HERRSCHAFT"
             },
             {
-                "_id": "dcxapi:tm_topic\/tmt6b65zcnitt015oloa1i4",
+                "_id": "dcxapi:tm_topic\/tmt6s27tr7caqb19tbf7l6l",
                 "_type": "dcx:tm_topic",
-                "value": "Faultier"
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "JAHRHUNDERT"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6hox4ebw1mtgs3f4e8",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Teil"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xj4vpa52zpu5iaxau3",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Geschichte"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt61ds4zecodttkii613w",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Sohn"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt62rk6qn7jkgcbye1258",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "schrift"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xwxzw0lmhk14lb1ljr",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "religion"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6lrftjo0cuwrqi1nkiu",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Alphabet"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt642yzmx95msy0hqbhml",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "erfolg"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt67ws0ytsls763mmp1xf",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "dichter"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6gl7vjh24zc18n25e1vr",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "PHASE"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt644g1hko9ic18zaboc5a",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Anlage"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6hi2h4zjovay60k7bf3",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Angabe"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6jief9br9w1vbuouafk",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "drittel"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5y7t83wzssk3tfukogk",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Ansicht"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt649zxh45h8k196qo86k5",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Forscher"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6hkzk8vn4mqg88jk335",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Jahr"
             }
         ],
         "LastEditedBy": [
             {
-                "_id": "dcxapi:user\/tmt68sk9bwnr8k1f2mfyl8d",
+                "_id": "dcxapi:user\/tmt6wgdxc8ea3o18eda8mur",
                 "_type": "dcx:user",
-                "value": "Bastian Schmoll"
+                "value": "pz_zierahn"
+            }
+        ],
+        "Organization": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6040hkj6ohxrrk4yam2",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "YouTube"
             }
         ],
         "Owner": [
             {
-                "_id": "dcxapi:tm_topic\/tmt68puofz9bk11bqm6w5gm",
+                "_id": "dcxapi:tm_topic\/tmt5xi3dyebfx5bm1w440h",
                 "_type": "dcx:tm_topic",
-                "value": "trunk"
+                "value": "demo"
             }
         ],
-        "Place": [
+        "Person": [
             {
-                "_id": "dcxapi:tm_topic\/tmt6tyhbzu55jk17417yen3",
+                "_id": "dcxapi:tm_topic\/tmt6tifpz2vh6v1i4sqdht8",
                 "_type": "dcx:tm_topic",
-                "value": "Hambrug"
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Marcus Terentius Varro"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6070krhmzk8k3glxfq3",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Augustus"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5zstvdvtrl31b432y1sh",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Odysseus"
             }
         ],
         "Status": [
@@ -156,21 +440,15 @@
         ],
         "StoryType": [
             {
-                "_id": "dcxapi:tm_topic\/storytype-default",
+                "_id": "dcxapi:tm_topic\/storytype-online",
                 "_type": "dcx:tm_topic",
-                "value": "Standard"
-            }
-        ],
-        "SubHeadline": [
-            {
-                "position": "1",
-                "value": " Weitere \u00dcberschrift "
+                "value": "Online"
             }
         ],
         "Title": [
             {
                 "position": "1",
-                "value": "Simple UI Story"
+                "value": "Arbeitstitle R\u00f6misches Reich"
             }
         ],
         "Type": [
@@ -183,36 +461,29 @@
         "WordCount": [
             {
                 "_type": "xsd:nonNegativeInteger",
-                "source": "com.digicol.dcx",
-                "value": "138"
+                "value": "364"
             }
         ],
         "_display_title": [
             {
-                "value": "Simple UI Story iPad"
+                "value": "Headline R\u00f6misches Reich"
             }
         ],
         "body": [
             {
                 "_type": "xhtml",
                 "lang": "",
-                "value": "<p>Die Faultiere (Folivora, auch Tardigrada oder Phyllophaga) bilden eine Unterordnung der zahnarmen S\u00e4ugetiere (Pilosa) und sind mit den Ameisenb\u00e4ren und den G\u00fcrteltieren verwandt (Nebengelenktiere). Es sind sechs rezente Arten bekannt, die sich auf die beiden Gattungen der Zweifinger-Faultiere (Choloepus) und der Dreifinger-Faultiere (Bradypus) verteilen. Bei diesen heute lebenden Arten handelt es sich um eher kleine Tiere der Unterordnung, die durchschnittlich 50 cm lang und etwa 5 kg schwer werden. Sie bewohnen zumeist tropische Regenw\u00e4lder in S\u00fcd- und Mittelamerika, wo sie sich bevorzugt in den Baumkronen aufhalten und sich von blatthaltiger Pflanzenkost ern\u00e4hren. Bekannt sind die Faultiere vor allem durch ihre \u2013 mit dem R\u00fccken nach unten \u2013 im Ge\u00e4st h\u00e4ngende Lebensweise, ihre sehr langsamen Bewegungen und die langen Ruhephasen. Die beiden letztgenannten Eigenschaften werden durch einen extrem niedrigen Stoffwechsel hervorgerufen, der aus der energiearmen Blattnahrung resultiert.<\/p>\n<p\/>\n<p>iPad<\/p>\n<p\/>\n<p>Blablabla<\/p>"
-            }
-        ],
-        "parent_story": [
-            {
-                "_id": "dcxapi:document\/doc6wk0ea4fpsn10c0aihpg",
-                "_type": "dcx:document"
+                "value": "<p>Die altr\u00f6mische \u00dcberlieferung datiert die Gr\u00fcndung Roms zwischen 814 und 728 v. Chr., meist jedoch um das Jahr 750 v. Chr.; die sp\u00e4ter als Beginn der r\u00f6mischen Zeitrechnung (\u201eab urbe condita\u201c) kanonisch gewordene Angabe 753 v. Chr. geht auf den Gelehrten Marcus Terentius Varro (116\u201327 v. Chr.) zur\u00fcck. Obwohl die \u00e4ltesten Siedlungsspuren auf dem sp\u00e4teren Gebiet der Stadt bis ins 10. Jahrhundert v. Chr. hinaufreichen, stammen die fr\u00fchesten Hinweise f\u00fcr die Anlage einer Stadt wohl aus dem letzten Drittel des 7. Jahrhunderts v. Chr.<\/p><div class=\"media-container dcx_media_twitter\" data-dcx_media_type=\"twitter\" data-dcx_media_config=\"{&quot;content&quot;:{&quot;params&quot;:&quot;dcx_mg_attributes_slot_value=https%3A%2F%2Ftwitter.com%2Ftitanic%2Fstatus%2F982245146786869250&quot;}}\">MediaSlot: Tweet twitter.com\/titanic\/status\/982245146786869250<\/div><p>Die Quellenlage zur r\u00f6mischen Fr\u00fchzeit ist sehr schlecht, da die schriftliche \u00dcberlieferung erst Jahrhunderte sp\u00e4ter einsetzt. Nach Ansicht mancher Forscher kann daher nicht einmal als gesichert gelten, dass die Stadt Rom in ihrer Fr\u00fchzeit tats\u00e4chlich K\u00f6nigen unterstand. Der neue Stadtstaat wurde jedenfalls laut sp\u00e4terer \u00dcberlieferung von reges beherrscht und geriet schlie\u00dflich unter etruskische Herrschaft; diese Phase seiner Entwicklung wird die K\u00f6nigszeit genannt. Obwohl das Gebiet Roms aus \u00e4u\u00dferst unfruchtbaren, zum Teil sumpfigen und sandigen B\u00f6den bestand und somit eine gewinnbringende Landwirtschaft nahezu ausgeschlossen war, gelangte Rom unter den Etruskern bald zu wirtschaftlicher Bedeutung, kontrollierte es doch zwei bedeutende Handelswege: die Via Latina und die Via Salaria. Auch die Einf\u00fchrung des uralten r\u00f6mischen Hafenzolls f\u00fcr Handelsg\u00fcter trug ihren Teil zum wirtschaftlichen Erfolg bei.<\/p><div class=\"media-container dcx_media_imagegroups\" data-dcx_media_type=\"imagegroups\" data-dcx_media_config=\"{&quot;content&quot;:{&quot;params&quot;:&quot;align=left&amp;dcx_mg_attributes_slot_value=image_primary&quot;}}\">MediaSlot: ImageContainer #image_primary<\/div><p>\u00a0Verschiedene sp\u00e4tere Legenden wollen die r\u00f6mische K\u00f6nigszeit mit der Geschichte Troias verkn\u00fcpfen. So sollen die \u00fcberlebenden Troianer von Aeneas, einem Sohn des Anchises und der G\u00f6ttin Venus, nach langer Seefahrt (\u00e4hnlich der Odyssee des Griechen Odysseus) nach Latium gef\u00fchrt worden sein. Die \u00e4lteste \u00dcberlieferung dieses Mythos geht auf Timaios von Tauromenion zur\u00fcck, der r\u00f6mische Dichter Vergil schrieb dann zur Zeit des Augustus das Nationalepos der R\u00f6mer, die Aeneis.<\/p><div class=\"media-container dcx_media_youtube\" data-dcx_media_type=\"youtube\" data-dcx_media_config=\"{&quot;content&quot;:{&quot;params&quot;:&quot;dcx_mg_attributes_slot_value=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DtxqiwrbYGrs%26feature%3Dyoutu.be&quot;}}\">MediaSlot: Youtube<\/div><p>Kulturell wurden die R\u00f6mer stark von den Etruskern beeinflusst; \u00fcber diese fanden auch griechische Elemente ihren Weg in die Stadt. Beispiele sind die etruskischen Zahlen, die griechisch-etruskische Schrift, aus der sich das lateinische Alphabet entwickelte, die etruskische Religion mit Leberschau und Vogelschau und das Begr\u00e4bnisritual, das in den Gladiatorenk\u00e4mpfen eine \u00fcberzogene Sp\u00e4tbl\u00fcte fand. Rom gewann in Italien zunehmend an Einfluss, nachdem es sich um 500 v. Chr. von der Herrschaft der Etrusker gel\u00f6st hatte.<\/p><p\/><div class=\"media-container dcx_media_gallery\" data-dcx_media_type=\"gallery\" data-dcx_media_config=\"{&quot;content&quot;:{&quot;params&quot;:&quot;dcx_mg_attributes_slot_value=gallery_primary&quot;}}\">MediaSlot: Gallery<\/div><p\/>"
             }
         ]
     },
     "files": [],
     "properties": {
-        "_created": "2017-09-06T11:26:21+02:00",
-        "_modcount": 9,
-        "_modified": "2017-09-06T12:06:48+02:00",
-        "_web_url": "\/dcx_trunk\/documents#\/doc\/doc6wkfj97y13ouzj9dhpf",
-        "_web_url_ui": "\/dcx_trunk\/ui\/document\/doc6wkfj97y13ouzj9dhpf",
+        "_created": "2018-03-30T14:14:48+02:00",
+        "_modcount": 10,
+        "_modified": "2018-04-08T16:19:19+02:00",
+        "_web_url": "\/dcx\/documents#\/doc\/doc6zhtpoemzpw8gb7gfms",
+        "_web_url_ui": "\/dcx\/ui\/document\/doc6zhtpoemzpw8gb7gfms",
         "pool_id": {
             "_id": "dcxapi:pool\/story",
             "_type": "dcx:pool"

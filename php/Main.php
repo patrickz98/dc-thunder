@@ -9,70 +9,50 @@ include("./Article.php");
 include("./DcxExtractor.php");
 include("./ParagraphFactory.php");
 
-function sampleArticle()
-{
-    $paragraphs = new ParagraphFactory();
-
-    for ($inx = 0; $inx < 4; $inx++)
-    {
-        $randomText = Simple::getRandomText();
-        $paragraphs->createText($randomText);
-    }
-
-    $paragraphs->createImage("Einstein.jpg");
-
-    $article = new Article();
-    $article->setTitle(Simple::getRandomText(6));
-    $article->setSeoTitle(Simple::getRandomText(6));
-    $article->addParagraphs($paragraphs->build());
-    $response = $article->post();
-
-    echo Simple::prettyJson($response) . "\n";
-    // Simple::write("article.json", $response);
-}
+//function sampleArticle()
+//{
+//    $paragraphs = new ParagraphFactory();
+//
+//    for ($inx = 0; $inx < 4; $inx++)
+//    {
+//        $randomText = Simple::getRandomText();
+//        $paragraphs->createText($randomText);
+//    }
+//
+//    $paragraphs->createImage("Einstein.jpg");
+//
+//    $article = new Article();
+//    $article->setTitle(Simple::getRandomText(6));
+//    $article->setSeoTitle(Simple::getRandomText(6));
+//    $article->addParagraphs($paragraphs->build());
+//    $response = $article->post();
+//
+//    echo Simple::prettyJson($response) . "\n";
+//    // Simple::write("article.json", $response);
+//}
 
 function main()
 {
-    $story = DcxExtractor::getStory(Config::$dcx_doc);
-    exit();
+    echo "--> Extracting docId=" . Config::$dcx_doc . "... ";
 
-//    echo "dcx: " . Simple::prettyJson($story) . "\n";
+    $dcxExtractor = new DcxExtractor(Config::$dcx_server, Config::$dcx_auth);
+    $story = $dcxExtractor->getStory(Config::$dcx_doc);
+    // echo Simple::prettyJson($story) . "\n";
+    echo "done\n";
 
-    $paragraphs = new ParagraphFactory();
-
-    foreach ($story[ "paragraphs" ] as $inx => $paragraph)
-    {
-        $type = $paragraph[ "type" ];
-
-        if ($type === "text")
-        {
-            $paragraphs->createText($paragraph[ "text" ]);
-        }
-
-        if ($type === "image")
-        {
-            $paragraphs->createImage($paragraph[ "src" ]);
-        }
-
-        if ($type === "twitter")
-        {
-            $paragraphs->createTwitter($paragraph[ "src" ]);
-        }
-    }
-
-    $article = new Article();
+    echo "--> Creating new thunder article... ";
+    $article = new Article(Config::$thunder_server, Config::$thunder_auth);
     $article->setTitle($story[ "headline" ]);
     $article->setSeoTitle($story[ "subHeadline" ]);
-    $article->addParagraphs($paragraphs->build());
-
+    $article->createParagraphs($story[ "paragraphs" ]);
     $response = $article->post();
 
-//    echo "thunder: " . Simple::prettyJson($response) . "\n";
-//    echo "paragraphs: " . Simple::prettyJson($paragraphs->build()) . "\n";
-
-    // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
-
     echo "done\n";
+
+    echo "--> url=" . Config::$thunder_server . "/node/" . $response[ "nid" ][ 0 ][ "value" ] . "\n";
+
+    // echo "thunder: " . Simple::prettyJson($response) . "\n";
+    // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
 }
 
 main();
