@@ -26,16 +26,16 @@ class Article
         $this->seoTitle = $seoTitle;
     }
 
-    public function createParagraph($type, $src)
+    public function createParagraph($paragraph)
     {
-        $this->paragraphs->createParagraph($type, $src);
+        $this->paragraphs->createParagraph($paragraph);
     }
 
     public function createParagraphs($paragraphs)
     {
-        foreach ($paragraphs as $inx => $json)
+        foreach ($paragraphs as $inx => $paragraph)
         {
-            $this->createParagraph($json[ "type" ], $json[ "src" ]);
+            $this->createParagraph($paragraph);
         }
     }
 

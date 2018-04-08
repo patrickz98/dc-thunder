@@ -66,26 +66,28 @@ class ParagraphFactory
         array_push($this->paragraphs, $paragraph);
     }
 
-    public function createParagraph($type, $src)
+    public function createParagraph($paragraph)
     {
+        $type = $paragraph[ "type" ];
+
         if ($type === "text")
         {
-            $this->createText($src);
+            $this->createText($paragraph[ "text" ]);
         }
 
         if ($type === "image")
         {
-            $this->createImage($src);
+            $this->createImage($paragraph[ "src" ]);
         }
 
         if ($type === "tweet")
         {
-            $this->createTweet($src);
+            $this->createTweet($paragraph[ "src" ]);
         }
 
         if ($type === "youtube")
         {
-            $this->createYoutube($src);
+            $this->createYoutube($paragraph[ "src" ]);
         }
     }
 

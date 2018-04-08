@@ -4,7 +4,6 @@ class DcxExtractor
 {
     private $dcx_server;
     private $dcx_auth;
-    private $imagesTmp;
 
     function __construct($dcx_server, $dcx_auth)
     {
@@ -22,6 +21,16 @@ class DcxExtractor
         return Curl::get($this->dcx_server . "/file/$fileId", $this->dcx_auth);
     }
 
+    private function getMediaConfig($attributes)
+    {
+        $config = Simple::parseJson($attributes[ "data-dcx_media_config" ]);
+        $params = $config[ "content" ][ "params" ];
+
+        parse_str($params, $configQuery);
+
+        return $configQuery[ "dcx_mg_attributes_slot_value" ];
+    }
+
     private function extractData($dcxParagraph, $imageIds, $galleries)
     {
         $attributes = $dcxParagraph[ "@attributes" ];
@@ -30,61 +39,41 @@ class DcxExtractor
         {
             return [
                 "type" => "text",
-                "src" => $dcxParagraph[ "0" ]
+                "text" => $dcxParagraph[ "0" ]
             ];
         }
 
-        if ($attributes[ "data-dcx_media_type" ] === "imagegroups")
-        {
-            $mediaSlot = $dcxParagraph[ "0" ];
-            $imgId = explode("#", $mediaSlot)[ 1 ];
+        $type = $attributes[ "data-dcx_media_type" ];
 
+        if ($type === "imagegroups")
+        {
             return [
                 "type" => "image",
-                "src" => $imageIds[ $imgId ]
+                "src"  => $imageIds[ $this->getMediaConfig($attributes) ]
             ];
         }
 
-        if ($attributes[ "data-dcx_media_type" ] === "twitter")
+        if ($type === "twitter")
         {
-            $mediaSlot = $dcxParagraph[ "0" ];
-
-            // remove MediaSlot: Tweet
-            $tweetUrl = "https://" . substr($mediaSlot, 17);
-
             return [
                 "type" => "tweet",
-                "src" => $tweetUrl
+                "src"  => $this->getMediaConfig($attributes)
             ];
         }
 
-        if ($attributes[ "data-dcx_media_type" ] === "youtube")
+        if ($type === "youtube")
         {
-            $config = Simple::parseJson($attributes[ "data-dcx_media_config" ]);
-            $params = $config[ "content" ][ "params" ];
-
-            // remove dcx_mg_attributes_slot_value=
-            $youtubeUrl = urldecode(substr($params, 29));
-
             return [
                 "type" => "youtube",
-                "src" => $youtubeUrl
+                "src"  => $this->getMediaConfig($attributes)
             ];
         }
 
-        if ($attributes[ "data-dcx_media_type" ] === "gallery")
+        if ($type === "gallery")
         {
-            echo "dcxParagraph=" . Simple::prettyJson($dcxParagraph) . "\n";
-
-            $config = Simple::parseJson($attributes[ "data-dcx_media_config" ]);
-            $params = $config[ "content" ][ "params" ];
-
-            // remove dcx_mg_attributes_slot_value=
-            $galleryId = urldecode(substr($params, 29));
-
             return [
-                "type" => "gallery",
-                "gallery" => $galleries[ $galleryId ]
+                "type"   => "gallery",
+                "images" => $galleries[ $this->getMediaConfig($attributes) ]
             ];
         }
 
@@ -120,7 +109,7 @@ class DcxExtractor
                 $imageDoc   = $this->getDoc($imageDocId);
                 $fileId     = $imageDoc[ "files" ][ 0 ][ "_id" ];
 
-                // dcxapi:file/
+                // remove dcxapi:file/
                 $fileId = substr($fileId, 12);
 
                 $file = $this->getFile($fileId);
@@ -156,13 +145,14 @@ class DcxExtractor
             }
         }
 
-        echo "galleries=" . Simple::prettyJson($galleries) . "\n";
-
         return $galleries;
     }
 
     public function getStory($docId)
     {
+        // $getDoc  = function($docId)  { return $this->getDoc($docId);   };
+        // $getFile = function($fileId) { return $this->getFile($fileId); };
+
         $doc = $this->getDoc($docId);
 
         $galleries = $this->getGalleries($doc);
@@ -173,7 +163,12 @@ class DcxExtractor
 
         foreach($this->htmlBodyToJson($htmlBody) as $dcxParagraph)
         {
-            array_push($paragraphs, $this->extractData($dcxParagraph, $imageIds, $galleries));
+            $paragraph = $this->extractData($dcxParagraph, $imageIds, $galleries);
+
+            if ($paragraph)
+            {
+                array_push($paragraphs, $paragraph);
+            }
         }
 
         $story = [];
