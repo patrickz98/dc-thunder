@@ -113,6 +113,20 @@ class DcxExtractor
 
         $type = $attributes[ "data-dcx_media_type" ];
 
+        if ($attributes[ "class" ] === "bodytext")
+        {
+            return [
+                "type" => "text",
+                "text"  => $dcxParagraph[ "0" ]
+            ];
+        }
+
+        if ($attributes[ "class" ] === "title")
+        {
+            // STUB!
+            return null;
+        }
+
         if ($type === "imagegroups")
         {
             return [
@@ -159,6 +173,13 @@ class DcxExtractor
         // $getFile = function($fileId) { return $this->getFile($fileId); };
 
         $doc = $this->getDoc($docId);
+
+        if ($doc[ "status" ] >= 400)
+        {
+            echo "error\n";
+            echo Simple::prettyJson($doc) . "\n";
+            return null;
+        }
 
         $galleries = $this->getGalleries($doc);
         $imageIds  = $this->getImages($doc[ "fields" ][ "Image" ]);

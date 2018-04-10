@@ -31,16 +31,21 @@ include("./ParagraphFactory.php");
 //    // Simple::write("article.json", $response);
 //}
 
-function main()
+function export($dcx_doc)
 {
-//    echo "--> Extracting docId=" . Config::$dcx_doc . "... ";
+    echo "--> Extracting docId=$dcx_doc... ";
 
     $dcxExtractor = new DcxExtractor(Config::$dcx_server, Config::$dcx_auth);
-    $story = $dcxExtractor->getStory(Config::$dcx_doc);
+    $story = $dcxExtractor->getStory($dcx_doc);
+
+    if (is_null($story))
+    {
+        return;
+    }
+
+    echo "done\n";
 
 //    echo Simple::prettyJson($story) . "\n";
-//    echo "done\n";
-
 //    exit();
 
     echo "--> Creating new thunder article... ";
@@ -56,6 +61,21 @@ function main()
 
     // echo "thunder: " . Simple::prettyJson($response) . "\n";
     // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
+}
+
+function main()
+{
+    global $argc;
+    global $argv;
+
+    if ($argc <= 1)
+    {
+        export(Config::$dcx_doc);
+    }
+    else
+    {
+        export($argv[ 1 ]);
+    }
 }
 
 main();
