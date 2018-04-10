@@ -37,10 +37,11 @@ function main()
 
     $dcxExtractor = new DcxExtractor(Config::$dcx_server, Config::$dcx_auth);
     $story = $dcxExtractor->getStory(Config::$dcx_doc);
-    // echo Simple::prettyJson($story) . "\n";
+
+//    echo Simple::prettyJson($story) . "\n";
 //    echo "done\n";
 
-    exit();
+//    exit();
 
     echo "--> Creating new thunder article... ";
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);

@@ -47,22 +47,18 @@ class ParagraphFactoryImage
         return $id;
     }
 
-    private static function createMedia($server, $auth, $fileSrc)
+    public static function createMedia($server, $auth, $fileSrc)
     {
         $url = "$server/entity/media?_format=json";
         $target_id = ParagraphFactoryImage::createFile($server, $auth, $fileSrc);
 
         $media = [
-            "bundle" => [
-                [
-                    "target_id" => "image"
-                ]
-            ],
-            "field_image" => [
-                [
-                    "target_id" => $target_id
-                ]
-            ]
+            "bundle" => [[
+                "target_id" => "image"
+            ]],
+            "field_image" => [[
+                "target_id" => $target_id
+            ]]
         ];
 
         return Curl::post($url, $auth, $media);
@@ -77,11 +73,9 @@ class ParagraphFactoryImage
             "type" => [[
                 "target_id" => "image"
             ]],
-            "field_image" => [
-                [
-                    "target_id" => $targetId
-                ]
-            ]
+            "field_image" => [[
+                "target_id" => $targetId
+            ]]
         ];
 
         $url = "$server/entity/paragraph?_format=json";

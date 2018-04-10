@@ -31,55 +31,6 @@ class DcxExtractor
         return $configQuery[ "dcx_mg_attributes_slot_value" ];
     }
 
-    private function extractData($dcxParagraph, $imageIds, $galleries)
-    {
-        $attributes = $dcxParagraph[ "@attributes" ];
-
-        if (is_null($attributes) && $dcxParagraph[ "0" ])
-        {
-            return [
-                "type" => "text",
-                "text" => $dcxParagraph[ "0" ]
-            ];
-        }
-
-        $type = $attributes[ "data-dcx_media_type" ];
-
-        if ($type === "imagegroups")
-        {
-            return [
-                "type" => "image",
-                "src"  => $imageIds[ $this->getMediaConfig($attributes) ]
-            ];
-        }
-
-        if ($type === "twitter")
-        {
-            return [
-                "type" => "tweet",
-                "src"  => $this->getMediaConfig($attributes)
-            ];
-        }
-
-        if ($type === "youtube")
-        {
-            return [
-                "type" => "youtube",
-                "src"  => $this->getMediaConfig($attributes)
-            ];
-        }
-
-        if ($type === "gallery")
-        {
-            return [
-                "type"   => "gallery",
-                "images" => $galleries[ $this->getMediaConfig($attributes) ]
-            ];
-        }
-
-        return null;
-    }
-
     private function htmlBodyToJson($htmlBody)
     {
         $json = [];
@@ -148,6 +99,60 @@ class DcxExtractor
         return $galleries;
     }
 
+    private function extractData($dcxParagraph, $imageIds, $galleries)
+    {
+        $attributes = $dcxParagraph[ "@attributes" ];
+
+        if (is_null($attributes) && $dcxParagraph[ "0" ])
+        {
+            return [
+                "type" => "text",
+                "text" => $dcxParagraph[ "0" ]
+            ];
+        }
+
+        $type = $attributes[ "data-dcx_media_type" ];
+
+        if ($type === "imagegroups")
+        {
+            return [
+                "type" => "image",
+                "src"  => $imageIds[ $this->getMediaConfig($attributes) ]
+            ];
+        }
+
+        if ($type === "twitter")
+        {
+            return [
+                "type" => "tweet",
+                "src"  => $this->getMediaConfig($attributes)
+            ];
+        }
+
+        if ($type === "youtube")
+        {
+            return [
+                "type" => "youtube",
+                "src"  => $this->getMediaConfig($attributes)
+            ];
+        }
+
+        if ($type === "gallery")
+        {
+            return [
+                "type"   => "gallery",
+                "images" => $galleries[ $this->getMediaConfig($attributes) ]
+            ];
+        }
+
+        if (count($dcxParagraph) > 0)
+        {
+            echo "--> unknown paragraph: " . Simple::prettyJson($dcxParagraph) . "\n";
+        }
+
+        return null;
+    }
+
     public function getStory($docId)
     {
         // $getDoc  = function($docId)  { return $this->getDoc($docId);   };
@@ -177,8 +182,6 @@ class DcxExtractor
         $story[ "title"         ] = strip_tags($doc[ "fields" ][ "Title"          ][ 0 ][ "value" ]);
         $story[ "display_title" ] = strip_tags($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]);
         $story[ "paragraphs"    ] = $paragraphs;
-
-        echo "paragraphs=" . Simple::prettyJson($paragraphs) . "\n";
 
         return $story;
     }

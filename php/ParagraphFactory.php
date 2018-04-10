@@ -4,6 +4,7 @@ include("./ParagraphFactoryText.php");
 include("./ParagraphFactoryImage.php");
 include("./ParagraphFactoryTweet.php");
 include("./ParagraphFactoryYoutube.php");
+include("./ParagraphFactoryGallery.php");
 
 class ParagraphFactory
 {
@@ -66,6 +67,18 @@ class ParagraphFactory
         array_push($this->paragraphs, $paragraph);
     }
 
+    public function createGallery($imagesSrc)
+    {
+        $paragraph = ParagraphFactoryGallery::create
+        (
+            $this->server,
+            $this->auth,
+            $imagesSrc
+        );
+
+        array_push($this->paragraphs, $paragraph);
+    }
+
     public function createParagraph($paragraph)
     {
         $type = $paragraph[ "type" ];
@@ -88,6 +101,11 @@ class ParagraphFactory
         if ($type === "youtube")
         {
             $this->createYoutube($paragraph[ "src" ]);
+        }
+
+        if ($type === "gallery")
+        {
+            $this->createGallery($paragraph[ "images" ]);
         }
     }
 
