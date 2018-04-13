@@ -26,7 +26,8 @@ class ParagraphFactoryGallery extends ParagraphFactoryImage
         return Curl::post($url, $auth, $media);
     }
 
-    public static function create($server, $auth, $imagesSrc)
+
+    public static function createGallery($server, $auth, $imagesSrc)
     {
         $media = self::createGalleryMedia($server, $auth, $imagesSrc);
         $targetId = $media[ "mid" ][ 0 ][ "value" ];
@@ -44,7 +45,7 @@ class ParagraphFactoryGallery extends ParagraphFactoryImage
         $paragraph = Curl::post($url, $auth, $data);
 
         return [
-            "target_id" => $paragraph[ "id" ][ 0 ][ "value" ],
+            "target_id"          => $paragraph[ "id"          ][ 0 ][ "value" ],
             "target_revision_id" => $paragraph[ "revision_id" ][ 0 ][ "value" ]
         ];
     }

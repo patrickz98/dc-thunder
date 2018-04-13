@@ -11,12 +11,14 @@ class ParagraphFactory
     private $server;
     private $auth;
     private $paragraphs;
+    private $imagesMediaIds
 
     function __construct($thunder_server, $thunder_auth)
     {
-        $this->server = $thunder_server;
-        $this->auth   = $thunder_auth;
-        $this->paragraphs = [];
+        $this->server         = $thunder_server;
+        $this->auth           = $thunder_auth;
+        $this->paragraphs     = [];
+        $this->imagesMediaIds = [];
     }
 
     public function createText($htmlBody)
@@ -40,7 +42,8 @@ class ParagraphFactory
             $imgSrc
         );
 
-        array_push($this->paragraphs, $paragraph);
+        array_push($this->paragraphs,     $paragraph[ "paragraph" ]);
+        array_push($this->imagesMediaIds, $paragraph[ "media_id"  ]);
     }
 
     public function createTweet($tweet)
@@ -69,7 +72,7 @@ class ParagraphFactory
 
     public function createGallery($imagesSrc)
     {
-        $paragraph = ParagraphFactoryGallery::create
+        $paragraph = ParagraphFactoryGallery::createGallery
         (
             $this->server,
             $this->auth,
@@ -107,6 +110,11 @@ class ParagraphFactory
         {
             $this->createGallery($paragraph[ "images" ]);
         }
+    }
+
+    public function getImagesMediaIds()
+    {
+        return $this->imagesMediaIds;
     }
 
     public function build()

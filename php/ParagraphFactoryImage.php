@@ -82,8 +82,11 @@ class ParagraphFactoryImage
         $paragraph = Curl::post($url, $auth, $data);
 
         return [
-            "target_id" => $paragraph[ "id" ][ 0 ][ "value" ],
-            "target_revision_id" => $paragraph[ "revision_id" ][ 0 ][ "value" ]
+            "media_id" => $targetId,
+            "paragraph" => [
+                "target_id" => $paragraph[ "id" ][ 0 ][ "value" ],
+                "target_revision_id" => $paragraph[ "revision_id" ][ 0 ][ "value" ]
+            ]
         ];
     }
 }

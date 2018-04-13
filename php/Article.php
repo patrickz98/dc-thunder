@@ -11,8 +11,8 @@ class Article
 
     function __construct($thunder_server, $thunder_auth)
     {
-        $this->server = $thunder_server;
-        $this->auth   = $thunder_auth;
+        $this->server     = $thunder_server;
+        $this->auth       = $thunder_auth;
         $this->paragraphs = new ParagraphFactory($thunder_server, $thunder_auth);
     }
 
@@ -58,18 +58,22 @@ class Article
         }
 
         $article = [];
-        $article[ "type"            ] = [["target_id" => "article"]];
-        $article[ "title"           ] = [["value" => $title]];
-        $article[ "field_seo_title" ] = [["value" => $seoTitle]];
-        $article[ "status"          ] = [["value" => true]];
-        $article[ "field_channel"   ] = [[
-            "target_id"   => 1,
-            "target_type" => "taxonomy_term",
-            "target_uuid" => "bfc251bc-de35-467d-af44-1f7a7012b845",
-            "url"         => "/thunder/news"
-        ]];
+        $article[ "type"              ] = [[ "target_id" => "article" ]];
+        $article[ "title"             ] = [[ "value"     => $title    ]];
+        $article[ "field_seo_title"   ] = [[ "value"     => $seoTitle ]];
+        $article[ "status"            ] = [[ "value"     => true      ]];
+        $article[ "field_teaser_text" ] = [[ "value"     => "STUB!"   ]];
+        $article[ "field_channel"     ] = [[ "target_id" => 1         ]];
+        $article[ "field_paragraphs"  ] = $this->paragraphs->build();
 
-        $article[ "field_paragraphs" ] = $this->paragraphs->build();
+        $imagesMediaIds = $this->paragraphs->getImagesMediaIds();
+
+        if ($imagesMediaIds[ 0 ])
+        {
+            $article[ "field_teaser_media" ] = [[ "target_id" => $imagesMediaIds[ 0 ] ]];
+        }
+
+        // echo "article: " . Simple::prettyJson($article) . "\n";
 
         return $article;
     }
@@ -78,6 +82,8 @@ class Article
     {
         $url = $this->server . "/node?_format=json";
         $response = Curl::post($url, $this->auth, $this->build());
+
+        // echo "response: " . Simple::prettyJson($response) . "\n";
 
         return $response;
     }
