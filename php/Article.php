@@ -9,6 +9,7 @@ class Article
     private $title;
     private $seoTitle;
     private $teaserText;
+    private $metaTags;
 
     function __construct($thunder_server, $thunder_auth)
     {
@@ -30,6 +31,11 @@ class Article
     public function setTeaserText($text)
     {
         $this->teaserText = $text;
+    }
+
+    public function setMetaTags($metaTags)
+    {
+        $this->metaTags = $metaTags;
     }
 
     public function createParagraph($paragraph)
@@ -70,12 +76,13 @@ class Article
         }
 
         $article = [];
-        $article[ "type"              ] = [[ "target_id" => "article"   ]];
-        $article[ "title"             ] = [[ "value"     => $title      ]];
-        $article[ "field_seo_title"   ] = [[ "value"     => $seoTitle   ]];
-        $article[ "status"            ] = [[ "value"     => true        ]];
-        $article[ "field_teaser_text" ] = [[ "value"     => $teaserText ]];
-        $article[ "field_channel"     ] = [[ "target_id" => 1           ]];
+        $article[ "type"              ] = [[ "target_id" => "article"       ]];
+        $article[ "title"             ] = [[ "value"     => $title          ]];
+        $article[ "field_seo_title"   ] = [[ "value"     => $seoTitle       ]];
+        $article[ "status"            ] = [[ "value"     => true            ]];
+        $article[ "field_teaser_text" ] = [[ "value"     => $teaserText     ]];
+        $article[ "field_channel"     ] = [[ "target_id" => 1               ]];
+        $article[ "metatag"           ] = [[ "value"     => $this->metaTags ]];
         $article[ "field_paragraphs"  ] = $this->paragraphs->build();
 
         $imagesMediaIds = $this->paragraphs->getImagesMediaIds();
