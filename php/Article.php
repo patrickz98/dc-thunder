@@ -82,7 +82,9 @@ class Article
         $article[ "status"            ] = [[ "value"     => true            ]];
         $article[ "field_teaser_text" ] = [[ "value"     => $teaserText     ]];
         $article[ "field_channel"     ] = [[ "target_id" => 1               ]];
-        $article[ "metatag"           ] = [[ "value"     => $this->metaTags ]];
+
+        // #### Metatags don't work --> try patch
+        $article[ "metatag"           ] =  [ "value"     => $this->metaTags ];
         $article[ "field_paragraphs"  ] = $this->paragraphs->build();
 
         $imagesMediaIds = $this->paragraphs->getImagesMediaIds();
@@ -92,7 +94,8 @@ class Article
             $article[ "field_teaser_media" ] = [[ "target_id" => $imagesMediaIds[ 0 ] ]];
         }
 
-        // echo "article: " . Simple::prettyJson($article) . "\n";
+        // Simple::logJson("article", $article);
+        Simple::write("zzz-article.json", $article);
 
         return $article;
     }

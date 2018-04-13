@@ -8,6 +8,7 @@ include("./Simple.php");
 include("./Article.php");
 include("./DcxExtractor.php");
 include("./ArticleParagraphFactory.php");
+include("./PatchArticle.php");
 
 //function sampleArticle()
 //{
@@ -48,6 +49,11 @@ function export($dcx_doc)
 
     echo "done\n";
 
+    // #### Metatags hack
+    // $patcher = new PatchArticle(Config::$thunder_server, Config::$thunder_auth);
+    // $patcher->patch($story[ "metatags" ]);
+    // exit(0);
+
     // echo Simple::prettyJson($story) . "\n";
     // exit();
 
@@ -55,10 +61,13 @@ function export($dcx_doc)
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);
     $article->setTitle(        $story[ "headline"     ]);
     $article->setSeoTitle(     $story[ "sub_headline" ]);
+    $article->setMetaTags(     $story[ "metatags"     ]);
     $article->setTeaserText(   $story[ "teaser_text"  ]);
     $article->createParagraphs($story[ "paragraphs"   ]);
 
     $response = $article->post();
+
+    Simple::write("zzz.json", $response);
 
     echo "done\n";
 
