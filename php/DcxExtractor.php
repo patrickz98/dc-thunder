@@ -198,10 +198,11 @@ class DcxExtractor
         }
 
         $story = [];
-        $story[ "headline"      ] = strip_tags($doc[ "fields" ][ "Headline"       ][ 0 ][ "value" ]);
-        $story[ "subHeadline"   ] = strip_tags($doc[ "fields" ][ "SubHeadline"    ][ 0 ][ "value" ]);
         $story[ "title"         ] = strip_tags($doc[ "fields" ][ "Title"          ][ 0 ][ "value" ]);
+        $story[ "headline"      ] = strip_tags($doc[ "fields" ][ "Headline"       ][ 0 ][ "value" ]);
+        $story[ "sub_headline"  ] = strip_tags($doc[ "fields" ][ "SubHeadline"    ][ 0 ][ "value" ]);
         $story[ "display_title" ] = strip_tags($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]);
+        $story[ "teaser_text"   ] = strip_tags($doc[ "fields" ][ "Highline"       ][ 0 ][ "value" ]);
         $story[ "paragraphs"    ] = $paragraphs;
 
         return $story;
