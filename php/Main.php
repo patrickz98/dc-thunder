@@ -38,7 +38,7 @@ function export($dcx_doc)
     $dcxExtractor = new DcxExtractor(Config::$dcx_server, Config::$dcx_auth);
     $story = $dcxExtractor->getStory($dcx_doc);
 
-    if (is_null($story))
+    if (! $story)
     {
         return;
     }
