@@ -45,14 +45,16 @@ function export($dcx_doc)
 
     echo "done\n";
 
-    echo Simple::prettyJson($story) . "\n";
-    exit();
+//    echo Simple::prettyJson($story) . "\n";
+//    exit();
 
     echo "--> Creating new thunder article... ";
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);
-    $article->setTitle($story[ "headline" ]);
-    $article->setSeoTitle($story[ "sub_headline" ]);
-    $article->createParagraphs($story[ "paragraphs" ]);
+    $article->setTitle(        $story[ "headline"     ]);
+    $article->setSeoTitle(     $story[ "sub_headline" ]);
+    $article->setTeaserText(   $story[ "teaser_text"  ]);
+    $article->createParagraphs($story[ "paragraphs"   ]);
+
     $response = $article->post();
 
     echo "done\n";

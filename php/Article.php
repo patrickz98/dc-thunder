@@ -8,6 +8,7 @@ class Article
     private $paragraphs;
     private $title;
     private $seoTitle;
+    private $teaserText;
 
     function __construct($thunder_server, $thunder_auth)
     {
@@ -24,6 +25,11 @@ class Article
     public function setSeoTitle($seoTitle)
     {
         $this->seoTitle = $seoTitle;
+    }
+
+    public function setTeaserText($text)
+    {
+        $this->teaserText = $text;
     }
 
     public function createParagraph($paragraph)
@@ -44,8 +50,9 @@ class Article
         $time = Simple::getTimeIso();
         // $time = Simple::getHumanTime();
 
-        $title = $this->title;
-        $seoTitle = $this->seoTitle;
+        $title      = $this->title;
+        $seoTitle   = $this->seoTitle;
+        $teaserText = $this->teaserText;
 
         if (! $title)
         {
@@ -57,13 +64,18 @@ class Article
             $seoTitle = "Default Seo Title: $time";
         }
 
+        if (! $teaserText)
+        {
+            $teaserText = $seoTitle;
+        }
+
         $article = [];
-        $article[ "type"              ] = [[ "target_id" => "article" ]];
-        $article[ "title"             ] = [[ "value"     => $title    ]];
-        $article[ "field_seo_title"   ] = [[ "value"     => $seoTitle ]];
-        $article[ "status"            ] = [[ "value"     => true      ]];
-        $article[ "field_teaser_text" ] = [[ "value"     => "STUB!"   ]];
-        $article[ "field_channel"     ] = [[ "target_id" => 1         ]];
+        $article[ "type"              ] = [[ "target_id" => "article"   ]];
+        $article[ "title"             ] = [[ "value"     => $title      ]];
+        $article[ "field_seo_title"   ] = [[ "value"     => $seoTitle   ]];
+        $article[ "status"            ] = [[ "value"     => true        ]];
+        $article[ "field_teaser_text" ] = [[ "value"     => $teaserText ]];
+        $article[ "field_channel"     ] = [[ "target_id" => 1           ]];
         $article[ "field_paragraphs"  ] = $this->paragraphs->build();
 
         $imagesMediaIds = $this->paragraphs->getImagesMediaIds();
