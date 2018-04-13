@@ -38,6 +38,9 @@ function export($dcx_doc)
     $dcxExtractor = new DcxExtractor(Config::$dcx_server, Config::$dcx_auth);
     $story = $dcxExtractor->getStory($dcx_doc);
 
+    Simple::logJson("story", $story);
+    exit(0);
+
     if (! $story)
     {
         return;

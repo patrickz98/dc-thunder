@@ -40,6 +40,11 @@ class Simple
         @fwrite($ofile, Simple::prettyJson($array));
         @fclose($ofile);
     }
+
+    public static function logJson($msg, $json = null)
+    {
+        echo "$msg: " . self::prettyJson($json) . "\n";
+    }
 }
 
 ?>

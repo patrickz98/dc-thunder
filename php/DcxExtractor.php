@@ -1,5 +1,7 @@
 <?php
 
+include("./DcxExtractorMetaTags.php");
+
 class DcxExtractor
 {
     private $dcx_server;
@@ -204,6 +206,7 @@ class DcxExtractor
             "sub_headline"  => strip_tags($doc[ "fields" ][ "SubHeadline"    ][ 0 ][ "value" ]),
             "display_title" => strip_tags($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]),
             "teaser_text"   => strip_tags($doc[ "fields" ][ "Highline"       ][ 0 ][ "value" ]),
+            "meta_tags"     => DcxExtractorMetaTags::getMetaTags($doc),
             "paragraphs"    => $paragraphs
         ];
 
