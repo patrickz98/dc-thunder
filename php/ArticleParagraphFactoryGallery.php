@@ -1,6 +1,6 @@
 <?php
 
-class ParagraphFactoryGallery extends ParagraphFactoryImage
+class ArticleParagraphFactoryGallery extends ArticleParagraphFactoryImage
 {
     private static function createGalleryMedia($server, $auth, $imagesSrc)
     {

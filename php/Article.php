@@ -14,7 +14,7 @@ class Article
     {
         $this->server     = $thunder_server;
         $this->auth       = $thunder_auth;
-        $this->paragraphs = new ParagraphFactory($thunder_server, $thunder_auth);
+        $this->paragraphs = new ArticleParagraphFactory($thunder_server, $thunder_auth);
     }
 
     public function setTitle($title)

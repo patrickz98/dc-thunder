@@ -1,6 +1,6 @@
 <?php
 
-class ParagraphFactoryText
+class ArticleParagraphFactoryText
 {
     public static function create($server, $auth, $htmlBody)
     {

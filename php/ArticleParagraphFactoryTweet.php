@@ -1,17 +1,17 @@
 <?php
 
-class ParagraphFactoryYoutube
+class ArticleParagraphFactoryTweet
 {
-    private static function createMedia($server, $auth, $youtubeUrl)
+    private static function createMedia($server, $auth, $tweet)
     {
         $url = "$server/entity/media?_format=json";
 
         $media = [
             "bundle" => [[
-                "target_id" => "video"
+                "target_id" => "twitter"
             ]],
-            "field_media_video_embed_field" => [[
-                "value" => $youtubeUrl
+            "field_url" => [[
+                "uri" => $tweet
             ]]
         ];
 
@@ -25,9 +25,9 @@ class ParagraphFactoryYoutube
 
         $data = [
             "type" => [[
-                "target_id" => "video"
+                "target_id" => "twitter"
             ]],
-            "field_video" => [[
+            "field_media" => [[
                 "target_id" => $targetId
             ]]
         ];

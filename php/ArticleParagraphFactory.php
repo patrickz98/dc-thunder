@@ -1,12 +1,12 @@
 <?php
 
-include("./ParagraphFactoryText.php");
-include("./ParagraphFactoryImage.php");
-include("./ParagraphFactoryTweet.php");
-include("./ParagraphFactoryYoutube.php");
-include("./ParagraphFactoryGallery.php");
+include("./ArticleParagraphFactoryText.php");
+include("./ArticleParagraphFactoryImage.php");
+include("./ArticleParagraphFactoryTweet.php");
+include("./ArticleParagraphFactoryYoutube.php");
+include("./ArticleParagraphFactoryGallery.php");
 
-class ParagraphFactory
+class ArticleParagraphFactory
 {
     private $server;
     private $auth;
@@ -23,7 +23,7 @@ class ParagraphFactory
 
     public function createText($htmlBody)
     {
-        $paragraph = ParagraphFactoryText::create
+        $paragraph = ArticleParagraphFactoryText::create
         (
             $this->server,
             $this->auth,
@@ -35,7 +35,7 @@ class ParagraphFactory
 
     public function createImage($imgSrc)
     {
-        $paragraph = ParagraphFactoryImage::create
+        $paragraph = ArticleParagraphFactoryImage::create
         (
             $this->server,
             $this->auth,
@@ -48,7 +48,7 @@ class ParagraphFactory
 
     public function createTweet($tweet)
     {
-        $paragraph = ParagraphFactoryTweet::create
+        $paragraph = ArticleParagraphFactoryTweet::create
         (
             $this->server,
             $this->auth,
@@ -60,7 +60,7 @@ class ParagraphFactory
 
     public function createYoutube($tweet)
     {
-        $paragraph = ParagraphFactoryYoutube::create
+        $paragraph = ArticleParagraphFactoryYoutube::create
         (
             $this->server,
             $this->auth,
@@ -72,7 +72,7 @@ class ParagraphFactory
 
     public function createGallery($imagesSrc)
     {
-        $paragraph = ParagraphFactoryGallery::createGallery
+        $paragraph = ArticleParagraphFactoryGallery::createGallery
         (
             $this->server,
             $this->auth,

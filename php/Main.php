@@ -7,11 +7,11 @@ include("./Config.php");
 include("./Simple.php");
 include("./Article.php");
 include("./DcxExtractor.php");
-include("./ParagraphFactory.php");
+include("./ArticleParagraphFactory.php");
 
 //function sampleArticle()
 //{
-//    $paragraphs = new ParagraphFactory();
+//    $paragraphs = new ArticleParagraphFactory();
 //
 //    for ($inx = 0; $inx < 4; $inx++)
 //    {
@@ -45,8 +45,8 @@ function export($dcx_doc)
 
     echo "done\n";
 
-//    echo Simple::prettyJson($story) . "\n";
-//    exit();
+    // echo Simple::prettyJson($story) . "\n";
+    // exit();
 
     echo "--> Creating new thunder article... ";
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);

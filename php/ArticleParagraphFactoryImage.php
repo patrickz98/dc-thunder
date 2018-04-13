@@ -1,6 +1,6 @@
 <?php
 
-class ParagraphFactoryImage
+class ArticleParagraphFactoryImage
 {
     private static function getBase64($imgSrc)
     {
@@ -21,7 +21,7 @@ class ParagraphFactoryImage
         $uploadInfo[ "filename" ] = [["value" => $fileName]];
         $uploadInfo[ "filemime" ] = [["value" => "image/jpeg"]];
         $uploadInfo[ "uri"      ] = [["value" => "public://patrick/$fileName"]];
-        $uploadInfo[ "data"     ] = [["value" => ParagraphFactoryImage::getBase64($fileSrc)]];
+        $uploadInfo[ "data"     ] = [["value" => ArticleParagraphFactoryImage::getBase64($fileSrc)]];
         $uploadInfo[ "uid"      ] = [
             [
                 "target_id" => 1,
@@ -36,7 +36,7 @@ class ParagraphFactoryImage
 
     private static function createFile($server, $auth, $fileSrc)
     {
-        $uploadInfo = ParagraphFactoryImage::build($server, $fileSrc);
+        $uploadInfo = ArticleParagraphFactoryImage::build($server, $fileSrc);
 
         $url = "$server/entity/file?_format=hal_json";
 
@@ -50,7 +50,7 @@ class ParagraphFactoryImage
     public static function createMedia($server, $auth, $fileSrc)
     {
         $url = "$server/entity/media?_format=json";
-        $target_id = ParagraphFactoryImage::createFile($server, $auth, $fileSrc);
+        $target_id = ArticleParagraphFactoryImage::createFile($server, $auth, $fileSrc);
 
         $media = [
             "bundle" => [[
@@ -66,7 +66,7 @@ class ParagraphFactoryImage
 
     public static function create($server, $auth, $fileSrc)
     {
-        $media = ParagraphFactoryImage::createMedia($server, $auth, $fileSrc);
+        $media = ArticleParagraphFactoryImage::createMedia($server, $auth, $fileSrc);
         $targetId = $media[ "mid" ][ 0 ][ "value" ];
 
         $data = [
