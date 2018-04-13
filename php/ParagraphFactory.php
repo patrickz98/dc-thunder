@@ -11,7 +11,7 @@ class ParagraphFactory
     private $server;
     private $auth;
     private $paragraphs;
-    private $imagesMediaIds
+    private $imagesMediaIds;
 
     function __construct($thunder_server, $thunder_auth)
     {
