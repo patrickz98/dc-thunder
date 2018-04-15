@@ -82,12 +82,13 @@ class Article
         $article[ "status"            ] = [[ "value"     => true            ]];
         $article[ "field_teaser_text" ] = [[ "value"     => $teaserText     ]];
         $article[ "field_channel"     ] = [[ "target_id" => 1               ]];
-
-        // #### Metatags don't work --> try patch
-        $article[ "metatag"           ] =  [ "value"     => $this->metaTags ];
         $article[ "field_paragraphs"  ] = $this->paragraphs->build();
 
-        $imagesMediaIds = $this->paragraphs->getImagesMediaIds();
+        // #### Metatags don't work --> try patch
+        $article[ "metatag"           ] = [ "value"     => $this->metaTags ];
+        $article[ "field_meta_tags"   ] = [ "Metatags are normalized in the metatag field." ];
+
+        $imagesMediaIds = $this->paragraphs->getImageMediaIds();
 
         if ($imagesMediaIds[ 0 ])
         {

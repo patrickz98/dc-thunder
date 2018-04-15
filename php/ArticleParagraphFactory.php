@@ -112,7 +112,7 @@ class ArticleParagraphFactory
         }
     }
 
-    public function getImagesMediaIds()
+    public function getImageMediaIds()
     {
         return $this->imagesMediaIds;
     }
