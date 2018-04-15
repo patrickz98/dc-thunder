@@ -81,6 +81,12 @@ class DcxExtractorMetaTags
         // Simple::logJson("metaTags", $metaTags);
         // exit(0);
 
-        return $metaTags;
+//        return $metaTags;
+
+        return [
+            "title" => "| Patrick Thunder Test Site 12345",
+            "shortlink" => "http://localhost/thunder/",
+            "canonical_url" => "http://localhost/thunder/"
+        ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-class PatchArticle
+class ArticlePatch
 {
     private $server;
     private $auth;

@@ -85,8 +85,8 @@ class Article
         $article[ "field_paragraphs"  ] = $this->paragraphs->build();
 
         // #### Metatags don't work --> try patch
-        $article[ "metatag"           ] = [ "value"     => $this->metaTags ];
-        $article[ "field_meta_tags"   ] = [ "Metatags are normalized in the metatag field." ];
+        // $article[ "metatag"           ] = [ "value"     => $this->metaTags ];
+        // $article[ "field_meta_tags"   ] = [ "Metatags are normalized in the metatag field." ];
 
         $imagesMediaIds = $this->paragraphs->getImageMediaIds();
 
@@ -96,7 +96,7 @@ class Article
         }
 
         // Simple::logJson("article", $article);
-        Simple::write("zzz-article.json", $article);
+        Simple::write("zzz-post.json", $article);
 
         return $article;
     }
@@ -106,9 +106,17 @@ class Article
         $url = $this->server . "/node?_format=json";
         $response = Curl::post($url, $this->auth, $this->build());
 
-        // echo "response: " . Simple::prettyJson($response) . "\n";
+        // Simple::logJson("response", $response);
+        Simple::write("zzz-response.json", $response);
 
         return $response;
+    }
+
+    public function patch($patch)
+    {
+        // #### Metatags hack
+        $patcher = new ArticlePatch(Config::$thunder_server, Config::$thunder_auth);
+        $patcher->patch($patch);
     }
 }
 
