@@ -19,5 +19,6 @@ array_push($bla, "test");
 
 print_r($bla);
 
-print_r(array_merge($var, $patch));
+//print_r(array_merge($var, $patch));
+print_r(array_merge_recursive($var, $patch));
 

@@ -73,7 +73,7 @@ class DcxExtractorMetaTags
             }
         }
 
-        $joinedTags = join(", ", $metaTagsAll);
+        $joinedTags = join(" ", $metaTagsAll);
 //        $metaTags[ "article_tag"   ] = $joinedTags;
         $metaTags[ "keywords"      ] = $joinedTags;
         $metaTags[ "news_keywords" ] = $joinedTags;
@@ -81,12 +81,6 @@ class DcxExtractorMetaTags
         // Simple::logJson("metaTags", $metaTags);
         // exit(0);
 
-//        return $metaTags;
-
-        return [
-            "title" => "| Patrick Thunder Test Site 12345",
-            "shortlink" => "http://localhost/thunder/",
-            "canonical_url" => "http://localhost/thunder/"
-        ];
+        return $metaTags;
     }
 }

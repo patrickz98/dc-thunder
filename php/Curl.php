@@ -13,6 +13,7 @@ class Curl
         curl_setopt($curl, CURLOPT_HTTPHEADER,     $headers);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST,  "GET");
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 
         if ($auth)
         {

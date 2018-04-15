@@ -4,6 +4,7 @@ class Article
 {
     private $server;
     private $auth;
+    private $nodeId;
 
     private $paragraphs;
     private $title;
@@ -49,6 +50,11 @@ class Article
         {
             $this->createParagraph($paragraph);
         }
+    }
+
+    public function getNodeId()
+    {
+        return $this->nodeId;
     }
 
     private function build()
@@ -109,14 +115,20 @@ class Article
         // Simple::logJson("response", $response);
         Simple::write("zzz-response.json", $response);
 
-        return $response;
+        $this->nodeId = $response[ "nid" ][ 0 ][ "value" ];
+
+        return $this->nodeId;
     }
 
-    public function patch($patch)
+    public function patch($patch, $nodeId = null)
     {
-        // #### Metatags hack
+        if (! $nodeId)
+        {
+            $nodeId = $this->nodeId;
+        }
+
         $patcher = new ArticlePatch(Config::$thunder_server, Config::$thunder_auth);
-        $patcher->patch($patch);
+        $patcher->patch($patch, $nodeId);
     }
 }
 

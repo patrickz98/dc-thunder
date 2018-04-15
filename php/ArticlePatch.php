@@ -11,18 +11,21 @@ class ArticlePatch
         $this->auth   = $thunder_auth;
     }
 
-    public function patch($metatags)
+    public function patch($patch, $nodeId)
     {
-        // $url = $this->server . "/node/$nodeId?_format=json";
-        $url = $this->server . "/default-seo-title-2018-04-13t1153570000?_format=json";
+        $url = $this->server . "/node/$nodeId?_format=json";
 
-        $old = Curl::get($url, Config::$dcx_auth);
-        Simple::write("zzz-article-old.json", $old);
-        $old[ "metatag" ][ "value" ] += $metatags;
+        $pre = Curl::get($url, Config::$dcx_auth);
+        //unset($pre[ "metatag" ][ "value" ][ "og_updated_time" ]);
+        //unset($pre[ "metatag" ][ "value" ][ "keywords" ]);
+        //unset($pre[ "field_meta_tags" ]);
 
-        $response = Curl::patch($url, $this->auth, $old);
+        $post = array_merge_recursive($pre, $patch);
+        //$post = array_merge($pre, $patch);
+        $response = Curl::patch($url, $this->auth, $post);
 
-        Simple::write("zzz-article-old-patch.json", $old);
-        Simple::write("zzz-article-patch-response.json", $response);
+        Simple::write("zzz-patch-pre.json",      $pre);
+        Simple::write("zzz-patch-post.json",     $post);
+        Simple::write("zzz-patch-response.json", $response);
     }
 }

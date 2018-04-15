@@ -60,11 +60,38 @@ function export($dcx_doc)
     $article->setTeaserText(   $story[ "teaser_text"  ]);
     $article->createParagraphs($story[ "paragraphs"   ]);
 
-    $response = $article->post();
+    $nodeId = $article->post();
 
     echo "done\n";
 
-    echo "--> url=" . Config::$thunder_server . "/node/" . $response[ "nid" ][ 0 ][ "value" ] . "\n";
+    echo "--> Patching metatags... ";
+
+    // #### Metatags hack
+    $metatagsPatch = [
+        "metatag" => [
+            "value" => [
+                "keywords" => "Keyword1 Keyword2 Keyword3"
+            ]
+        ]
+    ];
+
+//    $article->patch($metatagsPatch, 11);
+
+//    $metatagsPatch = [
+//        "metatag" => [
+//            "value" => $story[ "metatags" ]
+//        ]
+//    ];
+
+//    $metatagsPatch = [
+//        "field_meta_tags" =>  [ "keyword1, keyword2" ]
+//    ];
+
+    $article->patch($metatagsPatch, $nodeId);
+
+    echo "done\n";
+
+    echo "--> url=" . Config::$thunder_server . "/node/$nodeId\n";
 
     // echo "thunder: " . Simple::prettyJson($response) . "\n";
     // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
