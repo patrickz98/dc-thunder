@@ -120,7 +120,24 @@ class Article
         return $this->nodeId;
     }
 
-    public function patch($patch, $nodeId = null)
+    public function patch($patch, $nodeId = null, $override = false)
+    {
+        if (! $nodeId)
+        {
+            $nodeId = $this->nodeId;
+        }
+
+        if (! $nodeId)
+        {
+            return null;
+        }
+
+        $patcher = new ArticlePatch(Config::$thunder_server, Config::$thunder_auth);
+        $patcher->patch($patch, $nodeId, $override);
+    }
+
+    /*
+    public function patchAsHalJson($patch, $nodeId = null)
     {
         if (! $nodeId)
         {
@@ -128,8 +145,9 @@ class Article
         }
 
         $patcher = new ArticlePatch(Config::$thunder_server, Config::$thunder_auth);
-        $patcher->patch($patch, $nodeId);
+        $patcher->patchAsHalJson($patch, $nodeId);
     }
+    */
 }
 
 ?>

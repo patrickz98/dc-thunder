@@ -64,7 +64,7 @@ function export($dcx_doc)
 
     echo "done\n";
 
-    echo "--> Patching metatags... ";
+//    echo "--> Patching metatags... ";
 
     // #### Metatags hack
     $metatagsPatch = [
@@ -88,8 +88,15 @@ function export($dcx_doc)
 //    ];
 
     $article->patch($metatagsPatch, $nodeId);
+//    $article->patch(
+//    [
+//        "field_seo_title" => [
+//            "value" => "Test"
+//        ]
+//    ], true, $nodeId);
+    //$article->patchAsHalJson([ "keywords" => "Keyword1 Keyword2 Keyword3" ], $nodeId);
 
-    echo "done\n";
+//    echo "done\n";
 
     echo "--> url=" . Config::$thunder_server . "/node/$nodeId\n";
 
