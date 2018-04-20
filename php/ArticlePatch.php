@@ -30,7 +30,14 @@ class ArticlePatch
             $post = array_merge_recursive($pre, $patch);
         }
 
-        // unset($post[ "field_seo_title" ]);
+        $post = [
+            "metatag" => [
+                "value" => array_merge($pre[ "metatag" ][ "value" ], $patch[ "metatag" ][ "value" ])
+            ]
+        ];
+
+        // $post = $patch;
+        $post[ "type" ] = $pre[ "type" ];
 
         $response = Curl::patch($url, $this->auth, $post);
 

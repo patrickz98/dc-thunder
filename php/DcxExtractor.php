@@ -224,7 +224,6 @@ class DcxExtractor
         // $getFile = function($fileId) { return $this->getFile($fileId); };
 
         $doc = $this->getDoc($docId);
-        Simple::write("zzz-dcx-doc-tmp.json", $doc);
 
         if ($doc[ "status" ] >= 400)
         {

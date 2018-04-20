@@ -12,7 +12,7 @@ include("./ArticlePatch.php");
 include("./DcxFeedReader.php");
 
 // #### Metatags hack
-function patchMetatags(Article $article)
+function patchMetatags(Article $article = null)
 {
 //    $article->patch(
 //    [
@@ -33,15 +33,22 @@ function patchMetatags(Article $article)
 //
 //    $article->patchAsHalJson([ "keywords" => "Keyword1 Keyword2 Keyword3" ]);
 
+    if (! $article)
+    {
+        $article = new Article(Config::$thunder_server, Config::$thunder_auth);
+    }
+
     echo "--> Patching metatags... ";
 
     $metatagsPatch = [
         "metatag" => [
-            "value" => "Keyword1 Keyword2"
+            "value" => [
+                "keywords" => "Keyword1, Keyword2, Keyword3"
+            ]
         ]
     ];
 
-    $article->patch($metatagsPatch);
+    $article->patch($metatagsPatch, 286);
 
     echo "done\n";
 }
@@ -75,8 +82,6 @@ function export($dcx_doc)
     $article->createParagraphs($story[ "paragraphs"     ]);
 
     $nodeId = $article->post();
-    patchMetatags($article);
-
     echo "done\n";
 
     echo "--> url=" . Config::$thunder_server . "/node/$nodeId\n";
@@ -112,8 +117,10 @@ function main()
     }
 }
 
-main();
+//main();
 //$feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
 //exportRssFeed($feedUrl);
+
+//patchMetatags();
 
 ?>
