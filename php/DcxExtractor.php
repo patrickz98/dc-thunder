@@ -123,6 +123,12 @@ class DcxExtractor
             ];
         }
 
+        if ($attributes[ "href" ])
+        {
+            // STUB!
+            return null;
+        }
+
         if ($attributes[ "class" ] === "title")
         {
             // STUB!
