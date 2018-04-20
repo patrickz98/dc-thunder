@@ -32,6 +32,44 @@ include("./ArticlePatch.php");
 //    // Simple::write("article.json", $response);
 //}
 
+// #### Metatags hack
+function patchMetatags(DcxExtractor $article)
+{
+    echo "--> Patching metatags... ";
+
+//    $metatagsPatch = [
+//        "metatag" => [
+//            "value" => $story[ "metatags" ]
+//        ]
+//    ];
+
+//    $metatagsPatch = [
+//        "field_meta_tags" =>  [ "keyword1, keyword2" ]
+//    ];
+
+//    $article->patch($metatagsPatch, $nodeId);
+//    $article->patch(
+//    [
+//        "field_seo_title" => [
+//            "value" => "Test"
+//        ]
+//    ], true, $nodeId);
+
+//    $article->patch($metatagsPatch);
+
+//    $metatagsPatch = [
+//        "metatag" => [
+//            "value" => [
+//                "keywords" => "Keyword1 Keyword2 Keyword3"
+//            ]
+//        ]
+//    ];
+//
+//    $article->patchAsHalJson([ "keywords" => "Keyword1 Keyword2 Keyword3" ]);
+
+    echo "done\n";
+}
+
 function export($dcx_doc)
 {
     echo "--> Extracting docId=$dcx_doc... ";
@@ -63,40 +101,6 @@ function export($dcx_doc)
     $nodeId = $article->post();
 
     echo "done\n";
-
-//    echo "--> Patching metatags... ";
-
-    // #### Metatags hack
-    $metatagsPatch = [
-        "metatag" => [
-            "value" => [
-                "keywords" => "Keyword1 Keyword2 Keyword3"
-            ]
-        ]
-    ];
-
-//    $article->patch($metatagsPatch, 11);
-
-//    $metatagsPatch = [
-//        "metatag" => [
-//            "value" => $story[ "metatags" ]
-//        ]
-//    ];
-
-//    $metatagsPatch = [
-//        "field_meta_tags" =>  [ "keyword1, keyword2" ]
-//    ];
-
-    $article->patch($metatagsPatch, $nodeId);
-//    $article->patch(
-//    [
-//        "field_seo_title" => [
-//            "value" => "Test"
-//        ]
-//    ], true, $nodeId);
-    //$article->patchAsHalJson([ "keywords" => "Keyword1 Keyword2 Keyword3" ], $nodeId);
-
-//    echo "done\n";
 
     echo "--> url=" . Config::$thunder_server . "/node/$nodeId\n";
 
