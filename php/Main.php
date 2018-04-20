@@ -9,6 +9,7 @@ include("./Article.php");
 include("./DcxExtractor.php");
 include("./ArticleParagraphFactory.php");
 include("./ArticlePatch.php");
+include("./DcxFeedReader.php");
 
 //function sampleArticle()
 //{
@@ -92,11 +93,11 @@ function export($dcx_doc)
 
     echo "--> Creating new thunder article... ";
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);
-    $article->setTitle(        $story[ "headline"     ]);
-    $article->setSeoTitle(     $story[ "sub_headline" ]);
-    $article->setMetaTags(     $story[ "metatags"     ]);
-    $article->setTeaserText(   $story[ "teaser_text"  ]);
-    $article->createParagraphs($story[ "paragraphs"   ]);
+    $article->setTitle(        $story[ "_display_title" ]);
+    $article->setSeoTitle(     $story[ "sub_headline"   ]);
+    $article->setMetaTags(     $story[ "metatags"       ]);
+    $article->setTeaserText(   $story[ "teaser_text"    ]);
+    $article->createParagraphs($story[ "paragraphs"     ]);
 
     $nodeId = $article->post();
 
@@ -106,6 +107,18 @@ function export($dcx_doc)
 
     // echo "thunder: " . Simple::prettyJson($response) . "\n";
     // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
+}
+
+function exportRssFeed($feed)
+{
+    $docIds = DcxFeedReader::getDocIds($feed);
+
+    Simple::write("zzz-exported-docs.json", $docIds);
+
+    foreach ($docIds as $dcx_doc)
+    {
+        export($dcx_doc);
+    }
 }
 
 function main()
@@ -124,5 +137,7 @@ function main()
 }
 
 main();
+//$feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
+//exportRssFeed($feedUrl);
 
 ?>

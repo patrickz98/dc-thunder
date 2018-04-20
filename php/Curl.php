@@ -6,7 +6,8 @@ class Curl
     {
         $headers = [
             "Content-Type: application/json",
-            "Accept: application/json"
+            "Accept: application/json",
+            "Cookie: dcx_app_demo=mkcmbs8h7stgkep8st1ttiqo7p"
         ];
 
         $curl = curl_init($url);
@@ -31,6 +32,16 @@ class Curl
         curl_close($curl);
 
         return Simple::parseJson($result);
+    }
+
+    public static function getRaw($url, $auth)
+    {
+        $curl = Curl::curl_init($url, $auth);
+
+        $result = curl_exec($curl);
+        curl_close($curl);
+
+        return $result;
     }
 
     public static function post($url, $auth, $data)

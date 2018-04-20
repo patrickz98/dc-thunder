@@ -184,12 +184,11 @@ class DcxExtractor
             return null;
         }
 
-        $galleries = $this->getGalleries($doc);
-        $imageIds  = $this->getImages($doc[ "fields" ][ "Image" ]);
-
+        $galleries  = $this->getGalleries($doc);
+        $imageIds   = $this->getImages($doc[ "fields" ][ "Image" ]);
         $htmlBody   = $doc[ "fields" ][ "body" ][ 0 ][ "value" ];
-        $paragraphs = [];
 
+        $paragraphs = [];
         foreach($this->htmlBodyToJson($htmlBody) as $dcxParagraph)
         {
             $paragraph = $this->extractData($dcxParagraph, $imageIds, $galleries);
@@ -209,6 +208,9 @@ class DcxExtractor
             "metatags"      => DcxExtractorMetaTags::getMetaTags($doc),
             "paragraphs"    => $paragraphs
         ];
+
+        Simple::write("zzz-dcx-doc-tmp.json",   $doc);
+        Simple::write("zzz-dcx-story-tmp.json", $story);
 
         return $story;
     }
