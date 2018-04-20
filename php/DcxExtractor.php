@@ -101,7 +101,7 @@ class DcxExtractor
         return $galleries;
     }
 
-    private function extractData($dcxParagraph, $imageIds, $galleries)
+    private function transformParagraph($dcxParagraph, $imageIds, $galleries)
     {
         $attributes = $dcxParagraph[ "@attributes" ];
 
@@ -169,6 +169,54 @@ class DcxExtractor
         return null;
     }
 
+    private function getParagraphs($doc)
+    {
+        $galleries  = $this->getGalleries($doc);
+        $imageIds   = $this->getImages($doc[ "fields" ][ "Image" ]);
+        $body       = $doc[ "fields" ][ "body" ];
+
+        $paragraphs = [];
+
+        foreach ($body as $bodyPart)
+        {
+            $content = $bodyPart[ "value" ];
+            // echo substr($content, 0, 40) . "\n";
+
+            if (substr($content, 0, 1) === "<")
+            {
+                // echo "Process as HTML\n";
+                foreach($this->htmlBodyToJson($body) as $dcxParagraph)
+                {
+                    $paragraph = $this->transformParagraph($dcxParagraph, $imageIds, $galleries);
+
+                    if ($paragraph)
+                    {
+                        array_push($paragraphs, $paragraph);
+                    }
+                }
+            }
+            else
+            {
+                // echo "Process as Text\n";
+                // echo $content . "\n";
+
+                $htmlText = "";
+
+                foreach (explode("\n", $content) as $pTag)
+                {
+                    $htmlText .= "<p>$pTag</p>";
+                }
+
+                array_push($paragraphs, [
+                    "type" => "text",
+                    "text" => $htmlText
+                ]);
+            }
+        }
+
+        return $paragraphs;
+    }
+
     public function getStory($docId)
     {
         // $getDoc  = function($docId)  { return $this->getDoc($docId);   };
@@ -184,21 +232,6 @@ class DcxExtractor
             return null;
         }
 
-        $galleries  = $this->getGalleries($doc);
-        $imageIds   = $this->getImages($doc[ "fields" ][ "Image" ]);
-        $htmlBody   = $doc[ "fields" ][ "body" ][ 0 ][ "value" ];
-
-        $paragraphs = [];
-        foreach($this->htmlBodyToJson($htmlBody) as $dcxParagraph)
-        {
-            $paragraph = $this->extractData($dcxParagraph, $imageIds, $galleries);
-
-            if ($paragraph)
-            {
-                array_push($paragraphs, $paragraph);
-            }
-        }
-
         $story = [
             "title"         => strip_tags($doc[ "fields" ][ "Title"          ][ 0 ][ "value" ]),
             "headline"      => strip_tags($doc[ "fields" ][ "Headline"       ][ 0 ][ "value" ]),
@@ -206,11 +239,13 @@ class DcxExtractor
             "display_title" => strip_tags($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]),
             "teaser_text"   => strip_tags($doc[ "fields" ][ "Highline"       ][ 0 ][ "value" ]),
             "metatags"      => DcxExtractorMetaTags::getMetaTags($doc),
-            "paragraphs"    => $paragraphs
+            "paragraphs"    => self::getParagraphs($doc)
         ];
 
         Simple::write("zzz-dcx-doc-tmp.json",   $doc);
         Simple::write("zzz-dcx-story-tmp.json", $story);
+
+//        exit(0);
 
         return $story;
     }

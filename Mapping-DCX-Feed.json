@@ -1,0 +1,353 @@
+{
+    "@context": "\/dcx\/api\/_context",
+    "_files_index": {
+        "variant_type": []
+    },
+    "_id": "dcxapi:document\/doc6zshmf2wn03vxpsrabs",
+    "_links": {
+        "document_doctorprofs": {
+            "_url": "\/dcx\/api\/doctorprof?q[doc_id]=doc6zshmf2wn03vxpsrabs",
+            "_entries_type": "dcx:doctorprof"
+        },
+        "document_doctoutags": {
+            "_url": "\/dcx\/api\/doctoutag?q[doc_id]=doc6zshmf2wn03vxpsrabs",
+            "_entries_type": "dcx:doctoutag"
+        }
+    },
+    "_type": "dcx:document",
+    "fields": {
+        "CharCount": [
+            {
+                "_type": "xsd:nonNegativeInteger",
+                "value": "3159"
+            }
+        ],
+        "City": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xi3ldzmncg99bos4d8",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Berlin"
+            }
+        ],
+        "Classification": [
+            {
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_583048a28efd60302d53e517b07f55ad",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "listid": "dc_se_thesterm",
+                "percent": "57",
+                "score": "1",
+                "value": "CDU"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_543bb99f83d9f222037d631cdd90b0b4",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "listid": "dc_se_thesterm",
+                "percent": "27",
+                "score": "0.469531",
+                "value": "Innerparteiliche Demokratie"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/dc_se_thesterm_aaaea67aa9b746fde7f6631dc3682563",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "listid": "dc_se_thesterm",
+                "percent": "16",
+                "score": "0.28352",
+                "value": "Parteitage"
+            }
+        ],
+        "Country": [
+            {
+                "_id": "dcxapi:tm_topic\/country-DE",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Deutschland"
+            }
+        ],
+        "DateCreated": [
+            {
+                "_type": "xsd:dateTime",
+                "value": "2018-04-20T06:15:30Z"
+            }
+        ],
+        "DateImported": [
+            {
+                "_type": "xsd:dateTime",
+                "value": "2018-04-20T08:21:18+02:00"
+            }
+        ],
+        "Hotfolder": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6r8wiyanfxdsthnwux",
+                "_type": "dcx:tm_topic",
+                "feed_id": "feed_www.ksta.de_cd99066d2f5a11cf33a97555515d2c74",
+                "value": "K\u00f6lner Stadt-Anzeiger"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt63lzrg9ezkglddxs4r8",
+                "_type": "dcx:tm_topic",
+                "hotfolder_id": "fetch_feed_de",
+                "value": "RSS\/Atom feed downloads (german)"
+            }
+        ],
+        "Identifier": [
+            {
+                "value": "ksta-30044054-de640b4ea23057a1d3c9e9ead42eb64d"
+            }
+        ],
+        "Keywords": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt609n3hqgefa15jw64k48",
+                "_type": "dcx:tm_topic",
+                "value": "deutsch"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6r8ytae41yoirz5zeqp",
+                "_type": "dcx:tm_topic",
+                "value": "Lokalmedien"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xoo8fqx5cjutvx6b4b",
+                "_type": "dcx:tm_topic",
+                "value": "K\u00f6ln"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt63ysq7qu2dh11zi75130",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "6",
+                "value": "Merkel"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xj4h9m36btxcel811",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "4",
+                "value": "gesellschaft"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5z0dy8kibybczwl7gmx",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "4",
+                "value": "Recht"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt65icejyo0w01fvr4hjee",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "IV"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5yp8ts53h5y19kx7vm1f",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Debatte"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6azls6467692svkkiov",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Frage"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6ro5zzltd202iorc3go",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Vertreter"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xvc3wia0u11hf29h6mt",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Politik"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt64ltnfgreutlt2e1455",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Ergebnis"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt65b25dmp8aekhsq775f",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Werte"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6k0e7a5vnup1cgrthla0",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "distanz"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xzcovc6akmys254jr",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Kommunikation"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6234ibfkogk1gi3h8c2m",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Profil"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6hkzk8vn4mqg88jk335",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Jahr"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6hif2g1z3k91g8blh7ww",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "artikel"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt67fkfc3sbsk5lagnbz7",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "1",
+                "value": "Kritik"
+            }
+        ],
+        "Language": [
+            {
+                "_id": "dcxapi:tm_topic\/lang-de",
+                "_type": "dcx:tm_topic",
+                "value": "Deutsch"
+            }
+        ],
+        "Organization": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt5z89zmrmqn7h9jte5gk",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "16",
+                "value": "CDU"
+            }
+        ],
+        "Owner": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xi3dyebfx5bm1w440h",
+                "_type": "dcx:tm_topic",
+                "value": "demo"
+            }
+        ],
+        "Person": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt66kceou8jnc18bykzfmj",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Ingo Senftleben"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xik1a15dc91bhfei810",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Horst Seehofer"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xnyco4933sqvcyjsy",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Jens Spahn"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xi4c3yv5k3rx26y70l",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Angela Merkel"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt5xzdwx9q5k186eljr",
+                "_type": "dcx:tm_topic",
+                "generator": "com.digicol.se",
+                "score": "2",
+                "value": "Annegret Kramp-Karrenbauer"
+            }
+        ],
+        "Provider": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6r8wiy94gip1f9winux",
+                "_type": "dcx:tm_topic",
+                "value": "ksta.de \u2013 RSS-Feed Nachrichten"
+            }
+        ],
+        "Title": [
+            {
+                "value": "CDU-Generalsekret\u00e4rin: Kramp-Karrenbauer kritisiert Seehofer und Spahn"
+            }
+        ],
+        "Transcript": [
+            {
+                "value": "Berlin - Die neue CDU-Generalsekret\u00e4rin Annegret Kramp-Karrenbauer hat gravierende Kommunikationsdefizite ihrer Partei festgestellt und ist damit auch auf Distanz zur Parteivorsitzenden Angela Merkel gegangen. \u201eWas in den letzten Jahren zu kurz gekommen ist, ist die Erkl\u00e4rung, aus welchem unserer Werte sich welche Entscheidung abgeleitet hat\u201c, sagte Kramp-Karrenbauer dieser Zeitung.\u00a0\u201eEs geht nicht darum, unseren Kurs nach rechts oder links zu ver\u00e4ndern. Es geht darum, deutlich zu machen, was unsere Kernachsen sind und was wir daraus schlussfolgern. Das hat viel mit Kommunikation zu tun.\u201c Die CDU m\u00fcsse ihr Profil sch\u00e4rfen: \u201eDie Fu\u00dfspuren, die die CDU in den letzten Jahren hinterlassen hat, waren nicht so kr\u00e4ftig wie sie das h\u00e4tten sein m\u00fcssen.\u201c \u201eGrundentscheidung in der Fl\u00fcchtlingspolitik richtig\u201cDie CDU hatte bei der Bundestagswahl im vergangenen Jahr auf ein historisch schlechtes Ergebnis eingefahren. Die umstrittene Fl\u00fcchtlingspolitik der Kanzlerin verteidigte Kramp-Karrenbauer mit Einschr\u00e4nkungen: \u201eDie Grundentscheidung in der Fl\u00fcchtlingspolitik fand ich richtig, auch wenn danach nicht alles reibungslos und gut gelaufen ist.\u201cDie CDU m\u00fcsse nun Antworten auf die aufgeworfen geben, was die Gesellschaft zusammenhalte. Kramp-Karrenbauer gilt in der CDU derzeit als aussichtsreichste Kandidatin auf die Nachfolge Merkels als Parteichefin sowie als wahrscheinliche n\u00e4chste Kanzlerkandidatin. Eine Abl\u00f6sung Merkel zum jetzigen Zeitpunkt lehnte Kramp-Karrenbauer ab.Kritik an Spahn und SeehoferDie ehemalige saarl\u00e4ndische Ministerpr\u00e4sidentin wies auch Gesundheitsminister Jens Spahn in die Schranken, dem ebenfalls Ambitionen auf den CDU-Parteivorsitz nachgesagt werden. Dessen \u00c4u\u00dferung, dass Hartz IV die elementaren Bed\u00fcrfnisse decke, sei zwar inhaltlich richtig gewesen, im Ton aber verfehlt. CSU-Chef Horst Seehofer warf Kramp-Karrenbauer vor, mit dem Hinweis, der Islam geh\u00f6re nicht zu Deutschland die falsche Debatte zu f\u00fchren. Diese Fragestellung f\u00fchre nicht weiter. \u201eDie entscheidende Frage ist doch: Wie muss ein Islam aussehen, der mit einer offenen Gesellschaft kompatibel ist?\u201c, sagte sie.Deutlich distanzierte sich Kramp-Karrenbauer von \u00dcberlegungen des Brandenburger CDU-Vorsitzenden Ingo Senftleben zu einer Regierungszusammenarbeit mit der Linkspartei und zu Gespr\u00e4chen mit der AfD. \u201eWir lehnen eine Zusammenarbeit mit Linken und AfD klar ab\u201c, sagte sie. Es gehe darum \u201edie Mitte zu st\u00e4rken und die R\u00e4nder zur\u00fcckzudr\u00e4ngen. Das erreicht man nicht dadurch, dass man \u00fcberlegt, mit wem man von links oder rechts Gespr\u00e4che f\u00fchrt.\u201cEinzelne umg\u00e4ngliche Vertreter \u00e4nderten nichts an der grunds\u00e4tzlichen Ausrichtung der Parteien. Senftleben hatte Gespr\u00e4che mit Linkspartei und AfD angesichts der geringen Zustimmungswerte der CDU in ostdeutschen L\u00e4ndern als realistisch und pragmatisch bezeichnet. Kramp-Karrenbauer sagte, die CDU versuche die W\u00e4hler von der AfD zur\u00fcckzuholen, die sich abgewandt h\u00e4tten, weil sie sich von der Politik vernachl\u00e4ssigt f\u00fchlten. \u201eDie mit sehr rechtem und rechtsradikalem Gedankengut sind f\u00fcr die CDU nicht gewinnbar. Die will ich auch gar nicht in unseren Reihen haben.\u201c"
+            }
+        ],
+        "Type": [
+            {
+                "_id": "dcxapi:tm_topic\/documenttype-feed_entry",
+                "_type": "dcx:tm_topic",
+                "value": "RSS\/Atom Feed Eintrag"
+            }
+        ],
+        "URI": [
+            {
+                "value": "https:\/\/www.ksta.de\/politik\/cdu-generalsekretaerin-kramp-karrenbauer-kritisiert-seehofer-und-spahn-30044054?dmcid=f_yho_ksta.de+%3F+RSS-Feed+Nachrichten"
+            }
+        ],
+        "WordCount": [
+            {
+                "_type": "xsd:nonNegativeInteger",
+                "value": "444"
+            }
+        ],
+        "_display_title": [
+            {
+                "value": "CDU-Generalsekret\u00e4rin: Kramp-Karrenbauer kritisiert Seehofer und Spahn"
+            }
+        ],
+        "body": [
+            {
+                "_type": "xhtml",
+                "lang": "",
+                "value": "Die neue CDU-Generalsekret\u00e4rin Annegret Kramp-Karrenbauer hat gravierende Kommunikationsdefizite ihrer Partei festgestellt und ist damit auch auf Distanz zur Parteivorsitzenden Angela Merkel gegangen. \u201eWas in den letzten Jahren zu kurz gekommen ist, ist die Erkl\u00e4rung, aus welchem unserer Werte sich welche Entscheidung abgeleitet hat\u201c, sagte Kramp-Karrenbauer dieser Zeitung.\n\n\u00a0\u201eEs geht nicht darum, unseren Kurs nach rechts oder links zu ver\u00e4ndern. Es geht darum, deutlich zu machen, was unsere Kernachsen sind und was wir daraus schlussfolgern. Das hat viel mit Kommunikation zu tun.\u201c Die CDU m\u00fcsse ihr Profil sch\u00e4rfen: \u201eDie Fu\u00dfspuren, die die CDU in den letzten Jahren hinterlassen hat, waren nicht so kr\u00e4ftig wie sie das h\u00e4tten sein m\u00fcssen.\u201c\n\n\u201eGrundentscheidung in der Fl\u00fcchtlingspolitik richtig\u201c\n\nDie CDU hatte bei der Bundestagswahl im vergangenen Jahr auf ein historisch schlechtes Ergebnis eingefahren. Die umstrittene Fl\u00fcchtlingspolitik der Kanzlerin verteidigte Kramp-Karrenbauer mit Einschr\u00e4nkungen: \u201eDie Grundentscheidung in der Fl\u00fcchtlingspolitik fand ich richtig, auch wenn danach nicht alles reibungslos und gut gelaufen ist.\u201c\n\nDie CDU m\u00fcsse nun Antworten auf die aufgeworfen geben, was die Gesellschaft zusammenhalte. Kramp-Karrenbauer gilt in der CDU derzeit als aussichtsreichste Kandidatin auf die Nachfolge Merkels als Parteichefin sowie als wahrscheinliche n\u00e4chste Kanzlerkandidatin. Eine Abl\u00f6sung Merkel zum jetzigen Zeitpunkt lehnte Kramp-Karrenbauer ab.\n\nKritik an Spahn und Seehofer\n\nDie ehemalige saarl\u00e4ndische Ministerpr\u00e4sidentin wies auch Gesundheitsminister Jens Spahn in die Schranken, dem ebenfalls Ambitionen auf den CDU-Parteivorsitz nachgesagt werden. Dessen \u00c4u\u00dferung, dass Hartz IV die elementaren Bed\u00fcrfnisse decke, sei zwar inhaltlich richtig gewesen, im Ton aber verfehlt. CSU-Chef Horst Seehofer warf Kramp-Karrenbauer vor, mit dem Hinweis, der Islam geh\u00f6re nicht zu Deutschland die falsche Debatte zu f\u00fchren. Diese Fragestellung f\u00fchre nicht weiter. \u201eDie entscheidende Frage ist doch: Wie muss ein Islam aussehen, der mit einer offenen Gesellschaft kompatibel ist?\u201c, sagte sie.\n\nDeutlich distanzierte sich Kramp-Karrenbauer von \u00dcberlegungen des Brandenburger CDU-Vorsitzenden Ingo Senftleben zu einer Regierungszusammenarbeit mit der Linkspartei und zu Gespr\u00e4chen mit der AfD. \u201eWir lehnen eine Zusammenarbeit mit Linken und AfD klar ab\u201c, sagte sie. Es gehe darum \u201edie Mitte zu st\u00e4rken und die R\u00e4nder zur\u00fcckzudr\u00e4ngen. Das erreicht man nicht dadurch, dass man \u00fcberlegt, mit wem man von links oder rechts Gespr\u00e4che f\u00fchrt.\u201c\n\nEinzelne umg\u00e4ngliche Vertreter \u00e4nderten nichts an der grunds\u00e4tzlichen Ausrichtung der Parteien. Senftleben hatte Gespr\u00e4che mit Linkspartei und AfD angesichts der geringen Zustimmungswerte der CDU in ostdeutschen L\u00e4ndern als realistisch und pragmatisch bezeichnet. Kramp-Karrenbauer sagte, die CDU versuche die W\u00e4hler von der AfD zur\u00fcckzuholen, die sich abgewandt h\u00e4tten, weil sie sich von der Politik vernachl\u00e4ssigt f\u00fchlten. \u201eDie mit sehr rechtem und rechtsradikalem Gedankengut sind f\u00fcr die CDU nicht gewinnbar. Die will ich auch gar nicht in unseren Reihen haben.\u201c...<a href=\"https:\/\/www.ksta.de\/politik\/cdu-generalsekretaerin-kramp-karrenbauer-kritisiert-seehofer-und-spahn-30044054\">Lesen Sie den ganzen Artikel bei ksta<\/a>"
+            }
+        ]
+    },
+    "files": [],
+    "properties": {
+        "_created": "2018-04-20T08:21:18+02:00",
+        "_modcount": 2,
+        "_modified": "2018-04-20T08:21:19+02:00",
+        "_web_url": "\/dcx\/documents#\/doc\/doc6zshmf2wn03vxpsrabs",
+        "_web_url_ui": "\/dcx\/ui\/document\/doc6zshmf2wn03vxpsrabs",
+        "identifier": "ksta-30044054-de640b4ea23057a1d3c9e9ead42eb64d",
+        "pool_id": {
+            "_id": "dcxapi:pool\/feeds",
+            "_type": "dcx:pool"
+        }
+    }
+}

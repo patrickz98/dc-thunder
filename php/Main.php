@@ -93,7 +93,7 @@ function export($dcx_doc)
 
     echo "--> Creating new thunder article... ";
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);
-    $article->setTitle(        $story[ "_display_title" ]);
+    $article->setTitle(        $story[ "display_title" ]);
     $article->setSeoTitle(     $story[ "sub_headline"   ]);
     $article->setMetaTags(     $story[ "metatags"       ]);
     $article->setTeaserText(   $story[ "teaser_text"    ]);
