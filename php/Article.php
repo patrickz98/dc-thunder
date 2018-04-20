@@ -102,7 +102,7 @@ class Article
         }
 
         // Simple::logJson("article", $article);
-        Simple::write("zzz-post.json", $article);
+        // Simple::write("zzz-post.json", $article);
 
         return $article;
     }
@@ -113,7 +113,7 @@ class Article
         $response = Curl::post($url, $this->auth, $this->build());
 
         // Simple::logJson("response", $response);
-        Simple::write("zzz-response.json", $response);
+        // Simple::write("zzz-response.json", $response);
 
         $this->nodeId = $response[ "nid" ][ 0 ][ "value" ];
 

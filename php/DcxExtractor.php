@@ -179,13 +179,14 @@ class DcxExtractor
 
         foreach ($body as $bodyPart)
         {
+//            print_r($bodyPart);
             $content = $bodyPart[ "value" ];
             // echo substr($content, 0, 40) . "\n";
 
             if (substr($content, 0, 1) === "<")
             {
                 // echo "Process as HTML\n";
-                foreach($this->htmlBodyToJson($body) as $dcxParagraph)
+                foreach($this->htmlBodyToJson($content) as $dcxParagraph)
                 {
                     $paragraph = $this->transformParagraph($dcxParagraph, $imageIds, $galleries);
 
@@ -223,6 +224,7 @@ class DcxExtractor
         // $getFile = function($fileId) { return $this->getFile($fileId); };
 
         $doc = $this->getDoc($docId);
+        Simple::write("zzz-dcx-doc-tmp.json", $doc);
 
         if ($doc[ "status" ] >= 400)
         {
@@ -250,9 +252,8 @@ class DcxExtractor
             return null;
         }
 
-        Simple::write("zzz-dcx-doc-tmp.json",   $doc);
-        Simple::write("zzz-dcx-story-tmp.json", $story);
-
+//        Simple::write("zzz-dcx-doc-tmp.json",   $doc);
+//        Simple::write("zzz-dcx-story-tmp.json", $story);
 //        exit(0);
 
         return $story;

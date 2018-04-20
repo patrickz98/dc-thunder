@@ -30,7 +30,7 @@ class ArticlePatch
             $post = array_merge_recursive($pre, $patch);
         }
 
-        unset($post[ "field_seo_title" ]);
+        // unset($post[ "field_seo_title" ]);
 
         $response = Curl::patch($url, $this->auth, $post);
 

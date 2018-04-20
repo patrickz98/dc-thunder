@@ -12,21 +12,8 @@ include("./ArticlePatch.php");
 include("./DcxFeedReader.php");
 
 // #### Metatags hack
-function patchMetatags(DcxExtractor $article)
+function patchMetatags(Article $article)
 {
-    echo "--> Patching metatags... ";
-
-//    $metatagsPatch = [
-//        "metatag" => [
-//            "value" => $story[ "metatags" ]
-//        ]
-//    ];
-
-//    $metatagsPatch = [
-//        "field_meta_tags" =>  [ "keyword1, keyword2" ]
-//    ];
-
-//    $article->patch($metatagsPatch, $nodeId);
 //    $article->patch(
 //    [
 //        "field_seo_title" => [
@@ -45,6 +32,16 @@ function patchMetatags(DcxExtractor $article)
 //    ];
 //
 //    $article->patchAsHalJson([ "keywords" => "Keyword1 Keyword2 Keyword3" ]);
+
+    echo "--> Patching metatags... ";
+
+    $metatagsPatch = [
+        "metatag" => [
+            "value" => "Keyword1 Keyword2"
+        ]
+    ];
+
+    $article->patch($metatagsPatch);
 
     echo "done\n";
 }
@@ -71,13 +68,14 @@ function export($dcx_doc)
 
     echo "--> Creating new thunder article... ";
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);
-    $article->setTitle(        $story[ "display_title" ]);
-    $article->setSeoTitle(     $story[ "sub_headline"   ]);
+    $article->setTitle(        $story[ "display_title"  ]);
+    $article->setSeoTitle(     $story[ "display_title"  ]);
     $article->setMetaTags(     $story[ "metatags"       ]);
     $article->setTeaserText(   $story[ "teaser_text"    ]);
     $article->createParagraphs($story[ "paragraphs"     ]);
 
     $nodeId = $article->post();
+    patchMetatags($article);
 
     echo "done\n";
 
@@ -91,7 +89,7 @@ function exportRssFeed($feed)
 {
     $docIds = DcxFeedReader::getDocIds($feed);
 
-    Simple::write("zzz-exported-docs.json", $docIds);
+//    Simple::write("zzz-exported-docs.json", $docIds);
 
     foreach ($docIds as $dcx_doc)
     {
