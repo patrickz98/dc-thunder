@@ -45,6 +45,11 @@ class Simple
     {
         echo "$msg: " . self::prettyJson($json) . "\n";
     }
+
+    public static function cleanHtml($txt)
+    {
+        return html_entity_decode(strip_tags($txt));
+    }
 }
 
 ?>

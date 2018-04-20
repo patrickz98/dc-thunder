@@ -22,12 +22,14 @@ include("./Simple.php");
 ////print_r(array_merge($var, $patch));
 //print_r(array_merge_recursive($var, $patch));
 
-$xml = "<p>Test 1</p>";
-$xml2 = "Blabla <p>Test 2</p> Blabla";
+//$xml = "<p>Test 1</p>";
+//$xml2 = "Blabla <p>Test 2</p> Blabla";
+//
+//$xml = simplexml_load_string("<xml>$xml2</xml>");
+//
+//foreach($xml->children() as $dcxParagraph)
+//{
+//    echo "$dcxParagraph\n";
+//}
 
-$xml = simplexml_load_string("<xml>$xml2</xml>");
-
-foreach($xml->children() as $dcxParagraph)
-{
-    echo "$dcxParagraph\n";
-}
+echo html_entity_decode("FDP-Fraktionsvize f&uuml;r Neugliederung der Bundesl&auml;nder") . "\n";

@@ -233,11 +233,11 @@ class DcxExtractor
         }
 
         $story = [
-            "title"         => strip_tags($doc[ "fields" ][ "Title"          ][ 0 ][ "value" ]),
-            "headline"      => strip_tags($doc[ "fields" ][ "Headline"       ][ 0 ][ "value" ]),
-            "sub_headline"  => strip_tags($doc[ "fields" ][ "SubHeadline"    ][ 0 ][ "value" ]),
-            "display_title" => strip_tags($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]),
-            "teaser_text"   => strip_tags($doc[ "fields" ][ "Highline"       ][ 0 ][ "value" ]),
+            "title"         => Simple::cleanHtml($doc[ "fields" ][ "Title"          ][ 0 ][ "value" ]),
+            "headline"      => Simple::cleanHtml($doc[ "fields" ][ "Headline"       ][ 0 ][ "value" ]),
+            "sub_headline"  => Simple::cleanHtml($doc[ "fields" ][ "SubHeadline"    ][ 0 ][ "value" ]),
+            "display_title" => Simple::cleanHtml($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]),
+            "teaser_text"   => Simple::cleanHtml($doc[ "fields" ][ "Highline"       ][ 0 ][ "value" ]),
             "metatags"      => DcxExtractorMetaTags::getMetaTags($doc),
             "paragraphs"    => self::getParagraphs($doc)
         ];
