@@ -100,7 +100,7 @@ class Article
         }
 
         // Simple::logJson("article", $article);
-         Simple::write("zzz-post.json", $article);
+        // Simple::write("zzz-post.json", $article);
 
         return $article;
     }
@@ -111,41 +111,12 @@ class Article
         $response = Curl::post($url, $this->auth, $this->build());
 
         // Simple::logJson("response", $response);
-         Simple::write("zzz-response.json", $response);
+        // Simple::write("zzz-response.json", $response);
 
         $this->nodeId = $response[ "nid" ][ 0 ][ "value" ];
 
         return $this->nodeId;
     }
-
-    public function patch($patch, $nodeId = null, $override = false)
-    {
-        if (! $nodeId)
-        {
-            $nodeId = $this->nodeId;
-        }
-
-        if (! $nodeId)
-        {
-            return null;
-        }
-
-        $patcher = new ArticlePatch(Config::$thunder_server, Config::$thunder_auth);
-        $patcher->patch($patch, $nodeId, $override);
-    }
-
-    /*
-    public function patchAsHalJson($patch, $nodeId = null)
-    {
-        if (! $nodeId)
-        {
-            $nodeId = $this->nodeId;
-        }
-
-        $patcher = new ArticlePatch(Config::$thunder_server, Config::$thunder_auth);
-        $patcher->patchAsHalJson($patch, $nodeId);
-    }
-    */
 }
 
 ?>

@@ -11,18 +11,12 @@ class ArticlePatch
         $this->auth   = $thunder_auth;
     }
 
-    public function patch($patch, $nodeId, $override)
+    public function patch($patch, $nodeId)
     {
         // http://localhost/thunder/node/11/edit
         $url = $this->server . "/node/$nodeId?_format=json";
 
         $pre = Curl::get($url, Config::$dcx_auth);
-
-//        $post = [
-//            "metatag" => [
-//                "value" => array_merge($pre[ "metatag" ][ "value" ], $patch[ "metatag" ][ "value" ])
-//            ]
-//        ];
 
         $post = $patch;
         $post[ "type" ] = $pre[ "type" ];

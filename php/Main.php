@@ -40,8 +40,8 @@ function patchMetatags($nodeId)
         ]
     ];
 
-    $article = new Article(Config::$thunder_server, Config::$thunder_auth);
-    $article->patch($patch, $nodeId);
+    $patcher = new ArticlePatch(Config::$thunder_server, Config::$thunder_auth);
+    $patcher->patch($patch, $nodeId);
 
     // $article->patchAsHalJson([ "keywords" => "Keyword1 Keyword2 Keyword3" ]);
 
