@@ -65,10 +65,6 @@ function export($dcx_doc)
         echo "done\n";
         echo "--> url=" . Config::$thunder_server . "/node/$nodeId\n";
     }
-    else
-    {
-        echo "error\n";
-    }
 }
 
 function exportRssFeed($feed)

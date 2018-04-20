@@ -75,14 +75,17 @@ class Article
             $teaserText = $seoTitle;
         }
 
+        // UUID --> used to ensure no duplication
+        // UUID dirty because it generates an server error if it already exist
         $article = [
-            "type"              => [[ "target_id" => "article"                  ]],
-            "title"             => [[ "value"     => $title                     ]],
-            "field_seo_title"   => [[ "value"     => $seoTitle                  ]],
-            "status"            => [[ "value"     => true                       ]],
-            "field_teaser_text" => [[ "value"     => $teaserText                ]],
-            "field_channel"     => [[ "target_id" => 1                          ]],
-            "field_meta_tags"   => [[ "value"     => serialize($this->metaTags) ]],
+            "uuid"              => [[ "value"     => Simple::createUUID($seoTitle) ]],
+            "type"              => [[ "target_id" => "article"                     ]],
+            "title"             => [[ "value"     => $title                        ]],
+            "field_seo_title"   => [[ "value"     => $seoTitle                     ]],
+            "status"            => [[ "value"     => true                          ]],
+            "field_teaser_text" => [[ "value"     => $teaserText                   ]],
+            "field_channel"     => [[ "target_id" => 1                             ]],
+            "field_meta_tags"   => [[ "value"     => serialize($this->metaTags)    ]],
             "field_paragraphs"  => $this->paragraphs->build()
         ];
 
@@ -104,10 +107,25 @@ class Article
         $url = $this->server . "/node?_format=json";
         $response = Curl::post($url, $this->auth, $this->build());
 
-        // Simple::logJson("response", $response);
-        // Simple::write("zzz-response.json", $response);
+        // See UUID dirty
+        if ($response[ "XXX_Error" ])
+        {
+            // Simple::logJson("response", $response);
+            echo "duplicate stop\n";
 
-        return $response[ "nid" ][ 0 ][ "value" ];
+            return null;
+        }
+
+        $nodeId = $response[ "nid" ][ 0 ][ "value" ];
+
+        if (! $nodeId)
+        {
+            echo "error\n";
+            echo "See zzz-error-response.json\n";
+            Simple::write("zzz-error-response.json", $response);
+        }
+
+        return $nodeId;
     }
 }
 

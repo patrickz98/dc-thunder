@@ -54,7 +54,9 @@ class Curl
         $result = curl_exec($curl);
         curl_close($curl);
 
-        return Simple::parseJson($result);
+        $json = Simple::parseJson($result);
+
+        return $json ? $json : [ "XXX_Error" => $result ];
     }
 
     public static function postHalJson($url, $auth, $data)

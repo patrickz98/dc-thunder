@@ -50,6 +50,18 @@ class Simple
     {
         return html_entity_decode(strip_tags($txt));
     }
+
+    public static function createUUID($str)
+    {
+        $md5 = md5($str);
+
+        return "" .
+            substr($md5, 0,  8) . "-" .
+            substr($md5, 8,  4) . "-" .
+            substr($md5, 12, 4) . "-" .
+            substr($md5, 16, 4) . "-" .
+            substr($md5, 20);
+    }
 }
 
 ?>
