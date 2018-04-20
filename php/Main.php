@@ -12,43 +12,38 @@ include("./ArticlePatch.php");
 include("./DcxFeedReader.php");
 
 // #### Metatags hack
-function patchMetatags(Article $article = null)
+function patchMetatags($nodeId)
 {
-//    $article->patch(
-//    [
-//        "field_seo_title" => [
-//            "value" => "Test"
-//        ]
-//    ], true, $nodeId);
+    echo "--> Patching metatags... ";
 
-//    $article->patch($metatagsPatch);
-
-//    $metatagsPatch = [
+//    $patch = [
 //        "metatag" => [
 //            "value" => [
-//                "keywords" => "Keyword1 Keyword2 Keyword3"
+//                "news_keywords" => "Keyword1, Keyword2, Keyword3"
 //            ]
 //        ]
 //    ];
-//
-//    $article->patchAsHalJson([ "keywords" => "Keyword1 Keyword2 Keyword3" ]);
 
-    if (! $article)
-    {
-        $article = new Article(Config::$thunder_server, Config::$thunder_auth);
-    }
+//    $patch = [
+//        "title" => [[
+//            "value" => "UPDATE"
+//        ]]
+//    ];
 
-    echo "--> Patching metatags... ";
-
-    $metatagsPatch = [
-        "metatag" => [
-            "value" => [
-                "keywords" => "Keyword1, Keyword2, Keyword3"
+    $patch = [
+        "field_meta_tags" => [
+            [
+                "advanced" => [
+                    "news_keywords" => "Keyword1,+Keyword2,+Keyword3"
+                ]
             ]
         ]
     ];
 
-    $article->patch($metatagsPatch, 286);
+    $article = new Article(Config::$thunder_server, Config::$thunder_auth);
+    $article->patch($patch, $nodeId);
+
+    // $article->patchAsHalJson([ "keywords" => "Keyword1 Keyword2 Keyword3" ]);
 
     echo "done\n";
 }
@@ -60,9 +55,6 @@ function export($dcx_doc)
     $dcxExtractor = new DcxExtractor(Config::$dcx_server, Config::$dcx_auth);
     $story = $dcxExtractor->getStory($dcx_doc);
 
-    // Simple::logJson("story", $story);
-    // exit(0);
-
     if (! $story)
     {
         return;
@@ -70,8 +62,9 @@ function export($dcx_doc)
 
     echo "done\n";
 
-    // echo Simple::prettyJson($story) . "\n";
-    // exit();
+    // Simple::write("zzz-story.json", $story);
+    // Simple::logJson("story", $story);
+    // exit(0);
 
     echo "--> Creating new thunder article... ";
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);
@@ -82,9 +75,16 @@ function export($dcx_doc)
     $article->createParagraphs($story[ "paragraphs"     ]);
 
     $nodeId = $article->post();
-    echo "done\n";
 
-    echo "--> url=" . Config::$thunder_server . "/node/$nodeId\n";
+    if ($nodeId)
+    {
+        echo "done\n";
+        echo "--> url=" . Config::$thunder_server . "/node/$nodeId\n";
+    }
+    else
+    {
+        echo "error\n";
+    }
 
     // echo "thunder: " . Simple::prettyJson($response) . "\n";
     // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
@@ -121,6 +121,6 @@ main();
 //$feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
 //exportRssFeed($feedUrl);
 
-//patchMetatags();
+//patchMetatags(287);
 
 ?>

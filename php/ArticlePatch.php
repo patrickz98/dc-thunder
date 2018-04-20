@@ -13,30 +13,18 @@ class ArticlePatch
 
     public function patch($patch, $nodeId, $override)
     {
+        // http://localhost/thunder/node/11/edit
         $url = $this->server . "/node/$nodeId?_format=json";
 
         $pre = Curl::get($url, Config::$dcx_auth);
-        //unset($pre[ "metatag" ][ "value" ][ "og_updated_time" ]);
-        //unset($pre[ "metatag" ][ "value" ][ "keywords" ]);
-        //unset($pre[ "metatag" ]);
-        //unset($pre[ "field_meta_tags" ]);
 
-        if ($override)
-        {
-            $post = array_merge($pre, $patch);
-        }
-        else
-        {
-            $post = array_merge_recursive($pre, $patch);
-        }
+//        $post = [
+//            "metatag" => [
+//                "value" => array_merge($pre[ "metatag" ][ "value" ], $patch[ "metatag" ][ "value" ])
+//            ]
+//        ];
 
-        $post = [
-            "metatag" => [
-                "value" => array_merge($pre[ "metatag" ][ "value" ], $patch[ "metatag" ][ "value" ])
-            ]
-        ];
-
-        // $post = $patch;
+        $post = $patch;
         $post[ "type" ] = $pre[ "type" ];
 
         $response = Curl::patch($url, $this->auth, $post);

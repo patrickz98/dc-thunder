@@ -32,4 +32,17 @@ include("./Simple.php");
 //    echo "$dcxParagraph\n";
 //}
 
-echo html_entity_decode("FDP-Fraktionsvize f&uuml;r Neugliederung der Bundesl&auml;nder") . "\n";
+//echo html_entity_decode("FDP-Fraktionsvize f&uuml;r Neugliederung der Bundesl&auml;nder") . "\n";
+
+//$fieldValues = [];
+//$fieldValues += [
+//    'field_channel' => 1,
+//    'title[0][value]' => 'Test FB MetaTags Article',
+//    'field_seo_title[0][value]' => 'Facebook MetaTags',
+//    'field_teaser_text[0][value]' => 'Facebook MetaTags Testing',
+//];
+//
+//print_r($fieldValues);
+
+$str = "a:4:{s:5:\"title\";s:22:\"[node:field_seo_title]\";s:11:\"description\";s:24:\"[node:field_teaser_text]\";s:13:\"canonical_url\";s:11:\"[node:path]\";s:16:\"content_language\";s:15:\"[node:langcode]\";}";
+print_r(unserialize($str));
