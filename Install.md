@@ -61,7 +61,7 @@ Install and enable modules
 * REST UI for config: https://www.drupal.org/project/restui
 * File entity needed for uploading images/data: https://www.drupal.org/project/file_entity
 
-Goto `Configuration >  Web services > REST` and enable Methods: `GET, POST, DELETE, PATCH`, Accepted request formats: `hal_json, json` and Authentication providers: `basic_auth` for: `Content, Paragraph, File, Media`
+Goto `Configuration >  Web services > REST` and enable Methods: `GET, POST, DELETE, PATCH`, Accepted request formats: `hal_json, json` and Authentication providers: `basic_auth, cookie` for: `Content, Paragraph, File, Media`
 
 
 ## Stuff
