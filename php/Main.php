@@ -11,28 +11,6 @@ include("./ArticleParagraphFactory.php");
 include("./ArticlePatch.php");
 include("./DcxFeedReader.php");
 
-//function sampleArticle()
-//{
-//    $paragraphs = new ArticleParagraphFactory();
-//
-//    for ($inx = 0; $inx < 4; $inx++)
-//    {
-//        $randomText = Simple::getRandomText();
-//        $paragraphs->createText($randomText);
-//    }
-//
-//    $paragraphs->createImage("Einstein.jpg");
-//
-//    $article = new Article();
-//    $article->setTitle(Simple::getRandomText(6));
-//    $article->setSeoTitle(Simple::getRandomText(6));
-//    $article->addParagraphs($paragraphs->build());
-//    $response = $article->post();
-//
-//    echo Simple::prettyJson($response) . "\n";
-//    // Simple::write("article.json", $response);
-//}
-
 // #### Metatags hack
 function patchMetatags(DcxExtractor $article)
 {
@@ -136,8 +114,8 @@ function main()
     }
 }
 
-//main();
-$feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
-exportRssFeed($feedUrl);
+main();
+//$feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
+//exportRssFeed($feedUrl);
 
 ?>

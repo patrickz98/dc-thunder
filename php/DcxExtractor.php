@@ -232,6 +232,8 @@ class DcxExtractor
             return null;
         }
 
+        $paragraphs = self::getParagraphs($doc);
+
         $story = [
             "title"         => Simple::cleanHtml($doc[ "fields" ][ "Title"          ][ 0 ][ "value" ]),
             "headline"      => Simple::cleanHtml($doc[ "fields" ][ "Headline"       ][ 0 ][ "value" ]),
@@ -239,8 +241,14 @@ class DcxExtractor
             "display_title" => Simple::cleanHtml($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]),
             "teaser_text"   => Simple::cleanHtml($doc[ "fields" ][ "Highline"       ][ 0 ][ "value" ]),
             "metatags"      => DcxExtractorMetaTags::getMetaTags($doc),
-            "paragraphs"    => self::getParagraphs($doc)
+            "paragraphs"    => $paragraphs
         ];
+
+        if (sizeof($paragraphs) == 0)
+        {
+            echo "content empty\n";
+            return null;
+        }
 
         Simple::write("zzz-dcx-doc-tmp.json",   $doc);
         Simple::write("zzz-dcx-story-tmp.json", $story);
