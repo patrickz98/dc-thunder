@@ -74,7 +74,7 @@ class DcxExtractorMetaTags
         }
 
         $joinedTags = join(" ", $metaTagsAll);
-//        $metaTags[ "article_tag"   ] = $joinedTags;
+        $metaTags[ "article_tag"   ] = $joinedTags;
         $metaTags[ "keywords"      ] = $joinedTags;
         $metaTags[ "news_keywords" ] = $joinedTags;
 

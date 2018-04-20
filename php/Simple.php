@@ -41,7 +41,7 @@ class Simple
         @fclose($ofile);
     }
 
-    public static function logJson($msg, $json = null)
+    public static function logJson($msg, $json)
     {
         echo "$msg: " . self::prettyJson($json) . "\n";
     }

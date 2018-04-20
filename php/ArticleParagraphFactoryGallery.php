@@ -17,9 +17,11 @@ class ArticleParagraphFactoryGallery extends ArticleParagraphFactoryImage
         $url = "$server/entity/media?_format=json";
 
         $media = [
-            "bundle" => [[
-                "target_id" => "gallery"
-            ]],
+            "bundle" => [
+                [
+                    "target_id" => "gallery"
+                ]
+            ],
             "field_media_images" => $imagesIds
         ];
 
@@ -33,12 +35,16 @@ class ArticleParagraphFactoryGallery extends ArticleParagraphFactoryImage
         $targetId = $media[ "mid" ][ 0 ][ "value" ];
 
         $data = [
-            "type" => [[
-                "target_id" => "gallery"
-            ]],
-            "field_media" => [[
-                "target_id" => $targetId
-            ]]
+            "type" => [
+                [
+                    "target_id" => "gallery"
+                ]
+            ],
+            "field_media" => [
+                [
+                    "target_id" => $targetId
+                ]
+            ]
         ];
 
         $url = "$server/entity/paragraph?_format=json";

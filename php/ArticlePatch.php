@@ -11,7 +11,7 @@ class ArticlePatch
         $this->auth   = $thunder_auth;
     }
 
-    public function patch($patch, $nodeId)
+    public function patch($nodeId, $patch)
     {
         // http://localhost/thunder/node/11/edit
         $url = $this->server . "/node/$nodeId?_format=json";

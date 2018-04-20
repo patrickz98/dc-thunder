@@ -14,7 +14,7 @@ class ArticleParagraphFactoryText
             ],
             "field_text" => [
                 [
-                    "value" => $htmlBody,
+                    "value"  => $htmlBody,
                     "format" => "basic_html"
                 ]
             ]
@@ -23,7 +23,7 @@ class ArticleParagraphFactoryText
         $response = Curl::post($url, $auth, $data);
 
         return [
-            "target_id" => $response[ "id" ][ 0 ][ "value" ],
+            "target_id"          => $response[ "id"          ][ 0 ][ "value" ],
             "target_revision_id" => $response[ "revision_id" ][ 0 ][ "value" ]
         ];
     }

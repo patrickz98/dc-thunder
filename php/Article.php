@@ -4,7 +4,6 @@ class Article
 {
     private $server;
     private $auth;
-    private $nodeId;
 
     private $paragraphs;
     private $title;
@@ -50,11 +49,6 @@ class Article
         {
             $this->createParagraph($paragraph);
         }
-    }
-
-    public function getNodeId()
-    {
-        return $this->nodeId;
     }
 
     private function build()
@@ -113,9 +107,7 @@ class Article
         // Simple::logJson("response", $response);
         // Simple::write("zzz-response.json", $response);
 
-        $this->nodeId = $response[ "nid" ][ 0 ][ "value" ];
-
-        return $this->nodeId;
+        return $response[ "nid" ][ 0 ][ "value" ];
     }
 }
 

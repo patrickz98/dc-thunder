@@ -4,9 +4,6 @@ class ArticleParagraphFactoryImage
 {
     private static function getBase64($imgSrc)
     {
-        // $path = 'myfolder/myimage.png';
-        // $type = pathinfo($path, PATHINFO_EXTENSION);
-        // $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
         $data = file_get_contents($imgSrc);
         return base64_encode($data);
     }
@@ -17,11 +14,11 @@ class ArticleParagraphFactoryImage
 
         // build hal_json
         $uploadInfo = [];
-        $uploadInfo[ "_links"   ] = [ "type"  => ["href" => "$server/rest/type/file/image"]];
-        $uploadInfo[ "filename" ] = [["value" => $fileName]];
-        $uploadInfo[ "filemime" ] = [["value" => "image/jpeg"]];
-        $uploadInfo[ "uri"      ] = [["value" => "public://patrick/$fileName"]];
-        $uploadInfo[ "data"     ] = [["value" => ArticleParagraphFactoryImage::getBase64($fileSrc)]];
+        $uploadInfo[ "_links"   ] = [  "type"  => [ "href" => "$server/rest/type/file/image" ]       ];
+        $uploadInfo[ "filename" ] = [[ "value" => $fileName                                         ]];
+        $uploadInfo[ "filemime" ] = [[ "value" => "image/jpeg"                                      ]];
+        $uploadInfo[ "uri"      ] = [[ "value" => "public://patrick/$fileName"                      ]];
+        $uploadInfo[ "data"     ] = [[ "value" => ArticleParagraphFactoryImage::getBase64($fileSrc) ]];
         $uploadInfo[ "uid"      ] = [
             [
                 "target_id" => 1,
@@ -30,6 +27,8 @@ class ArticleParagraphFactoryImage
                 "url" => "/thunder/user/1"
             ]
         ];
+
+        // ####
 
         return $uploadInfo;
     }
@@ -53,12 +52,16 @@ class ArticleParagraphFactoryImage
         $target_id = ArticleParagraphFactoryImage::createFile($server, $auth, $fileSrc);
 
         $media = [
-            "bundle" => [[
-                "target_id" => "image"
-            ]],
-            "field_image" => [[
-                "target_id" => $target_id
-            ]]
+            "bundle" => [
+                [
+                    "target_id" => "image"
+                ]
+            ],
+            "field_image" => [
+                [
+                    "target_id" => $target_id
+                ]
+            ]
         ];
 
         return Curl::post($url, $auth, $media);
@@ -70,12 +73,16 @@ class ArticleParagraphFactoryImage
         $targetId = $media[ "mid" ][ 0 ][ "value" ];
 
         $data = [
-            "type" => [[
-                "target_id" => "image"
-            ]],
-            "field_image" => [[
-                "target_id" => $targetId
-            ]]
+            "type" => [
+                [
+                    "target_id" => "image"
+                ]
+            ],
+            "field_image" => [
+                [
+                    "target_id" => $targetId
+                ]
+            ]
         ];
 
         $url = "$server/entity/paragraph?_format=json";
@@ -84,7 +91,7 @@ class ArticleParagraphFactoryImage
         return [
             "media_id" => $targetId,
             "paragraph" => [
-                "target_id" => $paragraph[ "id" ][ 0 ][ "value" ],
+                "target_id"          => $paragraph[ "id"          ][ 0 ][ "value" ],
                 "target_revision_id" => $paragraph[ "revision_id" ][ 0 ][ "value" ]
             ]
         ];

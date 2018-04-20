@@ -11,37 +11,20 @@ include("./ArticleParagraphFactory.php");
 include("./ArticlePatch.php");
 include("./DcxFeedReader.php");
 
-// #### Metatags hack
-function patchMetatags($nodeId)
+function patch($nodeId)
 {
-    echo "--> Patching metatags... ";
-
-//    $patch = [
-//        "metatag" => [
-//            "value" => [
-//                "news_keywords" => "Keyword1, Keyword2, Keyword3"
-//            ]
-//        ]
-//    ];
-
-//    $patch = [
-//        "title" => [[
-//            "value" => "UPDATE"
-//        ]]
-//    ];
+    echo "--> Patching... ";
 
     $patch = [
-        "field_meta_tags" => [
+        "title" => [
             [
-                "advanced" => [
-                    "news_keywords" => "Keyword1,+Keyword2,+Keyword3"
-                ]
+                "value" => "Example node title UPDATED!"
             ]
         ]
     ];
 
     $patcher = new ArticlePatch(Config::$thunder_server, Config::$thunder_auth);
-    $patcher->patch($patch, $nodeId);
+    $patcher->patch($nodeId, $patch);
 
     // $article->patchAsHalJson([ "keywords" => "Keyword1 Keyword2 Keyword3" ]);
 
@@ -67,6 +50,7 @@ function export($dcx_doc)
     // exit(0);
 
     echo "--> Creating new thunder article... ";
+
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);
     $article->setTitle(        $story[ "display_title"  ]);
     $article->setSeoTitle(     $story[ "display_title"  ]);
@@ -85,16 +69,13 @@ function export($dcx_doc)
     {
         echo "error\n";
     }
-
-    // echo "thunder: " . Simple::prettyJson($response) . "\n";
-    // echo Simple::prettyJson(Curl::get($server . "/seo-title?_format=json")) . "\n";
 }
 
 function exportRssFeed($feed)
 {
     $docIds = DcxFeedReader::getDocIds($feed);
 
-//    Simple::write("zzz-exported-docs.json", $docIds);
+    // Simple::write("zzz-exported-docs.json", $docIds);
 
     foreach ($docIds as $dcx_doc)
     {
@@ -109,7 +90,7 @@ function main()
 
     if ($argc <= 1)
     {
-        export(Config::$dcx_doc);
+        export(Config::$dcx_demo_doc);
     }
     else
     {

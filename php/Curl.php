@@ -4,6 +4,7 @@ class Curl
 {
     private static function curl_init($url, $auth)
     {
+        // #### cookie hack for DcxFeedReader.php
         $headers = [
             "Content-Type: application/json",
             "Accept: application/json",
