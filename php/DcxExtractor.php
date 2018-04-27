@@ -53,6 +53,10 @@ class DcxExtractor
             "paragraphs"    => $paragraphs
         ];
 
+        @mkdir("tmp");
+        Simple::write("tmp/$docId.json", $doc);
+        Simple::write("tmp/$docId-story-tmp.json", $story);
+
         if (sizeof($paragraphs) == 0)
         {
             echo "content empty\n";

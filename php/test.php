@@ -67,6 +67,15 @@ include("./Simple.php");
 //echo strpos("bodytextafa", "text") . "\n";
 //echo strpos("bodytextafa", "nicht") . "\n";
 
-$var = [["12" => "asdf"], ["1432" => "asfdg"]];
-
-print_r(array_merge($var, ["abcd" => "asdf"]));
+//$var = [
+//    "1234" => "asdf"
+//];
+//
+//echo (is_string($var[ "1234" ]) ? "true" : "false") . "\n";
+//
+//$var = [
+//    "1234" => ["asdf"]
+//];
+//echo (is_array($var[ "1234" ]) ? "true" : "false") . "\n";
+echo ([] ? "true" : "false") . "\n";
+echo (["asdf"] ? "true" : "false") . "\n";

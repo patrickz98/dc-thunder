@@ -58,13 +58,50 @@ class DcxExtractorParagraphs
             ];
         }
 
+        $span = $htmlParagraph[ "span" ];
+        if ($span)
+        {
+            $text = "";
+
+            if (is_array($span))
+            {
+                foreach ($span as $txt)
+                {
+                    $text .= $txt;
+                }
+            }
+
+            if (is_string($span))
+            {
+                $text = $span;
+            }
+
+            return [
+                "type" => "text",
+                "text" => $text
+            ];
+        }
+
+        if (array_key_exists("br", $htmlParagraph))
+        {
+            return null;
+        }
+
+        if ($htmlParagraph[ "a" ])
+        {
+            return [
+                "type" => "text",
+                "text" => "<a href=\"" . $htmlParagraph[ "a" ] . "\">" .  $htmlParagraph[ "a" ] . "</a>"
+            ];
+        }
+
         if ($attributes[ "href" ])
         {
             // echo "href=" . Simple::prettyJson($dcxParagraph) . "\n";
 
             return [
                 "type" => "text",
-                "text"  => "<a href=\"" . $attributes[ "href" ] . "\">" .  $attributes[ "href" ] . "</a>"
+                "text" => "<a href=\"" . $attributes[ "href" ] . "\">" .  $attributes[ "href" ] . "</a>"
             ];
         }
 

@@ -125,7 +125,8 @@ function main()
 
     if ($argv[ 1 ] === "feed")
     {
-        $feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
+        // $feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
+        $feedUrl = "https://dcx.digicol.de/dcx/feed?q[channel][]=channel_pool_story&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=ee241233a76751fea433d4745da6e4e1";
         exportRssFeed($feedUrl);
     }
     else if ($argv[ 1 ] === "delete")
