@@ -14,8 +14,15 @@ class DcxFeedReader
     public static function getDocIds($feedUrl)
     {
         $feedXml = Curl::getRaw($feedUrl, Config::$dcx_auth);
-        $feed    = simplexml_load_string($feedXml);
-        $feed    = Simple::xmlToJson($feed);
+
+        if ($feedXml[ 0 ] !== "<")
+        {
+            echo "Error: feedUrl=$feedUrl feedXml=$feedXml\n";
+            return null;
+        }
+
+        $feed = simplexml_load_string($feedXml);
+        $feed = Simple::xmlToJson($feed);
 
         // Simple::logJson("rss", $feed);
 

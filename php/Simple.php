@@ -34,6 +34,13 @@ class Simple
         return SimpleRandomWords::createText($words);
     }
 
+    public static function read($file)
+    {
+        $content = file_get_contents($file);
+
+        return self::parseJson($content);
+    }
+
     public static function write($file, $array)
     {
         $ofile = @fopen($file, "w");
@@ -61,6 +68,20 @@ class Simple
             substr($md5, 12, 4) . "-" .
             substr($md5, 16, 4) . "-" .
             substr($md5, 20);
+    }
+
+    public static function startsWith($str, $needle)
+    {
+        $length = strlen($needle);
+        return (substr($str, 0, $length) === $needle);
+    }
+
+    public static function endsWith($str, $needle)
+    {
+        $length = strlen($needle);
+
+        return $length === 0 ||
+            (substr($str, -$length) === $needle);
     }
 }
 

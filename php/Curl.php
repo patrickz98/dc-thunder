@@ -8,7 +8,7 @@ class Curl
         $headers = [
             "Content-Type: application/json",
             "Accept: application/json",
-            "Cookie: dcx_app_demo=mkcmbs8h7stgkep8st1ttiqo7p"
+            "Cookie: dcx_app_demo=5dutrtqatj27ndrm27sr0kmfp7"
         ];
 
         $curl = curl_init($url);

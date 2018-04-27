@@ -115,7 +115,7 @@ class DcxExtractor
 
         $type = $attributes[ "data-dcx_media_type" ];
 
-        if ($attributes[ "class" ] === "bodytext")
+        if (strpos($attributes[ "class" ], "text"))
         {
             return [
                 "type" => "text",
@@ -125,8 +125,12 @@ class DcxExtractor
 
         if ($attributes[ "href" ])
         {
-            // STUB!
-            return null;
+            // echo "href=" . Simple::prettyJson($dcxParagraph) . "\n";
+
+            return [
+                "type" => "text",
+                "text"  => "<a href=\"" . $attributes[ "href" ] . "\">" .  $attributes[ "href" ] . "</a>"
+            ];
         }
 
         if ($attributes[ "class" ] === "title")
@@ -180,16 +184,34 @@ class DcxExtractor
         $galleries  = $this->getGalleries($doc);
         $imageIds   = $this->getImages($doc[ "fields" ][ "Image" ]);
         $body       = $doc[ "fields" ][ "body" ];
+        $transcript = $doc[ "fields" ][ "Transcript" ];
+        $uri        = $doc[ "fields" ][ "URI" ][ 0 ][ "value" ];
 
         $paragraphs = [];
 
+        if ($uri && Simple::endsWith($uri, ".jpg"))
+        {
+            array_push($paragraphs, [
+                "type" => "image",
+                "src" => $uri
+            ]);
+        }
+
+        if ($transcript)
+        {
+            array_push($paragraphs, [
+                "type" => "text",
+                "text" => $transcript[ 0 ][ "value" ]
+            ]);
+        }
+
         foreach ($body as $bodyPart)
         {
-//            print_r($bodyPart);
+            // print_r($bodyPart);
             $content = $bodyPart[ "value" ];
             // echo substr($content, 0, 40) . "\n";
 
-            if (substr($content, 0, 1) === "<")
+            if ($content[ 0 ] === "<")
             {
                 // echo "Process as HTML\n";
                 foreach($this->htmlBodyToJson($content) as $dcxParagraph)
@@ -254,7 +276,7 @@ class DcxExtractor
         if (sizeof($paragraphs) == 0)
         {
             echo "content empty\n";
-            return null;
+            //return null;
         }
 
 //        Simple::write("zzz-dcx-doc-tmp.json",   $doc);
