@@ -61,8 +61,12 @@ include("./Simple.php");
 //echo "$test\n";
 //echo uuid_make($test) . "\n";
 
-$var = "<xml";
-echo $var[ 0 ] . "\n";
+//$var = "<xml";
+//echo $var[ 0 ] . "\n";
+//
+//echo strpos("bodytextafa", "text") . "\n";
+//echo strpos("bodytextafa", "nicht") . "\n";
 
-echo strpos("bodytextafa", "text") . "\n";
-echo strpos("bodytextafa", "nicht") . "\n";
+$var = [["12" => "asdf"], ["1432" => "asfdg"]];
+
+print_r(array_merge($var, ["abcd" => "asdf"]));

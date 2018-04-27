@@ -38,10 +38,6 @@ function export($dcx_doc)
     $dcxExtractor = new DcxExtractor(Config::$dcx_server, Config::$dcx_auth);
     $story = $dcxExtractor->getStory($dcx_doc);
 
-    @mkdir("tmp");
-    Simple::write("tmp/$dcx_doc.json", $dcxExtractor->getDoc($dcx_doc));
-    Simple::write("tmp/$dcx_doc-story.json", $story);
-
     if (! $story)
     {
         return;
@@ -99,9 +95,9 @@ function main()
     }
 }
 
-//main();
-$feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
-exportRssFeed($feedUrl);
+main();
+//$feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
+//exportRssFeed($feedUrl);
 
 //patchMetatags(287);
 
