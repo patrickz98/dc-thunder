@@ -89,6 +89,17 @@ class Curl
 
         return Simple::parseJson($result);
     }
+
+    public static function delete($url, $auth)
+    {
+        $curl = Curl::curl_init($url, $auth);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
+
+        $result = curl_exec($curl);
+        curl_close($curl);
+
+        return Simple::parseJson($result);
+    }
 }
 
 ?>

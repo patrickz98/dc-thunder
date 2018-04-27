@@ -43,6 +43,7 @@ class DcxExtractor
         $paragraphs = $dcxExtractorParagraphs->getParagraphs();
 
         $story = [
+            "uuid"          => Simple::createUUID($docId),
             "title"         => Simple::cleanHtml($doc[ "fields" ][ "Title"          ][ 0 ][ "value" ]),
             "headline"      => Simple::cleanHtml($doc[ "fields" ][ "Headline"       ][ 0 ][ "value" ]),
             "sub_headline"  => Simple::cleanHtml($doc[ "fields" ][ "SubHeadline"    ][ 0 ][ "value" ]),

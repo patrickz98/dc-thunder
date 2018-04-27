@@ -36,7 +36,7 @@ class Simple
 
     public static function read($file)
     {
-        $content = file_get_contents($file);
+        $content = @file_get_contents($file);
 
         return self::parseJson($content);
     }

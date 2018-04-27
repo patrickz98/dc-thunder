@@ -2,6 +2,8 @@
 
 date_default_timezone_set("UTC");
 
+const CREATED_THUNDER_URLS_FILE = "zzz-created-thunder-urls.json";
+
 include("./Curl.php");
 include("./Config.php");
 include("./Simple.php");
@@ -40,7 +42,7 @@ function export($dcx_doc)
 
     if (! $story)
     {
-        return;
+        return null;
     }
 
     echo "done\n";
@@ -52,6 +54,7 @@ function export($dcx_doc)
     echo "--> Creating new thunder article... ";
 
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);
+    $article->setUuid(         $story[ "uuid"           ]);
     $article->setTitle(        $story[ "display_title"  ]);
     $article->setSeoTitle(     $story[ "display_title"  ]);
     $article->setMetaTags(     $story[ "metatags"       ]);
@@ -63,7 +66,15 @@ function export($dcx_doc)
     if ($nodeId)
     {
         echo "done\n";
-        echo "--> url=" . Config::$thunder_server . "/node/$nodeId\n";
+
+        $thunderUrl = Config::$thunder_server . "/node/" . $nodeId;
+        echo "--> url=$thunderUrl\n";
+
+        return $thunderUrl;
+    }
+    else
+    {
+        return null;
     }
 }
 
@@ -73,11 +84,32 @@ function exportRssFeed($feed)
 
     if ($docIds)
     {
+        $thunderUrls = [];
+
         foreach ($docIds as $dcx_doc)
         {
-            export($dcx_doc);
+            $url = export($dcx_doc);
+            if ($url) array_push($thunderUrls, $url);
+        }
+
+        Simple::write(CREATED_THUNDER_URLS_FILE, $thunderUrls);
+    }
+}
+
+function deleteExportedRssFeed()
+{
+    $thunderUrls = Simple::read(CREATED_THUNDER_URLS_FILE);
+
+    if ($thunderUrls)
+    {
+        foreach ($thunderUrls as $thunderUrl)
+        {
+            echo "Delete: $thunderUrl\n";
+            Curl::delete($thunderUrl, Config::$thunder_auth);
         }
     }
+
+    unlink(CREATED_THUNDER_URLS_FILE);
 }
 
 function main()
@@ -88,6 +120,17 @@ function main()
     if ($argc <= 1)
     {
         export(Config::$dcx_demo_doc);
+        return;
+    }
+
+    if ($argv[ 1 ] === "feed")
+    {
+        $feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
+        exportRssFeed($feedUrl);
+    }
+    else if ($argv[ 1 ] === "delete")
+    {
+        deleteExportedRssFeed();
     }
     else
     {
@@ -96,8 +139,6 @@ function main()
 }
 
 main();
-//$feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
-//exportRssFeed($feedUrl);
 
 //patchMetatags(287);
 

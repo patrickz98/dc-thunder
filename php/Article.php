@@ -10,6 +10,7 @@ class Article
     private $seoTitle;
     private $teaserText;
     private $metaTags;
+    private $uuid;
 
     function __construct($thunder_server, $thunder_auth)
     {
@@ -36,6 +37,11 @@ class Article
     public function setMetaTags($metaTags)
     {
         $this->metaTags = $metaTags;
+    }
+
+    public function setUuid($uuid)
+    {
+        $this->uuid = $uuid;
     }
 
     public function createParagraph($paragraph)
@@ -78,7 +84,6 @@ class Article
         // UUID --> used to ensure no duplication
         // UUID dirty because it generates an server error if it already exist
         $article = [
-            "uuid"              => [[ "value"     => Simple::createUUID($seoTitle) ]],
             "type"              => [[ "target_id" => "article"                     ]],
             "title"             => [[ "value"     => $title                        ]],
             "field_seo_title"   => [[ "value"     => $seoTitle                     ]],
@@ -90,10 +95,14 @@ class Article
         ];
 
         $imagesMediaIds = $this->paragraphs->getImageMediaIds();
-
         if ($imagesMediaIds[ 0 ])
         {
             $article[ "field_teaser_media" ] = [[ "target_id" => $imagesMediaIds[ 0 ] ]];
+        }
+
+        if ($this->uuid)
+        {
+            $article[ "uuid" ] = [[ "value" => $this->uuid ]];
         }
 
         // Simple::logJson("article", $article);
