@@ -55,7 +55,7 @@ class Simple
 
     public static function cleanHtml($txt)
     {
-        return html_entity_decode(strip_tags($txt));
+        return trim(html_entity_decode(strip_tags($txt)));
     }
 
     public static function createUUID($str)

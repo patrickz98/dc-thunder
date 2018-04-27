@@ -109,7 +109,7 @@ class DcxExtractor
         {
             return [
                 "type" => "text",
-                "text" => $dcxParagraph[ "0" ]
+                "text" => trim($dcxParagraph[ "0" ])
             ];
         }
 
@@ -119,7 +119,7 @@ class DcxExtractor
         {
             return [
                 "type" => "text",
-                "text"  => $dcxParagraph[ "0" ]
+                "text"  => trim($dcxParagraph[ "0" ])
             ];
         }
 
@@ -201,7 +201,7 @@ class DcxExtractor
         {
             array_push($paragraphs, [
                 "type" => "text",
-                "text" => $transcript[ 0 ][ "value" ]
+                "text" => trim($transcript[ 0 ][ "value" ])
             ]);
         }
 
@@ -238,7 +238,7 @@ class DcxExtractor
 
                 array_push($paragraphs, [
                     "type" => "text",
-                    "text" => $htmlText
+                    "text" => trim($htmlText)
                 ]);
             }
         }
@@ -276,7 +276,7 @@ class DcxExtractor
         if (sizeof($paragraphs) == 0)
         {
             echo "content empty\n";
-            //return null;
+            return null;
         }
 
 //        Simple::write("zzz-dcx-doc-tmp.json",   $doc);
