@@ -126,7 +126,11 @@ function main()
     if ($argv[ 1 ] === "feed")
     {
         // $feedUrl = "https://dcx.digicol.de/dcx/feed?q[profile]=ch6yln2ccrj4hbvapc66j&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=15a7319f0601a9b8b805c5f5ccc6b6c9";
-        $feedUrl = "https://dcx.digicol.de/dcx/feed?q[channel][]=channel_pool_story&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=ee241233a76751fea433d4745da6e4e1";
+        // $feedUrl = "https://dcx.digicol.de/dcx/feed?q[channel][]=channel_pool_story&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=ee241233a76751fea433d4745da6e4e1";
+        // $feedUrl = "https://dcx.digicol.de/dcx/feed?q[channel][]=ch030dcxsystempoolatext&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=4c6005d85b120e01661539d3f6d71600";
+        // $feedUrl = "https://dcx.digicol.de/dcx/feed?q[channel][]=ch035dcxsystempoolpages&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=9dcc82c3974be6538ddf2524459879a6";
+        // $feedUrl = "https://dcx.digicol.de/dcx/feed?q[channel][]=ch6c24a8b6wo0osj923jb&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=48e8e365ee6c83145297ebe7089a0fa3";
+        $feedUrl = "https://dcx.digicol.de/dcx/feed?q[channel][]=ch695rfutxf5494jurmb0&user=I2xvY2FsX29wZW5sZGFwI3VpZCNwel96aWVyYWhu&key=ad3ed54fb9bb9b020f3b6b753728382e";
         exportRssFeed($feedUrl);
     }
     else if ($argv[ 1 ] === "delete")

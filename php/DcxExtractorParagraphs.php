@@ -58,6 +58,11 @@ class DcxExtractorParagraphs
             ];
         }
 
+        if ($attributes[ "class" ] === "interline")
+        {
+            return null;
+        }
+
         $span = $htmlParagraph[ "span" ];
         if ($span)
         {
@@ -87,6 +92,23 @@ class DcxExtractorParagraphs
             return null;
         }
 
+        if ($attributes && array_key_exists("style", $attributes))
+        {
+            return null;
+        }
+
+        if ($attributes[ "class" ] === "title")
+        {
+            // #### STUB!
+            return null;
+        }
+
+        if (Simple::startsWith($attributes[ "class" ], "WordSection"))
+        {
+            // #### STUB! docId = doc6zc5em9879we4fnjfeo
+            return null;
+        }
+
         if ($htmlParagraph[ "a" ])
         {
             return [
@@ -103,12 +125,6 @@ class DcxExtractorParagraphs
                 "type" => "text",
                 "text" => "<a href=\"" . $attributes[ "href" ] . "\">" .  $attributes[ "href" ] . "</a>"
             ];
-        }
-
-        if ($attributes[ "class" ] === "title")
-        {
-            // #### STUB!
-            return null;
         }
 
         $type = $attributes[ "data-dcx_media_type" ];
