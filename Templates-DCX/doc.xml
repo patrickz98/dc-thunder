@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:dcx="http://www.digicol.com/xmlns/dcx">
+  <id>http://customer.digicol.de/xmlns/dcx/document/doc6wjzrpdlkd36y3fnjy</id>
+  <link rel="alternate" href="/dcx/documents?doc_ids[]=doc6wjzrpdlkd36y3fnjy&amp;selected_doc_ids[]=doc6wjzrpdlkd36y3fnjy" type="text/html"/>
+  <link rel="self" href="/dcx/atom/document/doc6wjzrpdlkd36y3fnjy" type="application/atom+xml;type=entry"/>
+  <link rel="enclosure" href="http://192.168.18.131/device_testApp/dev1/2017/09-05/da/1e/file6wjzrpdzltg163w5cjy.jpg" type="image/jpeg" title="dpa_14963E002A014C3D.jpg" length="499035"/>
+  <link rel="dcx:document_files" href="/dcx/atom/files?q[doc_id]=doc6wjzrpdlkd36y3fnjy" type="application/atom+xml"/>
+  <link rel="dcx:document_pubinfos" href="/dcx/atom/pubinfos?q[doc_id]=doc6wjzrpdlkd36y3fnjy" type="application/atom+xml"/>
+  <link rel="dcx:document_doctoutags" href="/dcx/atom/doctoutags?q[doc_id]=doc6wjzrpdlkd36y3fnjy" type="application/atom+xml"/>
+  <link rel="dcx:document_related" href="/dcx/atom/documents?q[related]=1&amp;q[doc_id]=doc6wjzrpdlkd36y3fnjy" type="application/atom+xml"/>
+  <link rel="dcx:document_locks" href="/dcx/atom/locks?q[doc_id]=doc6wjzrpdlkd36y3fnjy" type="application/atom+xml"/>
+  <link rel="dcx:document_comments" href="/dcx/atom/comments?q[doc_id]=doc6wjzrpdlkd36y3fnjy" type="application/atom+xml"/>
+  <title type="text">KINA - Politiker üben für den großen Fernseh-Auftritt</title>
+  <updated>2017-09-05T14:59:03+02:00</updated>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml"><div><img src="http://192.168.18.131/device_testApp/dev1/2017/09-05/e0/8b/file6wjzrpe2vj558l63jy.jpg" width="600" height="371" alt=""/></div> <p>Kanzlerkandidat Martin Schulz (SPD) spricht am 30.08.2017 in Bielefeld (Nordrhein-Westfalen) bei einer Wahlkampfveranstaltung der SPD.
+
+Politiker üben ihre Auftritte, damit sie Menschen besser überzeugen können. Dazu gehört auch Körpersprache.
+
+ACHTUNG: Dieses Bild hat dpa auch im Bildfunk gesendet. Foto: Friso Gentsch/dpa +++(c) dpa - Nachrichten für Kinder+++</p></div>
+  </content>
+  <published>2017-09-05T14:59:03+02:00</published>
+  <document xmlns="http://www.digicol.com/xmlns/dcx" id="doc6wjzrpdlkd36y3fnjy" href="/dcx/atom/document/doc6wjzrpdlkd36y3fnjy" version="1.0">
+    <created>2017-09-05T14:59:03+02:00</created>
+    <identifier></identifier>
+    <modcount>2</modcount>
+    <modified>2017-09-05T14:59:03+02:00</modified>
+    <pool_id id="native"/>
+    <restore_pool_id></restore_pool_id>
+    <restore_unique></restore_unique>
+    <unique>4b0e9d6f4292b8dff8d3bd1c0c48a222</unique>
+    <head>
+      <Type topic="documenttype-image">image</Type>
+      <Category topic="tmt6whw455az20k5yhvju">PL</Category>
+      <City topic="tmt6wjzrpdo4cnsacf5jy">Bielefeld</City>
+      <Country topic="country-DE">Deutschland</Country>
+      <Creator topic="tmt6wjzrpdt7xt16gypyjy">Friso Gentsch</Creator>
+      <Provider topic="tmt6whijp2ed6t5yzivjw">dpa</Provider>
+      <DescriptionWriter topic="tmt6wjzrpdumgi9xdiqjy">frg pat haa</DescriptionWriter>
+      <Keywords topic="tmt6whw455i5c516elg7ju">KINA</Keywords>
+      <Keywords topic="tmt6wjzrpdvmhdsrxe7jy">knz014</Keywords>
+      <ProvinceState topic="tmt6wjikistz041gqpf49cb">Nordrhein-Westfalen</ProvinceState>
+      <Source topic="tmt6whijp2h56e1fec7pjw">dpa</Source>
+      <Language topic="lang-de">de</Language>
+      <LastEditedBy topic="tmt6whfkac0p54v92r2cj9">Manfred Mustermann</LastEditedBy>
+      <ImportedBy topic="tmt6whfkac0p54v92r2cj9">Manfred Mustermann</ImportedBy>
+      <Owner topic="owner-default">testApp</Owner>
+      <Hotfolder topic="tmt6wjzrpebz8n15v4xwjy" action_id="perspective_uploadformhandler" hotfolder_id="native">Misc. files</Hotfolder>
+      <IPTC02020>Wahlen</IPTC02020>
+      <IPTC02020>Bundestag</IPTC02020>
+      <IPTC02020>Parteien</IPTC02020>
+      <IPTC02020>Deutschland</IPTC02020>
+      <IPTC02020>SPD</IPTC02020>
+      <IPTC02020>#btw17</IPTC02020>
+      <IPTC02020>KINA</IPTC02020>
+      <CountryCode>DEU</CountryCode>
+      <DateCreated>2017-08-30T00:00:00+02:00</DateCreated>
+      <DateImported>2017-09-05T14:59:03+02:00</DateImported>
+      <Headline>KINA - Politiker üben für den großen Fernseh-Auftritt</Headline>
+      <JobID>99-855101</JobID>
+      <Title>urn:newsml:dpa.com:20090101:170831-99-855101</Title>
+      <Urgency>4</Urgency>
+      <IPTC02000>2</IPTC02000>
+      <IPTC02065>ines-g2-exporter</IPTC02065>
+      <IPTC02070>7.25.16.23</IPTC02070>
+      <IPTC02130>3P</IPTC02130>
+      <Filename>dpa_14963E002A014C3D.jpg</Filename>
+      <WordCount>50</WordCount>
+      <CharCount>361</CharCount>
+    </head>
+    <body xmlns="http://www.w3.org/1999/xhtml" xml:lang="">
+      <p>Kanzlerkandidat Martin Schulz (SPD) spricht am 30.08.2017 in Bielefeld (Nordrhein-Westfalen) bei einer Wahlkampfveranstaltung der SPD.
+
+Politiker üben ihre Auftritte, damit sie Menschen besser überzeugen können. Dazu gehört auch Körpersprache.
+
+ACHTUNG: Dieses Bild hat dpa auch im Bildfunk gesendet. Foto: Friso Gentsch/dpa +++(c) dpa - Nachrichten für Kinder+++</p>
+    </body>
+    <files>
+      <file xmlns="http://www.digicol.com/xmlns/dcx" id="file6wjzrpe1eifzyycjjy" href="/dcx/atom/file/file6wjzrpe1eifzyycjjy" version="1.0" src="/device_testApp/dev1/2017/09-05/7e/fb/file6wjzrpe1eifzyycjjy.jpg">
+        <created>2017-09-05T14:59:03+02:00</created>
+        <current>1</current>
+        <derivedfrom id=""/>
+        <dev_id id="dev1"/>
+        <displayname></displayname>
+        <doc_id id="doc6wjzrpdlkd36y3fnjy"/>
+        <hash>65923bb37102e284c61608db5fae2d25</hash>
+        <identifier></identifier>
+        <info>
+          <DisplayPath/>
+          <ImageBits>8</ImageBits>
+          <ImageColorspace>rgb</ImageColorspace>
+          <ImageHeight>741</ImageHeight>
+          <ImageOrientation>l</ImageOrientation>
+          <ImagePixels>889200</ImagePixels>
+          <ImageWidth>1200</ImageWidth>
+        </info>
+        <mimetype>image/jpeg</mimetype>
+        <modcount>1</modcount>
+        <modified>2017-09-05T14:59:03+02:00</modified>
+        <size>72900</size>
+        <subpath>2017/09-05/7e/fb/file6wjzrpe1eifzyycjjy.jpg</subpath>
+        <type>layout</type>
+        <variant>master</variant>
+        <version>1</version>
+      </file>
+      <file xmlns="http://www.digicol.com/xmlns/dcx" id="file6wjzrpdzltg163w5cjy" href="/dcx/atom/file/file6wjzrpdzltg163w5cjy" version="1.0" src="/device_testApp/dev1/2017/09-05/da/1e/file6wjzrpdzltg163w5cjy.jpg">
+        <created>2017-09-05T14:59:03+02:00</created>
+        <current>1</current>
+        <derivedfrom id=""/>
+        <dev_id id="dev1"/>
+        <displayname>dpa_14963E002A014C3D.jpg</displayname>
+        <doc_id id="doc6wjzrpdlkd36y3fnjy"/>
+        <hash>4b0e9d6f4292b8dff8d3bd1c0c48a222</hash>
+        <identifier></identifier>
+        <info>
+          <DisplayPath/>
+          <ICCProfilename>sRGB IEC61966-2.1</ICCProfilename>
+          <ImageBits>8</ImageBits>
+          <ImageColorspace>rgb</ImageColorspace>
+          <ImageHeight>1666</ImageHeight>
+          <ImageOrientation>l</ImageOrientation>
+          <ImagePixels>4494868</ImagePixels>
+          <ImageWidth>2698</ImageWidth>
+          <clipping_path>0</clipping_path>
+          <exif>
+            <Composite>
+              <ImageSize>2698x1666</ImageSize>
+              <Megapixels>4.494868</Megapixels>
+            </Composite>
+          </exif>
+        </info>
+        <mimetype>image/jpeg</mimetype>
+        <modcount>1</modcount>
+        <modified>2017-09-05T14:59:03+02:00</modified>
+        <size>499035</size>
+        <subpath>2017/09-05/da/1e/file6wjzrpdzltg163w5cjy.jpg</subpath>
+        <type>original</type>
+        <variant>master</variant>
+        <version>1</version>
+      </file>
+      <file xmlns="http://www.digicol.com/xmlns/dcx" id="file6wjzrpe2vj558l63jy" href="/dcx/atom/file/file6wjzrpe2vj558l63jy" version="1.0" src="/device_testApp/dev1/2017/09-05/e0/8b/file6wjzrpe2vj558l63jy.jpg">
+        <created>2017-09-05T14:59:03+02:00</created>
+        <current>1</current>
+        <derivedfrom id=""/>
+        <dev_id id="dev1"/>
+        <displayname></displayname>
+        <doc_id id="doc6wjzrpdlkd36y3fnjy"/>
+        <hash>2c9b3a3c661bdce20c5dd94d14174bb4</hash>
+        <identifier></identifier>
+        <info>
+          <DisplayPath/>
+          <ImageBits>8</ImageBits>
+          <ImageColorspace>rgb</ImageColorspace>
+          <ImageHeight>371</ImageHeight>
+          <ImageOrientation>l</ImageOrientation>
+          <ImagePixels>222600</ImagePixels>
+          <ImageWidth>600</ImageWidth>
+        </info>
+        <mimetype>image/jpeg</mimetype>
+        <modcount>1</modcount>
+        <modified>2017-09-05T14:59:03+02:00</modified>
+        <size>26598</size>
+        <subpath>2017/09-05/e0/8b/file6wjzrpe2vj558l63jy.jpg</subpath>
+        <type>thumbnail</type>
+        <variant>master</variant>
+        <version>1</version>
+      </file>
+    </files>
+  </document>
+  <feed xmlns:dcx="http://www.digicol.com/xmlns/dcx" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:fh="http://purl.org/syndication/history/1.0" rel="dcx:document_files_master">
+    <link rel="self" href="/dcx/atom/files?startIndex=1&amp;itemsPerPage=10&amp;q%5Bdoc_id%5D=doc6wjzrpdlkd36y3fnjy&amp;q%5Bvariant%5D=master" type="application/atom+xml"/>
+    <link rel="first" href="/dcx/atom/files?startIndex=1&amp;itemsPerPage=10&amp;q%5Bdoc_id%5D=doc6wjzrpdlkd36y3fnjy&amp;q%5Bvariant%5D=master" type="application/atom+xml"/>
+    <link rel="previous" href="/dcx/atom/files?startIndex=1&amp;itemsPerPage=10&amp;q%5Bdoc_id%5D=doc6wjzrpdlkd36y3fnjy&amp;q%5Bvariant%5D=master" type="application/atom+xml"/>
+    <link rel="next" href="/dcx/atom/files?startIndex=1&amp;itemsPerPage=10&amp;q%5Bdoc_id%5D=doc6wjzrpdlkd36y3fnjy&amp;q%5Bvariant%5D=master" type="application/atom+xml"/>
+    <link rel="last" href="/dcx/atom/files?startIndex=1&amp;itemsPerPage=10&amp;q%5Bdoc_id%5D=doc6wjzrpdlkd36y3fnjy&amp;q%5Bvariant%5D=master" type="application/atom+xml"/>
+    <link rel="alternate" href="/dcx/files" type="text/html"/>
+    <link rel="search" href="/dcx/atom/files?searchdescription&amp;q%5Bdoc_id%5D=doc6wjzrpdlkd36y3fnjy&amp;q%5Bvariant%5D=master" type="application/opensearchdescription+xml"/>
+    <title type="text">DCX_File</title>
+    <updated>2017-10-05T01:49:01+02:00</updated>
+    <entry xmlns:dcx="http://www.digicol.com/xmlns/dcx">
+      <id>http://customer.digicol.de/xmlns/dcx/file/file6wjzrpdzltg163w5cjy</id>
+      <link rel="self" href="/dcx/atom/file/file6wjzrpdzltg163w5cjy" type="application/atom+xml;type=entry"/>
+      <link rel="edit-media" href="http://192.168.18.131/device_testApp/dev1/2017/09-05/da/1e/file6wjzrpdzltg163w5cjy.jpg" type="image/jpeg"/>
+      <link rel="document-file-with-updated-metadata" href="/dcx/atom/documentfilewithupdatedmetadata/file6wjzrpdzltg163w5cjy.jpg" type="image/jpeg"/>
+      <link rel="dcx:document" href="/dcx/atom/document/doc6wjzrpdlkd36y3fnjy" type="application/atom+xml;type=entry"/>
+      <title type="text">dpa_14963E002A014C3D.jpg</title>
+      <updated>2017-09-05T14:59:03+02:00</updated>
+      <content type="image/jpeg" src="http://192.168.18.131/device_testApp/dev1/2017/09-05/da/1e/file6wjzrpdzltg163w5cjy.jpg"/>
+      <published>2017-09-05T14:59:03+02:00</published>
+      <file xmlns="http://www.digicol.com/xmlns/dcx" id="file6wjzrpdzltg163w5cjy" href="/dcx/atom/file/file6wjzrpdzltg163w5cjy" version="1.0" src="/device_testApp/dev1/2017/09-05/da/1e/file6wjzrpdzltg163w5cjy.jpg">
+        <created>2017-09-05T14:59:03+02:00</created>
+        <current>1</current>
+        <derivedfrom id=""/>
+        <dev_id id="dev1"/>
+        <displayname>dpa_14963E002A014C3D.jpg</displayname>
+        <doc_id id="doc6wjzrpdlkd36y3fnjy"/>
+        <hash>4b0e9d6f4292b8dff8d3bd1c0c48a222</hash>
+        <identifier></identifier>
+        <info>
+          <DisplayPath/>
+          <ICCProfilename>sRGB IEC61966-2.1</ICCProfilename>
+          <ImageBits>8</ImageBits>
+          <ImageColorspace>rgb</ImageColorspace>
+          <ImageHeight>1666</ImageHeight>
+          <ImageOrientation>l</ImageOrientation>
+          <ImagePixels>4494868</ImagePixels>
+          <ImageWidth>2698</ImageWidth>
+          <clipping_path>0</clipping_path>
+          <exif>
+            <Composite>
+              <ImageSize>2698x1666</ImageSize>
+              <Megapixels>4.494868</Megapixels>
+            </Composite>
+          </exif>
+        </info>
+        <mimetype>image/jpeg</mimetype>
+        <modcount>1</modcount>
+        <modified>2017-09-05T14:59:03+02:00</modified>
+        <size>499035</size>
+        <subpath>2017/09-05/da/1e/file6wjzrpdzltg163w5cjy.jpg</subpath>
+        <type>original</type>
+        <variant>master</variant>
+        <version>1</version>
+      </file>
+    </entry>
+    <entry xmlns:dcx="http://www.digicol.com/xmlns/dcx">
+      <id>http://customer.digicol.de/xmlns/dcx/file/file6wjzrpe1eifzyycjjy</id>
+      <link rel="self" href="/dcx/atom/file/file6wjzrpe1eifzyycjjy" type="application/atom+xml;type=entry"/>
+      <link rel="edit-media" href="http://192.168.18.131/device_testApp/dev1/2017/09-05/7e/fb/file6wjzrpe1eifzyycjjy.jpg" type="image/jpeg"/>
+      <link rel="document-file-with-updated-metadata" href="/dcx/atom/documentfilewithupdatedmetadata/file6wjzrpe1eifzyycjjy.jpg" type="image/jpeg"/>
+      <link rel="dcx:document" href="/dcx/atom/document/doc6wjzrpdlkd36y3fnjy" type="application/atom+xml;type=entry"/>
+      <updated>2017-09-05T14:59:03+02:00</updated>
+      <content type="image/jpeg" src="http://192.168.18.131/device_testApp/dev1/2017/09-05/7e/fb/file6wjzrpe1eifzyycjjy.jpg"/>
+      <published>2017-09-05T14:59:03+02:00</published>
+      <file xmlns="http://www.digicol.com/xmlns/dcx" id="file6wjzrpe1eifzyycjjy" href="/dcx/atom/file/file6wjzrpe1eifzyycjjy" version="1.0" src="/device_testApp/dev1/2017/09-05/7e/fb/file6wjzrpe1eifzyycjjy.jpg">
+        <created>2017-09-05T14:59:03+02:00</created>
+        <current>1</current>
+        <derivedfrom id=""/>
+        <dev_id id="dev1"/>
+        <displayname></displayname>
+        <doc_id id="doc6wjzrpdlkd36y3fnjy"/>
+        <hash>65923bb37102e284c61608db5fae2d25</hash>
+        <identifier></identifier>
+        <info>
+          <DisplayPath/>
+          <ImageBits>8</ImageBits>
+          <ImageColorspace>rgb</ImageColorspace>
+          <ImageHeight>741</ImageHeight>
+          <ImageOrientation>l</ImageOrientation>
+          <ImagePixels>889200</ImagePixels>
+          <ImageWidth>1200</ImageWidth>
+        </info>
+        <mimetype>image/jpeg</mimetype>
+        <modcount>1</modcount>
+        <modified>2017-09-05T14:59:03+02:00</modified>
+        <size>72900</size>
+        <subpath>2017/09-05/7e/fb/file6wjzrpe1eifzyycjjy.jpg</subpath>
+        <type>layout</type>
+        <variant>master</variant>
+        <version>1</version>
+      </file>
+    </entry>
+    <entry xmlns:dcx="http://www.digicol.com/xmlns/dcx">
+      <id>http://customer.digicol.de/xmlns/dcx/file/file6wjzrpe2vj558l63jy</id>
+      <link rel="self" href="/dcx/atom/file/file6wjzrpe2vj558l63jy" type="application/atom+xml;type=entry"/>
+      <link rel="edit-media" href="http://192.168.18.131/device_testApp/dev1/2017/09-05/e0/8b/file6wjzrpe2vj558l63jy.jpg" type="image/jpeg"/>
+      <link rel="document-file-with-updated-metadata" href="/dcx/atom/documentfilewithupdatedmetadata/file6wjzrpe2vj558l63jy.jpg" type="image/jpeg"/>
+      <link rel="dcx:document" href="/dcx/atom/document/doc6wjzrpdlkd36y3fnjy" type="application/atom+xml;type=entry"/>
+      <updated>2017-09-05T14:59:03+02:00</updated>
+      <content type="image/jpeg" src="http://192.168.18.131/device_testApp/dev1/2017/09-05/e0/8b/file6wjzrpe2vj558l63jy.jpg"/>
+      <published>2017-09-05T14:59:03+02:00</published>
+      <file xmlns="http://www.digicol.com/xmlns/dcx" id="file6wjzrpe2vj558l63jy" href="/dcx/atom/file/file6wjzrpe2vj558l63jy" version="1.0" src="/device_testApp/dev1/2017/09-05/e0/8b/file6wjzrpe2vj558l63jy.jpg">
+        <created>2017-09-05T14:59:03+02:00</created>
+        <current>1</current>
+        <derivedfrom id=""/>
+        <dev_id id="dev1"/>
+        <displayname></displayname>
+        <doc_id id="doc6wjzrpdlkd36y3fnjy"/>
+        <hash>2c9b3a3c661bdce20c5dd94d14174bb4</hash>
+        <identifier></identifier>
+        <info>
+          <DisplayPath/>
+          <ImageBits>8</ImageBits>
+          <ImageColorspace>rgb</ImageColorspace>
+          <ImageHeight>371</ImageHeight>
+          <ImageOrientation>l</ImageOrientation>
+          <ImagePixels>222600</ImagePixels>
+          <ImageWidth>600</ImageWidth>
+        </info>
+        <mimetype>image/jpeg</mimetype>
+        <modcount>1</modcount>
+        <modified>2017-09-05T14:59:03+02:00</modified>
+        <size>26598</size>
+        <subpath>2017/09-05/e0/8b/file6wjzrpe2vj558l63jy.jpg</subpath>
+        <type>thumbnail</type>
+        <variant>master</variant>
+        <version>1</version>
+      </file>
+    </entry>
+    <fh:complete/>
+    <opensearch:startIndex>1</opensearch:startIndex>
+    <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+    <opensearch:totalResults>3</opensearch:totalResults>
+  </feed>
+</entry>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- document_create.xml -->
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:dcx="http://www.digicol.com/xmlns/dcx">
+  <document xmlns="http://www.digicol.com/xmlns/dcx" id="" version="1.0">
+    <identifier>my-unique-identifier-01</identifier>
+    <pool_id id="atext"/>
+    <head>
+      <DateCreated>2009-09-24T18:00:55+02:00</DateCreated>
+      <Source>dpa - Deutsche Presse-Agentur GmbH</Source>
+      <CopyrightNotice>dpa-info.com GmbH</CopyrightNotice>
+      <Headline>dpa-Nachrichtenüberblick Sport</Headline>
+      <Type>text</Type>
+      <Language>de</Language>
+      <Owner>cn=Testers,ou=groups,dc=example,dc=com</Owner>
+      <Provider>dpa - Deutsche Presse-Agentur GmbH</Provider>
+      <Category>sp</Category>
+      <Keywords>Sport</Keywords>
+    </head>
+    <body xmlns="http://www.w3.org/1999/xhtml" xml:lang="de">
+      <p>Cancellara Zeitfahr-Weltmeister - Martin gewinnt Bronze</p>
+      <p>Mendrisio (dpa) - Der Cottbuser Tony Martin hat bei der Rad-WM im Zeitfahren die Bronzemedaille erkämpft. Hinter dem neuen Weltmeister Fabian Cancellara aus der Schweiz und dem Schweden Gustav Larsson fuhr der 24 Jahre alte Radprofi am Donnerstag mit einem Rückstand von 2:30 Minuten auf den dritten Rang. Lokalmatador und Olympiasieger Cancellara wurde vor heimischem Publikum in Mendrisio seiner Favoritenstellung in 57:55 Minuten souverän gerecht und führte bei allen Zwischenzeiten. Titelverteidiger Bert Grabsch (Wittenberg) konnte auf der 49,8 Kilometer langen Strecke nicht in den Medaillenkampf eingreifen.</p>
+      <p>Torhüter Lehmann wieder im VfB-Kader</p>
+      <p>Stuttgart (dpa) - Fußball-Bundesligist VfB Stuttgart hat die Suspendierung von Jens Lehmann aufgehoben. Der 39-Jährige soll am Samstag beim Auswärtsspiel in Frankfurt wieder im Tor stehen. Nach einem Gespräch am Donnerstag mit Lehmann, Trainer Markus Babbel und Sportdirektor Jochen Schneider erklärte Manager Horst Heldt: «Jens hat eingesehen, dass er seiner Vorbildfunktion nicht gerecht geworden ist. Damit ist der Fall für uns erledigt.» Lehmann hatte am Samstag nach der 0:2-Niederlage gegen Köln das Münchner Oktoberfest besucht, ohne das mit dem Verein abzusprechen. Er war daraufhin am Montag aus dem VfB-Kader für das Pokalspiel in Lübeck gestrichen worden.</p>
+      <p>Özil vor Rückkehr ins Werder-Team</p>
+      <p>Bremen (dpa) - Fußball-Nationalspieler Mesut Özil steht bei Werder Bremen vor der Rückkehr ins Bundesliga-Team. Der Mittelfeldakteur, der zuletzt mit Knieproblemen pausieren musste, nahm am Donnerstag an der Vorbereitung auf das Heimspiel gegen Mainz 05 teil. «Es sieht gut aus. Das Knie ist besser geworden und ich hoffe, dass es für Samstag reicht», sagte Werder-Trainer Thomas Schaaf, der einen spielstarken Gegner erwartet. «Der gute Tabellenplatz überrascht mich nicht.»</p>
+      <p>Hamburger SV bangt vor Bayern-Spiel um Zé Roberto</p>
+      <p>Hamburg (dpa) - Fußball-Bundesligist Hamburger SV bangt vor dem Spitzenspiel am Samstag (18.30 Uhr) gegen Rekordmeister Bayern München um Mittelfeldspieler Zé Roberto. Der 35-jährige Brasilianer, der sechs Jahre für den FC Bayern gespielt hatte, laboriert an einer Muskelverhärtung in der Wade. «Ich hoffe, dass ich es bis Samstag schaffe», sagte Zé Roberto und bekannte am Donnerstag, dass der Nord- Süd-Gipfel eine große Bedeutung für ihn habe. Das Pokal-Aus beim VfL Osnabrück müsse sein Team schnell vergessen. «Bayern ist stark, aber wir können das schaffen», versicherte Zé Roberto.</p>
+      <p>Ostholt führt nach erstem EM-Tag vor Schrade</p>
+      <p>Fontainebleau (dpa) - Frank Ostholt liegt nach dem ersten Tag der Vielseitigkeits-Europameisterschaft in Führung und darf sich berechtigte Hoffnungen auf eine Medaille machen. Der 34 Jahre alte Reiter aus Warendorf erhielt am Donnerstag in Fontainebleau für seine Dressur mit Air Jordan 39,20 Strafpunkte und führt vor Dirk Schrade (Sprockhövel) mit Gadget de la Cere (39,60). Hinter William Fox-Pitt (Großbritannien) mit Idalgo (41,50) ist EM-Debütant Michael Jung (Horb) mit Sam (45,00) Vierter. In der Teamwertung liegen die deutschen Reiter (84,20) vor Titelverteidiger Großbritannien (98,20) und Gastgeber Frankreich (101,30).</p>
+      <p>Klasse-Comeback für Eiskunstläufer Lindemann</p>
+      <p>Oberstdorf (dpa) - Nach zwei Jahren Verletzungspause hat der sechsmalige deutsche Eiskunstlauf-Meister Stefan Lindemann bei der Nebelhorn-Trophy ein Klasse-Comeback gegeben. Mit Rang acht nach dem Kurzprogramm lag der 28 Jahre alte WM-Dritte von 2004 auf Kurs für die Olympia-Qualifikation. «Ich fühle mich sehr, sehr gut», sagte Lindemann, «ich bin erleichtert nach diesem Einstand nach so langer Pause.» Der Erfurter überzeugte am Donnerstag in Oberstdorf und erhielt 63,95 Punkte. In Führung lag mit 77,45 Zählern der zweimalige Weltmeister Stéphane Lambiel aus der Schweiz.</p>
+      <p>Ringer-WM: Stefanie Stüber scheitert in Hoffnungsrunde</p>
+      <p>Herning (dpa) - Auch am vierten Wettkampftag der Ringer- Weltmeisterschaft im dänischen Herning ist das deutsche Team ohne Medaille geblieben. Stefanie Stüber vom VfK Schifferstadt scheiterte am Donnerstag in der Kategorie bis 63 Kilogramm in der Hoffnungsrunde gegen Olesja Zamula (Aserbaidschan) in 0:2 Runden (0:1, 2:6). «Das war einfach zu wenig, sie hat viel zu verhalten gerungen, so kann man bei einer Weltmeisterschaft eben nicht gewinnen», meinte der Präsident des Deutschen Ringer-Bundes, Manfred Werner.</p>
+    </body>
+  </document>
+</entry>
