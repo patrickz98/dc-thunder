@@ -1,6 +1,7 @@
 <?php
 
 include("./ThunderExportParagraphText.php");
+include("./ThunderExportParagraphImage.php");
 
 class ThunderExportParagraph
 {
@@ -15,6 +16,11 @@ class ThunderExportParagraph
         if (ThunderExportParagraphText::$type === $type)
         {
             return ThunderExportParagraphText::get($json);
+        }
+
+        if (ThunderExportParagraphImage::$type === $type)
+        {
+            return ThunderExportParagraphImage::get($json);
         }
 
         return null;
