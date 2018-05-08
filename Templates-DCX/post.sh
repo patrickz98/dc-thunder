@@ -9,5 +9,6 @@ curl \
 
 cat zzz.txt
 
+# curl --user "testuser:dc" http://192.168.18.131/dcx/api/document/doc6wxj23xrnq9ucu831m40
 # cookie-jar = "cookies.txt"
 # cookie = "cookies.txt"

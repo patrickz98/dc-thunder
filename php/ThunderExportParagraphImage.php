@@ -1,6 +1,6 @@
 <?php
 
-include("./DCXFileUpload.php");
+include("./DcxFileUpload.php");
 
 class ThunderExportParagraphImage
 {

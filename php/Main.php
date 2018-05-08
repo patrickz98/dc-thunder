@@ -14,6 +14,8 @@ include("./ThunderExport.php");
 include("./DcxFeedReader.php");
 include("./ArticleParagraphFactory.php");
 
+include("./DcxStory.php");
+
 function patch($nodeId)
 {
     echo "--> Patching... ";
@@ -144,7 +146,17 @@ function main()
     }
 }
 
-Simple::logJson("", ThunderExport::exportArticle());
+$export = ThunderExport::exportArticle();
+Simple::logJson("export", $export);
+
+$article = new DcxStory(Config::$dcx_server, Config::$dcx_auth);
+$article->setTitle(     $export[ "title"      ]);
+$article->setSeoTitle(  $export[ "seoTitle"   ]);
+$article->setParagraphs($export[ "paragraphs" ]);
+
+Simple::logJson("build", $article->build());
+
+
 //main();
 
 //patchMetatags(287);

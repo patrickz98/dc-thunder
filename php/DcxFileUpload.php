@@ -1,6 +1,6 @@
 <?php
 
-class DCXFileUpload
+class DcxFileUpload
 {
     private static function getFileId($dcxResponse)
     {
