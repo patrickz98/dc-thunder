@@ -19,14 +19,9 @@ class ThunderExport
         return $json[ "field_teaser_text" ][ 0 ][ "value" ];
     }
 
-    private static function getLangcode($json)
-    {
-        return $json[ "langcode" ][ 0 ][ "value" ];
-    }
-
     private static function getParagraphs($json)
     {
-        ThunderExportParagraph::getAll($json);
+        return ThunderExportParagraph::getAll($json);
     }
 
     public static function exportArticle()
@@ -36,12 +31,12 @@ class ThunderExport
 
         Simple::write("zzz-content.json", $json);
 
-        echo self::getTitle($json) . "\n";
-        echo self::getSEOTitle($json) . "\n";
-        echo self::getTeaserText($json) . "\n";
-        echo self::getLangcode($json) . "\n";
-
-        self::getParagraphs($json);
+        return [
+            "title"      => self::getTitle($json),
+            "seoTitle"   => self::getSEOTitle($json),
+            "teaserText" => self::getTeaserText($json),
+            "paragraphs" => self::getParagraphs($json)
+        ];
     }
 }
 

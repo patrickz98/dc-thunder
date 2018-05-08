@@ -4,11 +4,11 @@ include("./ThunderExportParagraphText.php");
 
 class ThunderExportParagraph
 {
-    private static function getContent($nodeId)
+    private static function getParagraph($target_id)
     {
-        $url = "http://localhost/thunder/entity/paragraph/$nodeId?_format=json";
+        $url = Config::$thunder_server . "/entity/paragraph/$target_id?_format=json";
         $json = Curl::get($url);
-        Simple::write("zzz-content-$nodeId.json", $json);
+        Simple::write("zzz-content-$target_id.json", $json);
 
         $type = $json[ "type" ][ 0 ][ "target_id" ];
 
@@ -22,11 +22,20 @@ class ThunderExportParagraph
 
     public static function getAll($json)
     {
-        foreach ($json[ "field_paragraphs" ] as $paragraph)
+        $paragraphs = [];
+
+        foreach ($json[ "field_paragraphs" ] as $paragraphInfo)
         {
-            echo $paragraph[ "target_id" ] . "\n";
-            print_r(self::getContent($paragraph[ "target_id" ]));
+            $target_id = $paragraphInfo[ "target_id" ];
+            $paragraph = self::getParagraph($target_id);
+
+            if ($paragraph)
+            {
+                array_push($paragraphs, $paragraph);
+            }
         }
+
+        return $paragraphs;
     }
 }
 

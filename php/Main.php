@@ -144,7 +144,7 @@ function main()
     }
 }
 
-ThunderExport::exportArticle();
+Simple::logJson("", ThunderExport::exportArticle());
 //main();
 
 //patchMetatags(287);
