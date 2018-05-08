@@ -1,0 +1,420 @@
+{
+    "@context": "\/dcx\/api\/_context",
+    "_files_index": {
+        "variant_type": {
+            "master": {
+                "original": 0,
+                "layout": 1,
+                "thumbnail": 2
+            },
+            "dcx_desktop_client59d1c61f0c7db": {
+                "original": 3,
+                "layout": 4,
+                "thumbnail": 5
+            },
+            "dcx_desktop_client59d1cc1ec5f61": {
+                "original": 6,
+                "layout": 7,
+                "thumbnail": 8
+            },
+            "dcx_desktop_client59d2da75d51ad": {
+                "original": 9,
+                "layout": 10,
+                "thumbnail": 11
+            },
+            "dcx_desktop_client59d2e07dc37b6": {
+                "original": 12,
+                "layout": 13,
+                "thumbnail": 14
+            },
+            "dcx_desktop_client59d31abc68ea6": {
+                "original": 15,
+                "layout": 16,
+                "thumbnail": 17
+            },
+            "dcx_desktop_client59d39ed2da3c3": {
+                "original": 18,
+                "layout": 19,
+                "thumbnail": 20
+            },
+            "dcx_desktop_client59d3eccf86d81": {
+                "original": 21,
+                "layout": 22,
+                "thumbnail": 23
+            },
+            "dcx_desktop_client59d3ed30f35ea": {
+                "original": 24,
+                "layout": 25,
+                "thumbnail": 26
+            },
+            "dcx_desktop_client59d3f96399203": {
+                "original": 27,
+                "layout": 28,
+                "thumbnail": 29
+            }
+        }
+    },
+    "_id": "dcxapi:document\/doc6wxj23xrnq9ucu831m40",
+    "_links": {
+        "document_doctorprofs": {
+            "_url": "\/dcx\/api\/doctorprof?q[doc_id]=doc6wxj23xrnq9ucu831m40",
+            "_entries_type": "dcx:doctorprof"
+        },
+        "document_doctoutags": {
+            "_url": "\/dcx\/api\/doctoutag?q[doc_id]=doc6wxj23xrnq9ucu831m40",
+            "_entries_type": "dcx:doctoutag"
+        }
+    },
+    "_type": "dcx:document",
+    "fields": {
+        "Category": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wjh69fqe2p12txdk5mb",
+                "_type": "dcx:tm_topic",
+                "value": "VM"
+            }
+        ],
+        "CharCount": [
+            {
+                "_type": "xsd:nonNegativeInteger",
+                "source": "com.digicol.dcx",
+                "value": "1967"
+            }
+        ],
+        "City": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wxj226b15tyl0su1m40",
+                "_type": "dcx:tm_topic",
+                "value": "Unterf\u00f6hring"
+            }
+        ],
+        "Country": [
+            {
+                "_id": "dcxapi:tm_topic\/country-DO",
+                "_type": "dcx:tm_topic",
+                "value": "Dominican Republic"
+            }
+        ],
+        "CountryCode": [
+            {
+                "value": "DOM"
+            }
+        ],
+        "Creator": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wxj22r0zvc1awlaz1m3z",
+                "_type": "dcx:tm_topic",
+                "value": "Martin Ehleben"
+            }
+        ],
+        "DateCreated": [
+            {
+                "_type": "xsd:dateTime",
+                "value": "2018-02-07T00:00:00+01:00"
+            }
+        ],
+        "DateImported": [
+            {
+                "_type": "xsd:dateTime",
+                "value": "2017-10-01T23:13:26+02:00"
+            }
+        ],
+        "Filename": [
+            {
+                "value": "dpa_5F988E00FF1D4BAD.jpg"
+            }
+        ],
+        "Headline": [
+            {
+                "value": "50 Topmodel-Anw\u00e4rterinnen, 3 Juroren, 1 Traumstrand"
+            }
+        ],
+        "Hotfolder": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6whfl5nsjy8dt039cz2",
+                "_type": "dcx:tm_topic",
+                "hotfolder_id": "agency_image",
+                "value": "Images"
+            }
+        ],
+        "IPTC02000": [
+            {
+                "value": "2"
+            }
+        ],
+        "IPTC02020": [
+            {
+                "value": "Fernsehen"
+            },
+            {
+                "value": "Freizeit"
+            },
+            {
+                "value": "Medien"
+            },
+            {
+                "value": "Mode"
+            },
+            {
+                "value": "Unterhaltung"
+            }
+        ],
+        "IPTC02065": [
+            {
+                "value": "dpa-G2"
+            }
+        ],
+        "IPTC02070": [
+            {
+                "value": "2.0.0"
+            }
+        ],
+        "IPTC02130": [
+            {
+                "value": "3P"
+            }
+        ],
+        "JobID": [
+            {
+                "value": "32159485"
+            }
+        ],
+        "Keywords": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wxj226e5jbkhzj51m40",
+                "_type": "dcx:tm_topic",
+                "value": "Bild"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wxj226fut119uem41m40",
+                "_type": "dcx:tm_topic",
+                "value": "Celebrities"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6ww73si6nea18s40fkp",
+                "_type": "dcx:tm_topic",
+                "value": "show"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wxj226gnpz1dwyx51m40",
+                "_type": "dcx:tm_topic",
+                "value": "TV-Ausblick"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wxj226ids31kbr9w1m40",
+                "_type": "dcx:tm_topic",
+                "value": "Video"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wxj226ixps14c5z11m40",
+                "_type": "dcx:tm_topic",
+                "value": "obs"
+            }
+        ],
+        "Language": [
+            {
+                "_id": "dcxapi:tm_topic\/lang-de",
+                "_type": "dcx:tm_topic",
+                "value": "German"
+            }
+        ],
+        "LastEditedBy": [
+            {
+                "_id": "dcxapi:user\/tmt6whfkac0p54v92r2cj9",
+                "_type": "dcx:user",
+                "value": "Manfred Mustermann"
+            }
+        ],
+        "Owner": [
+            {
+                "_id": "dcxapi:tm_topic\/owner-default",
+                "_type": "dcx:tm_topic",
+                "value": "testApp"
+            }
+        ],
+        "Provider": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wxj226d937l3o2s1m40",
+                "_type": "dcx:tm_topic",
+                "value": "ProSieben"
+            }
+        ],
+        "Source": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wxj226jmy914uzlr1m40",
+                "_type": "dcx:tm_topic",
+                "value": "ProSieben"
+            }
+        ],
+        "Title": [
+            {
+                "value": "urn:newsml:newsaktuell.de:20180207:32159485"
+            }
+        ],
+        "Type": [
+            {
+                "_id": "dcxapi:tm_topic\/documenttype-image",
+                "_type": "dcx:tm_topic",
+                "value": "Image"
+            }
+        ],
+        "Urgency": [
+            {
+                "value": "4"
+            }
+        ],
+        "WordCount": [
+            {
+                "_type": "xsd:nonNegativeInteger",
+                "source": "com.digicol.dcx",
+                "value": "277"
+            }
+        ],
+        "_display_title": [
+            {
+                "value": "50 Topmodel-Anw\u00e4rterinnen, 3 Juroren, 1 Traumstrand"
+            }
+        ],
+        "body": [
+            {
+                "_type": "xhtml",
+                "lang": "",
+                "value": "<p>Titel: Germany's next Topmodel - by Heidi Klum; Staffel: 13; 2018; Folge: 1; Ausstrahlungszeitraum von: 2018-02-08; Ausstrahlungszeitraum bis: 2018-02-08; Person: Michael Michalsky; Heidi Klum;Thomas Hayo;Ivana; Copyright: ProSieben\/Martin Ehleben; Fotograf: Martin Ehleben; Bildredakteur: Stephanie Schulz; Dateiname: 1114132.jpg; Rechtehinweis: Welcome to Paradise - Donnerstag starten Heidi Klum, Thomas Hayo und Michael Michalsky die Suche nach ,,Germany's next Topmodel\" ,,Dieses Jahr wird alles anders. Und vor allem anders als man denkt.\" Heidi Klum l\u00e4dt zum Start der 13. Staffel ,,Germany's next Topmodel - by Heidi Klum\" erstmals ihre Topmodel-Anw\u00e4rterinnen in die Karibik ein. Vor einer Traumkulisse stellen Michael Michalsky und Thomas Hayo der Jurychefin 50 Nachwuchsmodels vor, die sie in ganz Deutschland gesucht haben. Heidi Klum: ,,So viele M\u00e4dchen haben wir noch nie am Anfang mit auf gro\u00dfe Reise genommen.\" Die 13. Staffel ,,Germany's next Topmodel - by Heidi Klum\" startet am 8. Februar 2018 auf ProSieben. Dieses Bild darf bis Ende Mai 2018 honorarfrei fuer redaktionelle Zwecke und nur im Rahmen der Programmankuendigung verwendet werden. Spaetere Veroeffentlichungen sind nur nach Ruecksprache und ausdruecklicher Genehmigung der ProSiebenSat1 TV Deutschland GmbH moeglich. Nicht fuer EPG! Verwendung nur mit vollstaendigem Copyrightvermerk. Das Foto darf nicht veraendert, bearbeitet und nur im Ganzen verwendet werden. Es darf nicht archiviert werden. Es darf nicht an Dritte weitergeleitet werden. Bei Fragen: foto@prosiebensat1.com Voraussetzung fuer die Verwendung dieser Programmdaten ist die Zustimmung zu den Allgemeinen Geschaeftsbedingungen der Presselounges der Sender der ProSiebenSat.1 Media SE.; Weiterer Text \u00fcber ots und www.presseportal.de\/nr\/25171 \/ Die Verwendung dieses Bildes ist f\u00fcr redaktionelle Zwecke honorarfrei. Ver\u00f6ffentlichung bitte unter Quellenangabe: \"obs\/ProSieben\/Martin Ehleben\" Foto: Martin Ehleben\/ProSieben<\/p>"
+            }
+        ]
+    },
+    "files": [
+        {
+            "_id": "dcxapi:file\/file6wxj23xw1gg19jwah1m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wxj23xy4p012iph91m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wxj23xzs9i14v2r51m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wxpa9yhyyp149tt51m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wxpa9ykihfketpi1m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wxpa9ym2a0j54ca1m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wxpml116o81krp521m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wxpml12evm13026z1m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wxpml13d9elhgj11m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wy43zch2k5vc9491m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wy43zcjg54jszyn1m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wy43zcl5qr1fy1hw1m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wy59b65m7nec72k1m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wy59b67twy15m4ud1m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wy59b692s61dmx3m1m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wy7ojf7x14ylpvh1m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wy7ojf9u5y12t451m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wy7ojfaw0l2qrni1m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyew6vb480179wsz1m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyew6vd08welz3r1m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyew6veb10la0oi1m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyj59yp57911srn11m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyj59yrpxl1cuk8j1m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyj59yszavd75s1m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyj62yfu6f1hr5tf1m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyj62yjx8w8oeq51m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyj62ymj6x1czswj1m40",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyju7ywx551dwyyt1m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyju7yzgbkxnl0k1m3z",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wyju7z12e0p1jvg1m3z",
+            "_type": "dcx:file"
+        }
+    ],
+    "properties": {
+        "_created": "2017-10-01T23:13:26+02:00",
+        "_modcount": 11,
+        "_modified": "2017-10-03T22:56:45+02:00",
+        "_web_url": "\/dcx\/documents#\/doc\/doc6wxj23xrnq9ucu831m40",
+        "_web_url_ui": "\/dcx\/ui\/document\/doc6wxj23xrnq9ucu831m40",
+        "pool_id": {
+            "_id": "dcxapi:pool\/apict",
+            "_type": "dcx:pool"
+        },
+        "unique": "6f7ea452a043211333dcc3392506ae3c"
+    }
+}

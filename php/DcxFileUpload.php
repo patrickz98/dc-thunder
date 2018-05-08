@@ -2,6 +2,11 @@
 
 class DcxFileUpload
 {
+    private static function createDcxDoc($file)
+    {
+        // STUB!
+    }
+
     private static function getFileId($dcxResponse)
     {
         $location = $dcxResponse[ "location" ];
@@ -10,16 +15,6 @@ class DcxFileUpload
         return $matches[ 1 ];
     }
 
-    /*
-    curl -H 'Content-Type: image/jpeg' -H 'Slug: dcx-logo.jpg' --data-binary @/opt/dcx/static_www/images/dcx-logo.jpg -u 'user:secret' 'http://example.com/dcx/api/_file_upload'
-    {
-        "@context": "\/dcx\/api\/_context",
-        "_type": "dcx:success",
-        "dcx_code": 1,
-        "location": "\/dcx\/api\/file\/file6mvmlo9idd1jyszg1bz",
-        "status": 201
-    }
-    */
     public static function upload($file)
     {
         Simple::logJson("file", $file);
@@ -36,6 +31,8 @@ class DcxFileUpload
         $dcxResponse = Curl::postRaw($url, Config::$dcx_auth, $data, $headers);
 
         Simple::logJson("dcx-response", $dcxResponse);
+
+        $file[ "fileId" ] = self::getFileId($dcxResponse);
 
         return self::getFileId($dcxResponse);
     }
