@@ -35,7 +35,7 @@ function patch($nodeId)
 
 function export($dcx_doc)
 {
-    echo "--> Extracting docId=$dcx_doc... ";
+    echo "--> Extracting docId=$dcx_doc...       | ";
 
     $dcxExtractor = new DcxExtractor(Config::$dcx_server, Config::$dcx_auth);
     $story = $dcxExtractor->getStory($dcx_doc);
@@ -51,7 +51,7 @@ function export($dcx_doc)
     // Simple::logJson("story", $story);
     // exit(0);
 
-    echo "--> Creating new thunder article... ";
+    echo "--> Creating new thunder article...    | ";
 
     $article = new Article(Config::$thunder_server, Config::$thunder_auth);
     $article->setUuid(         $story[ "uuid"           ]);
