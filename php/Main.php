@@ -10,6 +10,7 @@ include("./Simple.php");
 include("./Article.php");
 include("./DcxExport.php");
 include("./ArticlePatch.php");
+include("./ThunderExport.php");
 include("./DcxFeedReader.php");
 include("./ArticleParagraphFactory.php");
 
@@ -143,7 +144,8 @@ function main()
     }
 }
 
-main();
+ThunderExport::exportArticle();
+//main();
 
 //patchMetatags(287);
 

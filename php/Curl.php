@@ -25,7 +25,7 @@ class Curl
         return $curl;
     }
 
-    public static function get($url, $auth)
+    public static function get($url, $auth = null)
     {
         $curl = Curl::curl_init($url, $auth);
 
@@ -35,7 +35,7 @@ class Curl
         return Simple::parseJson($result);
     }
 
-    public static function getRaw($url, $auth)
+    public static function getRaw($url, $auth = null)
     {
         $curl = Curl::curl_init($url, $auth);
 
