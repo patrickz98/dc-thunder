@@ -1,0 +1,52 @@
+curl \
+  --request POST \
+  --header "Content-type: application/json" \
+  -c cookie.txt \
+  --url "http://h2758593.stratoserver.net/thunder/user/login?_format=json" \
+  --data '{"name":"USER", "pass":"PASSWORD"}'
+
+curl \
+  --request GET \
+  --header "Content-type: application/json" \
+  -b cookie.txt \
+  --url "http://h2758593.stratoserver.net/thunder/user/login_status?_format=json"
+
+curl \
+  --request POST \
+  --header "Content-Type: application/vnd.api+json" \
+  -b cookie.txt \
+  --url http://h2758593.stratoserver.net/thunder/jsonapi/node/page \
+  --data '{"data": {"type": "node--page","attributes": {"title": "Created via JSON API 1222222"}}}'
+
+curl \
+  --request POST \
+  --header 'Accept: application/vnd.api+json' \
+  --header 'Content-type: application/vnd.api+json' \
+  -b cookie.txt \
+  --url http://h2758593.stratoserver.net/thunder/jsonapi/node/article \
+  --data-binary @thunder-article-template.json
+
+curl \
+  --request POST \
+  --header "Content-type: application/json" \
+  -b cookie.txt \
+  --url "http://h2758593.stratoserver.net/thunder/user/logout?_format=json"
+
+curl \
+  --request PATCH \
+  --header "Accept: application/vnd.api+json" \
+  --header "Content-type: application/vnd.api+json" \
+  -b cookie.txt \
+  --url http://h2758593.stratoserver.net/thunder/jsonapi/node/page/5b15f24b-b028-4843-8a1e-d5cd1581a9d9 \
+  --data '{"data":{"id":"5b15f24b-b028-4843-8a1e-d5cd1581a9d9","attributes":{"title":"My updated title"}}}'
+
+curl \
+  --request PATCH \
+  -b cookie.txt \
+  --header "Accept: application/vnd.api+json" \
+  --header "Content-type: application/vnd.api+json" \
+  --url http://h2758593.stratoserver.net/thunder/jsonapi/node/article/0bd5c257-2231-450f-b4c2-ab156af7b78d \
+  --data-binary @payload.json
+
+curl http://h2758593.stratoserver.net/thunder/jsonapi/node/article > article.json
+curl http://h2758593.stratoserver.net/thunder/jsonapi/node/article/0bd5c257-2231-450f-b4c2-ab156af7b78d > article-0bd5c257-2231-450f-b4c2-ab156af7b78d.json

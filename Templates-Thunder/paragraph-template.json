@@ -1,0 +1,13 @@
+{
+    "type": [
+        {
+            "target_id": "text"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Auto Paragraph</p>\r\n",
+            "format": "basic_html"
+        }
+    ]
+}

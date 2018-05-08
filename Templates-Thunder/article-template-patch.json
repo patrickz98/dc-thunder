@@ -1,0 +1,13 @@
+{
+    "type": [
+        {
+            "target_id": "article"
+        }
+    ],
+    "field_paragraphs": [
+        {
+            "target_id": 26,
+            "target_revision_id": 33
+        }
+    ]
+}
