@@ -59,6 +59,21 @@ class Curl
         return $json ? $json : [ "XXX_Error" => $result ];
     }
 
+    public static function postRaw($url, $auth, $data, $headers)
+    {
+        $curl = Curl::curl_init($url, $auth);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($curl, CURLOPT_POSTFIELDS,    $data);
+        curl_setopt($curl, CURLOPT_HTTPHEADER,    $headers);
+
+        $result = curl_exec($curl);
+        curl_close($curl);
+
+        $json = Simple::parseJson($result);
+
+        return $json ? $json : [ "XXX_Error" => $result ];
+    }
+
     public static function postHalJson($url, $auth, $data)
     {
         $curl = Curl::curl_init($url, $auth);

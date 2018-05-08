@@ -1,5 +1,7 @@
 <?php
 
+include("./DCXFileUpload.php");
+
 class ThunderExportParagraphImage
 {
     public static $type = "image";
@@ -10,9 +12,17 @@ class ThunderExportParagraphImage
         $url      = Config::$thunder_server . "/file/" . $fileId . "?_format=json";
         $fileJson = Curl::get($url);
 
-        Simple::write("zzz-file-$fileId.json", $fileJson);
+        //Simple::write("zzz-file-$fileId.json", $fileJson);
 
-        return Config::$thunder_host . $fileJson[ "url" ][ 0 ][ "value" ];
+        $src = Config::$thunder_host . $fileJson[ "url" ][ 0 ][ "value" ];
+        $filename = $fileJson[ "filename" ][ 0 ][ "value" ];
+        $filemime = $fileJson[ "filemime" ][ 0 ][ "value" ];
+
+        return [
+            "src"      => $src,
+            "filename" => $filename,
+            "filemime" => $filemime,
+        ];
     }
 
     private static function getMedia($json)
@@ -21,7 +31,7 @@ class ThunderExportParagraphImage
         $url = Config::$thunder_server . "/media/" . $mediaId . "?_format=json";
         $mediaJson = Curl::get($url);
 
-        Simple::write("zzz-media-$mediaId.json", $mediaJson);
+        //Simple::write("zzz-media-$mediaId.json", $mediaJson);
 
         return $mediaJson;
     }
@@ -32,7 +42,7 @@ class ThunderExportParagraphImage
 
         return [
             "type" => self::$type,
-            "src"  => self::getSrc($mediaJson)
+            "data" => self::getSrc($mediaJson)
         ];
     }
 }

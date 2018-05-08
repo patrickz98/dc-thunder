@@ -9,7 +9,8 @@ class ThunderExportParagraph
     {
         $url = Config::$thunder_server . "/entity/paragraph/$target_id?_format=json";
         $json = Curl::get($url);
-        Simple::write("zzz-content-$target_id.json", $json);
+
+        //Simple::write("zzz-content-$target_id.json", $json);
 
         $type = $json[ "type" ][ 0 ][ "target_id" ];
 
@@ -23,7 +24,7 @@ class ThunderExportParagraph
             return ThunderExportParagraphImage::get($json);
         }
 
-        echo "STUB! --> target_id=$target_id type=$type\n";
+        // echo "STUB! --> target_id=$target_id type=$type\n";
 
         return null;
     }

@@ -29,7 +29,7 @@ class ThunderExport
         $url = "http://localhost/thunder/node/11?_format=json";
         $json = Curl::get($url);
 
-        Simple::write("zzz-content.json", $json);
+        //Simple::write("zzz-content.json", $json);
 
         return [
             "title"      => self::getTitle($json),
