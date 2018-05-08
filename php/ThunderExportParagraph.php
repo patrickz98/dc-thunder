@@ -23,6 +23,8 @@ class ThunderExportParagraph
             return ThunderExportParagraphImage::get($json);
         }
 
+        echo "STUB! --> target_id=$target_id type=$type\n";
+
         return null;
     }
 

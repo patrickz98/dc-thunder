@@ -18,7 +18,7 @@ class ArticleParagraphFactoryImage
             "filename" => [[ "value" => $fileName ]],
             "filemime" => [[ "value" => "image/jpeg" ]],
             "uri"      => [[ "value" => "public://patrick/$fileName" ]],
-            "data"     => [[ "value" => ArticleParagraphFactoryImage::getBase64($fileSrc) ]],
+            "data"     => [[ "value" => self::getBase64($fileSrc) ]],
             "uid"      => [
                 [
                     "target_id" => 1,
@@ -30,7 +30,7 @@ class ArticleParagraphFactoryImage
 
     private static function createFile($server, $auth, $fileSrc)
     {
-        $uploadInfo = ArticleParagraphFactoryImage::build($server, $fileSrc);
+        $uploadInfo = self::build($server, $fileSrc);
         $url        = "$server/entity/file?_format=hal_json";
         $response   = Curl::postHalJson($url, $auth, $uploadInfo);
 
@@ -40,7 +40,7 @@ class ArticleParagraphFactoryImage
     public static function createMedia($server, $auth, $fileSrc)
     {
         $url = "$server/entity/media?_format=json";
-        $target_id = ArticleParagraphFactoryImage::createFile($server, $auth, $fileSrc);
+        $target_id = self::createFile($server, $auth, $fileSrc);
 
         $media = [
             "bundle" => [
@@ -60,7 +60,7 @@ class ArticleParagraphFactoryImage
 
     public static function create($server, $auth, $fileSrc)
     {
-        $media    = ArticleParagraphFactoryImage::createMedia($server, $auth, $fileSrc);
+        $media    = self::createMedia($server, $auth, $fileSrc);
         $targetId = $media[ "mid" ][ 0 ][ "value" ];
 
         $data = [
