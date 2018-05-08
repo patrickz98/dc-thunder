@@ -1,9 +1,9 @@
 <?php
 
-include("./DcxExtractorMetaTags.php");
-include("./DcxExtractorParagraphs.php");
+include("./DcxExportMetaTags.php");
+include("./DcxExportParagraphs.php");
 
-class DcxExtractor
+class DcxExport
 {
     private static $dcx_server;
     private static $dcx_auth;
@@ -39,7 +39,7 @@ class DcxExtractor
             return null;
         }
 
-        $dcxExtractorParagraphs = new DcxExtractorParagraphs($doc);
+        $dcxExtractorParagraphs = new DcxExportParagraphs($doc);
         $paragraphs = $dcxExtractorParagraphs->getParagraphs();
 
         $story = [
@@ -49,7 +49,7 @@ class DcxExtractor
             "sub_headline"  => Simple::cleanHtml($doc[ "fields" ][ "SubHeadline"    ][ 0 ][ "value" ]),
             "display_title" => Simple::cleanHtml($doc[ "fields" ][ "_display_title" ][ 0 ][ "value" ]),
             "teaser_text"   => Simple::cleanHtml($doc[ "fields" ][ "Highline"       ][ 0 ][ "value" ]),
-            "metatags"      => DcxExtractorMetaTags::getMetaTags($doc),
+            "metatags"      => DcxExportMetaTags::getMetaTags($doc),
             "paragraphs"    => $paragraphs
         ];
 

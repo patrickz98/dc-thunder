@@ -8,7 +8,7 @@ include("./Curl.php");
 include("./Config.php");
 include("./Simple.php");
 include("./Article.php");
-include("./DcxExtractor.php");
+include("./DcxExport.php");
 include("./ArticlePatch.php");
 include("./DcxFeedReader.php");
 include("./ArticleParagraphFactory.php");
@@ -37,7 +37,7 @@ function export($dcx_doc)
 {
     echo "--> Extracting docId=$dcx_doc...       | ";
 
-    $dcxExtractor = new DcxExtractor(Config::$dcx_server, Config::$dcx_auth);
+    $dcxExtractor = new DcxExport(Config::$dcx_server, Config::$dcx_auth);
     $story = $dcxExtractor->getStory($dcx_doc);
 
     if (! $story)

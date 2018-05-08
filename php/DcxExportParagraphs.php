@@ -1,8 +1,8 @@
 <?php
 
-include("./DcxExtractorImages.php");
+include("./DcxExportImages.php");
 
-class DcxExtractorParagraphs
+class DcxExportParagraphs
 {
     private $doc;
     private $imageIds;
@@ -11,8 +11,8 @@ class DcxExtractorParagraphs
     function __construct($doc)
     {
         $this->doc       = $doc;
-        $this->imageIds  = DcxExtractorImages::getImageIds($doc);
-        $this->galleries = DcxExtractorImages::getGalleries($doc);
+        $this->imageIds  = DcxExportImages::getImageIds($doc);
+        $this->galleries = DcxExportImages::getGalleries($doc);
     }
 
     public function parseHtml($htmlBody)

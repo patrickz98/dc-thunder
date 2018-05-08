@@ -1,6 +1,6 @@
 <?php
 
-class DcxExtractorImages
+class DcxExportImages
 {
     private static function getImageTargetIds($images)
     {
@@ -15,13 +15,13 @@ class DcxExtractorImages
 
                 // remove dcxapi:document/
                 $imageDocId = substr($imageDocId, 16);
-                $imageDoc   = DcxExtractor::getDoc($imageDocId);
+                $imageDoc   = DcxExport::getDoc($imageDocId);
                 $fileId     = $imageDoc[ "files" ][ 0 ][ "_id" ];
 
                 // remove dcxapi:file/
                 $fileId = substr($fileId, 12);
 
-                $file = DcxExtractor::getFile($fileId);
+                $file = DcxExport::getFile($fileId);
 
                 $parsedImages[ $targetImgId ] = $file[ "properties" ][ "_file_url_absolute" ];
             }

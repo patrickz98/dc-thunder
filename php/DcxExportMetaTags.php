@@ -1,6 +1,6 @@
 <?php
 
-class DcxExtractorMetaTags
+class DcxExportMetaTags
 {
     private static function extractValues($values)
     {
