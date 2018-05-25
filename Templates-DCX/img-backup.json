@@ -1,0 +1,258 @@
+{
+    "@context": "\/dcx\/api\/_context",
+    "_files_index": {
+        "variant_type": {
+            "master": {
+                "original": 0,
+                "layout": 1,
+                "thumbnail": 2
+            }
+        }
+    },
+    "_id": "dcxapi:document\/doc6wz8bklv6p114t2t41ogx",
+    "_links": {
+        "document_doctorprofs": {
+            "_url": "\/dcx\/api\/doctorprof?q[doc_id]=doc6wz8bklv6p114t2t41ogx",
+            "_entries_type": "dcx:doctorprof"
+        },
+        "document_doctoutags": {
+            "_url": "\/dcx\/api\/doctoutag?q[doc_id]=doc6wz8bklv6p114t2t41ogx",
+            "_entries_type": "dcx:doctoutag"
+        }
+    },
+    "_type": "dcx:document",
+    "fields": {
+        "Category": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wjh69fqe2p12txdk5mb",
+                "_type": "dcx:tm_topic",
+                "value": "VM"
+            }
+        ],
+        "CharCount": [
+            {
+                "_type": "xsd:nonNegativeInteger",
+                "source": "com.digicol.dcx",
+                "value": "225"
+            }
+        ],
+        "City": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wrz4pdwjzq1gprcqkl",
+                "_type": "dcx:tm_topic",
+                "value": "Hannover"
+            }
+        ],
+        "Country": [
+            {
+                "_id": "dcxapi:tm_topic\/country-DE",
+                "_type": "dcx:tm_topic",
+                "value": "Germany"
+            }
+        ],
+        "CountryCode": [
+            {
+                "value": "DEU"
+            }
+        ],
+        "Creator": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wrz4pqshtc1kw69zkm",
+                "_type": "dcx:tm_topic",
+                "value": "Holger Hollemann"
+            }
+        ],
+        "DateCreated": [
+            {
+                "_type": "xsd:dateTime",
+                "value": "2017-05-19T00:00:00+02:00"
+            }
+        ],
+        "DateImported": [
+            {
+                "_type": "xsd:dateTime",
+                "value": "2017-10-05T06:42:36+02:00"
+            }
+        ],
+        "DescriptionWriter": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wxc4hqcktxaznqiia",
+                "_type": "dcx:tm_topic",
+                "value": "hoh"
+            }
+        ],
+        "Filename": [
+            {
+                "value": "dpa_5F997200D2E76429.jpg"
+            }
+        ],
+        "Headline": [
+            {
+                "value": "Ausstellung \"Der Wolf. Ein Wildtier kehrt zur\u00fcck\""
+            }
+        ],
+        "Hotfolder": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6whfl5nsjy8dt039cz2",
+                "_type": "dcx:tm_topic",
+                "hotfolder_id": "agency_image",
+                "value": "Images"
+            }
+        ],
+        "IPTC02000": [
+            {
+                "value": "2"
+            }
+        ],
+        "IPTC02020": [
+            {
+                "value": "Museen"
+            },
+            {
+                "value": "Wissenschaft"
+            },
+            {
+                "value": "Tiere"
+            }
+        ],
+        "IPTC02065": [
+            {
+                "value": "dpa-G2"
+            }
+        ],
+        "IPTC02070": [
+            {
+                "value": "2.0.0"
+            }
+        ],
+        "IPTC02130": [
+            {
+                "value": "3P"
+            }
+        ],
+        "JobID": [
+            {
+                "value": "99-453564"
+            }
+        ],
+        "Keywords": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wz8bkm50rq10jnw81ogx",
+                "_type": "dcx:tm_topic",
+                "value": "Wolf"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wxj20wjtgobetmt1m3z",
+                "_type": "dcx:tm_topic",
+                "value": "lni"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wz8bkmapurfev4q1ogx",
+                "_type": "dcx:tm_topic",
+                "value": "nsb"
+            },
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wvzdx4909z11qutkkp",
+                "_type": "dcx:tm_topic",
+                "value": "Vermischtes"
+            }
+        ],
+        "Language": [
+            {
+                "_id": "dcxapi:tm_topic\/lang-de",
+                "_type": "dcx:tm_topic",
+                "value": "German"
+            }
+        ],
+        "Owner": [
+            {
+                "_id": "dcxapi:tm_topic\/owner-default",
+                "_type": "dcx:tm_topic",
+                "value": "testApp"
+            }
+        ],
+        "Provider": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6whijp2ed6t5yzivjw",
+                "_type": "dcx:tm_topic",
+                "value": "dpa"
+            }
+        ],
+        "ProvinceState": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6wjhyjo8qc6xe0066pd",
+                "_type": "dcx:tm_topic",
+                "value": "Niedersachsen"
+            }
+        ],
+        "Source": [
+            {
+                "_id": "dcxapi:tm_topic\/tmt6whijp2h56e1fec7pjw",
+                "_type": "dcx:tm_topic",
+                "value": "dpa"
+            }
+        ],
+        "Title": [
+            {
+                "value": "urn:newsml:dpa.com:20090101:180525-99-453564"
+            }
+        ],
+        "Type": [
+            {
+                "_id": "dcxapi:tm_topic\/documenttype-image",
+                "_type": "dcx:tm_topic",
+                "value": "Image"
+            }
+        ],
+        "Urgency": [
+            {
+                "value": "3"
+            }
+        ],
+        "WordCount": [
+            {
+                "_type": "xsd:nonNegativeInteger",
+                "source": "com.digicol.dcx",
+                "value": "32"
+            }
+        ],
+        "_display_title": [
+            {
+                "value": "Ausstellung \"Der Wolf. Ein Wildtier kehrt zur\u00fcck\""
+            }
+        ],
+        "body": [
+            {
+                "_type": "xhtml",
+                "lang": "",
+                "value": "<p>ARCHIV - 19.05.2017 , Niedersachsen,\u00a0Hannover: Der ausgestopfte Wolf Kurti steht im Landesmuseum. (zu dpa \"Ausstellung mit ausgestopftem Wolf Kurti sehr beliebt\" vom 26.05.2018) Foto: Holger Hollemann\/dpa +++ dpa-Bildfunk +++<\/p>"
+            }
+        ]
+    },
+    "files": [
+        {
+            "_id": "dcxapi:file\/file6wz8bkmig21pickf1ogx",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wz8bkmpxn88xz3y1ogx",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wz8bkmwd0o1gwv8c1ogx",
+            "_type": "dcx:file"
+        }
+    ],
+    "properties": {
+        "_created": "2017-10-05T06:42:37+02:00",
+        "_modcount": 2,
+        "_modified": "2017-10-05T06:42:37+02:00",
+        "_web_url": "\/dcx\/documents#\/doc\/doc6wz8bklv6p114t2t41ogx",
+        "_web_url_ui": "\/dcx\/ui\/document\/doc6wz8bklv6p114t2t41ogx",
+        "pool_id": {
+            "_id": "dcxapi:pool\/apict",
+            "_type": "dcx:pool"
+        },
+        "unique": "15cfb3e4db11b9dece9db16b4c0ae78b"
+    }
+}

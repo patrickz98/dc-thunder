@@ -6,6 +6,7 @@ class DcxStoryBodyImage
     private $auth;
 
     private $images;
+    private $fileIds;
 
     function __construct($dcx_server, $dcx_auth)
     {
@@ -15,7 +16,8 @@ class DcxStoryBodyImage
 
     public function setSource($paragraphs)
     {
-        $this->images = [];
+        $this->images  = [];
+        $this->fileIds = [];
 
         // filter images
         foreach ($paragraphs as $paragraph)
@@ -34,7 +36,7 @@ class DcxStoryBodyImage
 
         foreach ($this->images as $imgInfo)
         {
-            print_r($imgInfo);
+            //print_r($imgInfo);
 
             $header = [
                 "Slug"         => $imgInfo[ "data" ][ "filename" ],
@@ -44,11 +46,20 @@ class DcxStoryBodyImage
             $data = file_get_contents($imgInfo[ "data" ][ "src" ]);
 
             $response = Curl::postRaw($url, Config::$dcx_auth, $data, $header);
+            $fileSrc = $response[ "location" ];
 
-            print_r($response);
+            if ($fileSrc)
+            {
+                // /dcx/api/file/
+                $fileId = substr($fileSrc, 14);
+                array_push($this->fileIds, $fileId);
+            }
 
-            exit();
+            //print_r($response);
+            //exit();
         }
+
+        print_r($this->fileIds);
 
         //Curl::postRaw($url, Config::$dcx_auth, );
     }

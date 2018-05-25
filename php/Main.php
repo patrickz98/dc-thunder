@@ -158,8 +158,9 @@ $article->setTitle(     $export[ "title"      ]);
 $article->setSeoTitle(  $export[ "seoTitle"   ]);
 $article->setParagraphs($export[ "paragraphs" ]);
 
-Simple::logJson("post", $article->build());
-Simple::write("zzz.json", $article->build());
+$build = $article->build();
+Simple::logJson("post", $build);
+Simple::write("zzz.json", $build);
 //Simple::logJson("post", $article->post());
 
 

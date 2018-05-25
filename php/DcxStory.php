@@ -69,7 +69,6 @@ class DcxStory
     {
         $imagesBuilder = new DcxStoryBodyImage($this->server, $this->auth);
         $imagesBuilder->setSource($this->paragraphs);
-        $imagesBuilder->build();
 
         $images = $imagesBuilder->build();
 

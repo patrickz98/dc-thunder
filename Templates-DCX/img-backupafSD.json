@@ -1,0 +1,58 @@
+{
+    "_files_index": {
+        "variant_type": {
+            "master": {
+                "original": 0,
+                "layout": 1,
+                "thumbnail": 2
+            }
+        }
+    },
+    "_type": "dcx:document",
+    "fields": {
+        "Filename": [
+            {
+                "value": "dpa_5F997200D2E76429.jpg"
+            }
+        ],
+        "Headline": [
+            {
+                "value": "asfgasdgasd"
+            }
+        ],
+        "Type": [
+            {
+                "_id": "dcxapi:tm_topic\/documenttype-image",
+                "_type": "dcx:tm_topic",
+                "value": "Image"
+            }
+        ],
+        "body": [
+            {
+                "_type": "xhtml",
+                "lang": "",
+                "value": "<p>ARCHIV - 19.05.2017 , Niedersachsen,\u00a0Hannover: Der ausgestopfte Wolf Kurti steht im Landesmuseum. (zu dpa \"Ausstellung mit ausgestopftem Wolf Kurti sehr beliebt\" vom 26.05.2018) Foto: Holger Hollemann\/dpa +++ dpa-Bildfunk +++<\/p>"
+            }
+        ]
+    },
+    "files": [
+        {
+            "_id": "dcxapi:file\/file6wz8bkmig21pickf1ogx",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wz8bkmpxn88xz3y1ogx",
+            "_type": "dcx:file"
+        },
+        {
+            "_id": "dcxapi:file\/file6wz8bkmwd0o1gwv8c1ogx",
+            "_type": "dcx:file"
+        }
+    ],
+    "properties": {
+        "pool_id": {
+            "_id": "dcxapi:pool\/apict",
+            "_type": "dcx:pool"
+        }
+    }
+}
