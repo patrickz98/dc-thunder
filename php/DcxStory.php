@@ -43,11 +43,22 @@ class DcxStory
         ];
     }
 
+    private function buildType()
+    {
+        return [
+            [
+                "_id"   => "dcxapi:tm_topic/documenttype-story",
+                "_type" => "dcx:tm_topic",
+                "value" => "Story"
+            ]
+        ];
+    }
+
     private function buildStoryType()
     {
         return [
             [
-                "_id"   => "dcxapi:tm_topic\/storytype-online",
+                "_id"   => "dcxapi:tm_topic/storytype-online",
                 "_type" => "dcx:tm_topic",
                 "value" => "Online"
             ]
@@ -58,6 +69,7 @@ class DcxStory
     {
         $imagesBuilder = new DcxStoryBodyImage($this->server, $this->auth);
         $imagesBuilder->setSource($this->paragraphs);
+        $imagesBuilder->build();
 
         $images = $imagesBuilder->build();
 
@@ -66,6 +78,7 @@ class DcxStory
             "Headline"    => self::buildSimpleValue($this->title),
             "SubHeadline" => self::buildSimpleValue($this->seoTitle),
             "Catchline"   => self::buildSimpleValue($this->seoTitle),
+            "Type"        => self::buildType(),
             "StoryType"   => self::buildStoryType(),
             "body"        => DcxStoryBody::build($this->paragraphs),
         ];
@@ -75,7 +88,7 @@ class DcxStory
     {
         return [
             "pool_id" => [
-                "_id" => "dcxapi:pool\/story",
+                "_id" => "dcxapi:pool/story",
                 "_type" => "dcx:pool"
             ]
         ];
@@ -88,6 +101,14 @@ class DcxStory
             "fields"     => self::buildFields(),
             "properties" => self::buildProperties()
         ];
+    }
+
+    public function post()
+    {
+        // http://192.168.18.131/dcx/api
+        $url = Config::$dcx_server . "/document";
+
+        return Curl::post($url, Config::$dcx_auth, $this->build());
     }
 }
 

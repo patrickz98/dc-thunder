@@ -13,65 +13,6 @@
                 "value": "Headline: CURL POST"
             }
         ],
-        "Image": [
-            {
-                "_type": "dcx:taggroup",
-                "fields": {
-                    "DocumentRef": [
-                        {
-                            "_id": "dcxapi:document\/doc6wxj23xrnq9ucu831m40",
-                            "_type": "dcx:document",
-                            "file_variant": "dcx_desktop_client59d1cc1ec5f61",
-                            "position": "1"
-                        }
-                    ],
-                    "ImageCaption": [
-                        {
-                            "_type": "xhtml",
-                            "position": "1",
-                            "value": "<p>Test Img<\/p>"
-                        }
-                    ],
-                    "ImageCredit": [
-                        {
-                            "position": "1",
-                            "value": "Martin Ehleben"
-                        }
-                    ],
-                    "ImageLabel": [
-                        {
-                            "position": "1",
-                            "value": "Picture 2"
-                        }
-                    ],
-                    "TagGroupConfig": [
-                        {
-                            "document_mode": "single",
-                            "value": ""
-                        }
-                    ]
-                },
-                "taggroup_id": "image_2_59d458adaa586"
-            },
-            {
-                "_type": "dcx:taggroup",
-                "fields": {
-                    "ImageLabel": [
-                        {
-                            "position": "1",
-                            "value": "Picture 2"
-                        }
-                    ],
-                    "TagGroupConfig": [
-                        {
-                            "document_mode": "single",
-                            "value": ""
-                        }
-                    ]
-                },
-                "taggroup_id": "image_2_59d568e373e6b"
-            }
-        ],
         "StoryType": [
             {
                 "_id": "dcxapi:tm_topic\/storytype-online",
@@ -102,7 +43,7 @@
             {
                 "_type": "xhtml",
                 "lang": "",
-                "value": "<div class=\"media-container dcx_media_twitter\" data-dcx_media_type=\"twitter\" data-dcx_media_config=\"{&quot;content&quot;:{&quot;params&quot;:&quot;dcx_mg_attributes_slot_value=%3Cblockquote+class%3D%22twitter-tweet%22+data-lang%3D%22de%22%3E%3Cp+lang%3D%22en%22+dir%3D%22ltr%22%3ECrazy+Joe+Biden+is+trying+to+act+like+a+tough+guy.+Actually%2C+he+is+weak%2C+both+mentally+and+physically%2C+and+yet+he+threatens+me%2C+for+the+second+time%2C+with+physical+assault.+He+doesn%E2%80%99t+know+me%2C+but+he+would+go+down+fast+and+hard%2C+crying+all+the+way.+Don%E2%80%99t+threaten+people+Joe%21%3C%2Fp%3E%26mdash%3B+Donald+J.+Trump+%28%40realDonaldTrump%29+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FrealDonaldTrump%2Fstatus%2F976765417908776963%3Fref_src%3Dtwsrc%255Etfw%22%3E22.+M%C3%A4rz+2018%3C%2Fa%3E%3C%2Fblockquote%3E%0A%3Cscript+async+src%3D%22https%3A%2F%2Fplatform.twitter.com%2Fwidgets.js%22+charset%3D%22utf-8%22%3E%3C%2Fscript%3E%0A&quot;}}\">MediaSlot: Tweet twitter.com\/realDonaldTrump\/status\/976765417908776963<\/div><p>Zirkon ist ein Mineral aus der Mineralklasse der \u201eSilikate und Germanate\u201c mit der chemischen Zusammensetzung Zr[SiO4] und damit chemisch gesehen ein<\/p><div class=\"media-container dcx_media_imagegroups\" data-dcx_media_type=\"imagegroups\" data-dcx_media_config=\"{&quot;content&quot;:{&quot;params&quot;:&quot;dcx_mg_attributes_slot_value=image_2_59d458adaa586&quot;}}\">MediaSlot: ImageContainer #image_2_59d458adaa586<\/div><p>Zirconium-Silikat, das strukturell zu den Inselsilikaten z\u00e4hlt. Sehr typisch sind zum Teil hohe Gehalte an Hafnium, Uran, Thorium, Yttrium, Cer und anderen Metallen der Seltenen Erden (Rare Earth Elements, REE). Zirkon bildet eine l\u00fcckenlose Mischkristallreihe mit seinem wesentlich selteneren hafniumdominanten Analogon Hafnon. Reidit ist eine Hochdruckmodifikation von Zirkon.<\/p><p>Paragraf 2<\/p>"
+                "value": "<p>Paragraf 2<\/p>"
             }
         ]
     },

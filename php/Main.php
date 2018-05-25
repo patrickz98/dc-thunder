@@ -151,14 +151,16 @@ function main()
 //patchMetatags(287);
 
 $export = ThunderExport::exportArticle();
-Simple::logJson("export", $export);
+//Simple::logJson("export", $export);
 
 $article = new DcxStory(Config::$dcx_server, Config::$dcx_auth);
 $article->setTitle(     $export[ "title"      ]);
 $article->setSeoTitle(  $export[ "seoTitle"   ]);
 $article->setParagraphs($export[ "paragraphs" ]);
 
-Simple::logJson("build", $article->build());
+Simple::logJson("post", $article->build());
+Simple::write("zzz.json", $article->build());
+//Simple::logJson("post", $article->post());
 
 
 ?>
