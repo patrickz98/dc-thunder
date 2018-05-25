@@ -146,6 +146,10 @@ function main()
     }
 }
 
+//main();
+
+//patchMetatags(287);
+
 $export = ThunderExport::exportArticle();
 Simple::logJson("export", $export);
 
@@ -156,9 +160,5 @@ $article->setParagraphs($export[ "paragraphs" ]);
 
 Simple::logJson("build", $article->build());
 
-
-//main();
-
-//patchMetatags(287);
 
 ?>
