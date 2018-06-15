@@ -32,7 +32,8 @@ class DcxStoryBodyImage
 
     private function uploadFiles()
     {
-        $url = Config::$dcx_server . "/_file_upload";
+        //$url = Config::$dcx_server . "/_file_upload";
+        $url = Config::$dcx_server . "/_upload/native_hotfolder";
 
         foreach ($this->images as $imgInfo)
         {
@@ -43,10 +44,15 @@ class DcxStoryBodyImage
                 "Content-Type" => $imgInfo[ "data" ][ "filemime" ]
             ];
 
-            $data = file_get_contents($imgInfo[ "data" ][ "src" ]);
+            $binaryData = file_get_contents($imgInfo[ "data" ][ "src" ]);
+            $postfields = array(
+                "file[input]" => "@$binaryData",
+                "job_metadata[form_data][addtags][Title][][value]" => "Hasdhfaklsdhfkjasdkj");
 
             $response = Curl::postRaw($url, Config::$dcx_auth, $data, $header);
             $fileSrc = $response[ "location" ];
+
+            Simple::logJson("response", $response);
 
             if ($fileSrc)
             {
@@ -59,7 +65,7 @@ class DcxStoryBodyImage
             //exit();
         }
 
-        print_r($this->fileIds);
+        //print_r($this->fileIds);
 
         //Curl::postRaw($url, Config::$dcx_auth, );
     }
